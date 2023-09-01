@@ -3,7 +3,7 @@
 ![Dino Jam](https://img.itch.zone/aW1hZ2UyL2phbS8zMzEyMjkvMTIyNjA2NjUucG5n/original/yFwz9S.png)
 
 **Unity Version:** 2023.3.7f  
-![](https://1000logos.net/wp-content/uploads/2021/10/Unity-logo.png =120x70)
+![](https://1000logos.net/wp-content/uploads/2021/10/Unity-logo.png=120x70)
 
 ##  Team: 🎮
 
