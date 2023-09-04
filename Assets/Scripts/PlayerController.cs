@@ -48,8 +48,9 @@ public class PlayerController : MonoBehaviour
         {
             lastInput = 0;
         }
-
-        if(Input.GetKeyDown(KeyCode.Space) && dashRoutine == null)
+        
+        // Changed Key to 'E'
+        if(Input.GetKeyDown(KeyCode.E) && dashRoutine == null)
         {
             dashRoutine = StartCoroutine(Dash());
         }
@@ -89,4 +90,5 @@ public class PlayerController : MonoBehaviour
 
         dashRoutine = null;
     }
+   
 }
