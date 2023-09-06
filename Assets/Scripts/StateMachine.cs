@@ -10,6 +10,7 @@ public class StateMachine : MonoBehaviour
     private void Start()
     {
         Instance = this;
+        DontDestroyOnLoad(this.gameObject);
     }
 
     public void SetState(Mode newState)

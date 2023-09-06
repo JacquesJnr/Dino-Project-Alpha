@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-public class StateTest : MonoBehaviour
+public class ManualStateSwap : MonoBehaviour
 {
     private KeyCode one, two, three;
     public Animator anim;
