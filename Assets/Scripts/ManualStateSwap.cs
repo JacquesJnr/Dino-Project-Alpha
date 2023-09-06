@@ -16,21 +16,22 @@ public class ManualStateSwap : MonoBehaviour
     
     private void Update()
     {
-        if (Input.GetKey(one))
+        if (Input.GetKeyDown(one))
         {
             StateMachine.Instance.SetState(Mode.Running);
-            anim.SetTrigger("Run");
+            anim.SetBool("Run",true);
         }
-        if (Input.GetKey(two))
+        if (Input.GetKeyDown(two))
         {
             StateMachine.Instance.SetState(Mode.Rolling);
             anim.SetTrigger("Roll");
+            anim.SetBool("Run",false);
         }
-        if (Input.GetKey(three))
+        if (Input.GetKeyDown(three))
         {
             StateMachine.Instance.SetState(Mode.Flying);
             anim.SetTrigger("Fly");
-            
+            anim.SetBool("Run",false);
         }
         
         SetAnimState();

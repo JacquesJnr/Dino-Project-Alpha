@@ -7,12 +7,12 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DownRobotM
+  m_Name: MyWall
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_Parent: {fileID: 2100000, guid: a2b1ea17c9df2ee47a132b107fa96c02, type: 2}
+  m_Parent: {fileID: 2100000, guid: bf632217b459daa43b425051cdc316ea, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - _METALLICGLOSSMAP
+  - _GLOSSYREFLECTIONS_OFF
   - _NORMALMAP
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -25,19 +25,17 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 74f858492c029364eb9927051c8fe180, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 0.25, y: 0.145}
+        m_Offset: {x: 0.2, y: 0.5}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 2f77177a0e819a8429082cb3935e063b, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 8a0d388089acab54a86db59276f1c161, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+        m_Texture: {fileID: 2800000, guid: 8704652641cb8634d804980864ffdb2f, type: 3}
+        m_Scale: {x: 0.25, y: 0.145}
+        m_Offset: {x: 0.2, y: 0.5}
     m_Ints: []
-    m_Floats: []
+    m_Floats:
+    - _GlossyReflections: 0
+    - _SpecularHighlights: 1
     m_Colors: []
   m_BuildTextureStacks: []

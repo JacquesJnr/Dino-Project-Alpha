@@ -5,6 +5,7 @@ public class StateMachine : MonoBehaviour
 {
     private Mode playerMode { get; set; }
     public static StateMachine Instance;
+    public static event Action OnStateChanged;
     [SerializeField] private Mode currentState;
 
     private void Start()
@@ -16,6 +17,7 @@ public class StateMachine : MonoBehaviour
     public void SetState(Mode newState)
     {
         playerMode = newState;
+        OnStateChanged.Invoke();
     }
 
     public Mode GetState()
