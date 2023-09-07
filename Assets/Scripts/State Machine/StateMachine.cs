@@ -17,7 +17,8 @@ public class StateMachine : MonoBehaviour
     public void SetState(Mode newState)
     {
         playerMode = newState;
-        OnStateChanged.Invoke();
+        OnStateChanged?.Invoke();
+        Debug.Log($"Game State Changed - {playerMode}");
     }
 
     public Mode GetState()

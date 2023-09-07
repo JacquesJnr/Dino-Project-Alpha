@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
     private Coroutine swapRoutine;
     private Coroutine dashRoutine;
 
+    private Rigidbody rb => GetComponentInChildren<Rigidbody>();
+
     public static PlayerController Instance;
 
     private void Start()
@@ -55,6 +57,7 @@ public class PlayerController : MonoBehaviour
             dashRoutine = StartCoroutine(Dash());
         }
     }
+
 
     IEnumerator MoveToTile(int from, int to)
     {

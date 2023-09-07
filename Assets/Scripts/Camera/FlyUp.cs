@@ -31,7 +31,7 @@ public class FlyUp : MonoBehaviour
        }
        lerp = endValue;
    }
-   private void Fly()
+   public void Fly()
    {
        if (StateMachine.Instance.GetState() != Mode.Flying)
        {

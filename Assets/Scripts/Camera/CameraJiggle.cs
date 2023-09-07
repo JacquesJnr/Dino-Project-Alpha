@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraController : MonoBehaviour
+public class CameraJiggle : MonoBehaviour
 {
     [Header("Scene objects")]
     public new Camera camera;
@@ -25,7 +25,7 @@ public class CameraController : MonoBehaviour
         Vector3 offset = rotation*(Vector3.back*distance);
         Vector3 pos = orbit.position + offset;
         transform.position = pos;
-
+        
         Vector3 jiggle = new Vector3(xAngle, yAngle, 0f)*angleJiggle;
         transform.LookAt(lookAt.position + jiggle);
     }
