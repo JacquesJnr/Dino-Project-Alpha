@@ -7,10 +7,9 @@ public class SwapParticles : MonoBehaviour
 {
     public ParticleSystem poof;
     [SerializeField]private Mode currentMode;
-    private void Awake()
+    private void Start()
     {
         StateMachine.OnStateChanged += OnStateChanged;
-        currentMode = StateMachine.Instance.GetState();
     }
 
     private void OnStateChanged()

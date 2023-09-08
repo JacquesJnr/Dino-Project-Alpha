@@ -1,10 +1,13 @@
 using System;
 using System.Collections;
-
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    // Note:
+    // For now this script is disabled during states other than run to support the other movement types
+    
     public int indexedPosition;
     public int lastInput;
     public float laneWidth = 1f;
@@ -19,9 +22,7 @@ public class PlayerController : MonoBehaviour
 
     private Coroutine swapRoutine;
     private Coroutine dashRoutine;
-
-    private Rigidbody rb => GetComponentInChildren<Rigidbody>();
-
+    
     public static PlayerController Instance;
 
     private void Start()

@@ -31,7 +31,7 @@ public class CameraTrigger : MonoBehaviour
     public void SwapStates(Transform obj)
     {
         string[] directions = name.Split('-');
-        Mode newState;
+        Mode newState = Mode.Running;
         
         switch (directions[1])
         {
@@ -43,9 +43,6 @@ public class CameraTrigger : MonoBehaviour
                 break;
             case "Flying":
                 newState = Mode.Flying;
-                break;
-            default:
-                throw new Exception($"Bad name on GameObject: {obj.name}");
                 break;
         }
         

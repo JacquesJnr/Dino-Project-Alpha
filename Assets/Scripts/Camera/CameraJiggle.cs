@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraJiggle : MonoBehaviour
 {
     [Header("Scene objects")]
-    public new Camera camera;
+    public Camera cam;
     public Transform lookAt;
     public Transform orbit;
 
