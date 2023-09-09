@@ -16,6 +16,7 @@ public struct StateBody
 public class StateBodies : MonoBehaviour
 {
     [SerializeField] private List<StateBody> bodies = new List<StateBody>();
+    public Animator anim;
     
     private void Start()
     {
@@ -30,9 +31,9 @@ public class StateBodies : MonoBehaviour
             b.obj.SetActive(b.isStateActive());
             b.cam.enabled = b.isStateActive();
                 
-            if (b.cam.enabled)
+            if (b.isStateActive())
             {
-                
+                //TODO: Set Animator State
             }
         }
     }

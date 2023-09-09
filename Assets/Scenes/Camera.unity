@@ -2111,6 +2111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1edf55f60427f0145a7c1006483e27e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  brain: {fileID: 0}
   Run:
     cam: {fileID: 750819046}
     tranposer: {fileID: 0}
