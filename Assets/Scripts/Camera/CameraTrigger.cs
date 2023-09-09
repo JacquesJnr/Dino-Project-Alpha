@@ -5,23 +5,10 @@ using UnityEngine.Events;
 
 public class CameraTrigger : MonoBehaviour
 {
-    public UnityEvent cameraBehavior;
-
-   
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            
-            var allTriggers = new List<GameObject>();
-            foreach (var go in GameObject.FindGameObjectsWithTag("CameraTigger"))
-            {
-                allTriggers.Add(go);
-                go.SetActive(false);
-            }
-            
-            cameraBehavior.Invoke();
-
             if (transform.name.Contains("State"))
             {
                 SwapStates(transform);

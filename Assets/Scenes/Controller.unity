@@ -2413,8 +2413,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000015258789, y: 0}
-  m_SizeDelta: {x: 0, y: 34.63}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 47.4}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1362371808
 MonoBehaviour:
@@ -2841,7 +2841,6 @@ GameObject:
   - component: {fileID: 1647739511}
   - component: {fileID: 1647739514}
   - component: {fileID: 1647739516}
-  - component: {fileID: 1647739515}
   - component: {fileID: 1647739512}
   - component: {fileID: 1647739513}
   m_Layer: 0
@@ -2920,25 +2919,6 @@ MonoBehaviour:
   dashDuration: 0
   dashSpeedMultiplier: 0
   speed: 1
---- !u!114 &1647739515
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1647739510}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a39d89fa1a5bde4e91c96fa9025939b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bodies:
-  - mode: 0
-    obj: {fileID: 1420687408}
-  - mode: 1
-    obj: {fileID: 607399283}
-  - mode: 2
-    obj: {fileID: 1489676340}
 --- !u!114 &1647739516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3170,6 +3150,7 @@ GameObject:
   - component: {fileID: 1868899659}
   - component: {fileID: 1868899658}
   - component: {fileID: 1868899661}
+  - component: {fileID: 1868899662}
   m_Layer: 0
   m_Name: GM
   m_TagString: Untagged
@@ -3231,6 +3212,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runningControls: {fileID: 1647739514}
   rollingControls: {fileID: 1647739516}
+--- !u!114 &1868899662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868899657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a39d89fa1a5bde4e91c96fa9025939b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bodies:
+  - mode: 0
+    obj: {fileID: 1420687408}
+    cam: {fileID: 577471724}
+  - mode: 1
+    obj: {fileID: 607399283}
+    cam: {fileID: 664860747}
+  - mode: 2
+    obj: {fileID: 1489676340}
+    cam: {fileID: 1149426227}
 --- !u!1 &1896241098
 GameObject:
   m_ObjectHideFlags: 0
@@ -3377,7 +3380,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1942322247
 Transform:
   m_ObjectHideFlags: 0
@@ -3517,7 +3520,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2096590372
 MonoBehaviour:
   m_ObjectHideFlags: 0

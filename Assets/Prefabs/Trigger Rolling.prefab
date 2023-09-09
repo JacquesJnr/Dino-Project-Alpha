@@ -50,7 +50,7 @@ MonoBehaviour:
   cameraBehavior:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 11500000, guid: 91da42fbac4936143af03eff7d6ac57c, type: 3}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -61,7 +61,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
-        m_CallState: 2
+        m_CallState: 0
 --- !u!33 &654327202755921796
 MeshFilter:
   m_ObjectHideFlags: 0
