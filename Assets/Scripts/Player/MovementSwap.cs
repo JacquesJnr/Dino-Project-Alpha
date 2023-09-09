@@ -10,9 +10,9 @@ public class MovementSwap : MonoBehaviour
     public PlayerController runningControls;
     public Roller rollingControls;
 
-    private void Awake()
+    private void Start()
     {
-        StateMachine.OnStateChanged += Swap;
+        StateMachine.Instance.OnStateChanged += Swap;
     }
 
     public void Swap()

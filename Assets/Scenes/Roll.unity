@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028627, g: 0.22571659, b: 0.30692533, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028627, g: 0.22571659, b: 0.30692536, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -502,6 +502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88a0af2c2789c06499869191da2fe042, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rollBody: {fileID: 474019318}
   rollSpeed: 10
   maxSpeed: 5
   decelerationSpeed: 3.5
@@ -581,7 +582,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 66958d5b373b51145bc3cc78346c8575, type: 2}
+  - {fileID: 2100000, guid: 0d636eb57b3d4c443abe713c82bc51f8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -881,7 +882,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 66958d5b373b51145bc3cc78346c8575, type: 2}
+  - {fileID: 2100000, guid: 0d636eb57b3d4c443abe713c82bc51f8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1045,7 +1046,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 66958d5b373b51145bc3cc78346c8575, type: 2}
+  - {fileID: 2100000, guid: a2b1ea17c9df2ee47a132b107fa96c02, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

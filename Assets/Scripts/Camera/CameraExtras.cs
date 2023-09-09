@@ -12,7 +12,7 @@ using UnityEngine.Events;
 public class CameraExtras : MonoBehaviour
 {
     public ICinemachineCamera live => CinemachineCore.Instance.GetActiveBrain(0).ActiveVirtualCamera;
-    public CinemachineBrain brain => GetComponent<CinemachineBrain>();
+    public CinemachineBrain brain;
     
     public GameCamera Run;
 
@@ -20,6 +20,7 @@ public class CameraExtras : MonoBehaviour
 
     private void Start()
     {
+        brain = GetComponent<CinemachineBrain>();
         Instance = this;
         
         Run.tranposer = Run.cam.GetCinemachineComponent<CinemachineFramingTransposer>();

@@ -15,10 +15,9 @@ public class StateBodies : MonoBehaviour
 {
     [SerializeField] private List<StateBody> bodies = new List<StateBody>();
 
-    
-    private void Awake()
+    private void Start()
     {
-        StateMachine.OnStateChanged += SetBody;
+        StateMachine.Instance.OnStateChanged += SetBody;
     }
 
     public void SetBody()

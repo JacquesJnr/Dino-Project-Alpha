@@ -6,10 +6,12 @@ using UnityEngine;
 public class SwapParticles : MonoBehaviour
 {
     public ParticleSystem poof;
-    [SerializeField]private Mode currentMode;
+
+    [SerializeField] private Mode currentMode;
+
     private void Start()
     {
-        StateMachine.OnStateChanged += OnStateChanged;
+        StateMachine.Instance.OnStateChanged += OnStateChanged;
     }
 
     private void OnStateChanged()

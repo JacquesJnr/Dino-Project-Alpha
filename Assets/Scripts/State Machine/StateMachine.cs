@@ -3,15 +3,17 @@ using UnityEngine;
 
 public class StateMachine : MonoBehaviour
 {
-    private Mode playerMode { get; set; }
     public static StateMachine Instance;
-    public static event Action OnStateChanged;
+    public event Action OnStateChanged;
+
+    private Mode playerMode { get; set; }
+
     [SerializeField] private Mode currentState;
 
     private void Start()
     {
         Instance = this;
-        DontDestroyOnLoad(this.gameObject);
+        DontDestroyOnLoad(gameObject);
     }
 
     public void SetState(Mode newState)
