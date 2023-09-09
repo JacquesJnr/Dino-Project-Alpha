@@ -2,14 +2,18 @@ using UnityEngine;
 
 public class RepeatMover : MonoBehaviour
 {
-    public float start = 80f;
-    public float distance = 100f;
-    public float duration = 5f;
+    public float speed = 5f;
+    public float transitPosition = -25f;
+    public float startPosition = 80f;
 
     void Update()
     {
-        var pos = transform.position;
-        pos.z = start - Time.time/duration % 1f * distance;
+        Vector3 pos = transform.position;
+        pos.z -= Time.deltaTime*speed;
+        if(pos.z < transitPosition)
+        {
+            pos.z = startPosition;
+        }
         transform.position = pos;
     }
 }
