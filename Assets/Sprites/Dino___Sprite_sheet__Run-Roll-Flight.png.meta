@@ -1,0 +1,561 @@
+fileFormatVersion: 2
+guid: f728fe388907b384bac2c516ef48a35e
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Dino___Sprite_sheet__Run-Roll-Flight_0
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 1357
+        width: 317
+        height: 558
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15abe956293876c478a97f95b7017202
+      internalID: 605107343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dino___Sprite_sheet__Run-Roll-Flight_1
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 1412
+        width: 309
+        height: 508
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbdc6aeda8797fa41a62dfb0b0e4a997
+      internalID: 961996159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dino___Sprite_sheet__Run-Roll-Flight_2
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 1357
+        width: 265
+        height: 563
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb0832c9091216847b7b9cf2a3691216
+      internalID: 1060277157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dino___Sprite_sheet__Run-Roll-Flight_3
+      rect:
+        serializedVersion: 2
+        x: 1173
+        y: 1410
+        width: 278
+        height: 508
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38f6b38f11c3c764e800004dd081b852
+      internalID: -59524227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dino___Sprite_sheet__Run-Roll-Flight_4
+      rect:
+        serializedVersion: 2
+        x: 1505
+        y: 1417
+        width: 316
+        height: 495
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac0a0b46dc2633d4f957061951bb846e
+      internalID: -1027696455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dino___Sprite_sheet__Run-Roll-Flight_5
+      rect:
+        serializedVersion: 2
+        x: 1873
+        y: 1422
+        width: 316
+        height: 486
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9fd2f8fc00b28344a1847b9abb722e6
+      internalID: 1158665044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dino___Sprite_sheet__Run-Roll-Flight_6
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 691
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72c1a57f510435e49b69457f23f27614
+      internalID: -85658671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dino___Sprite_sheet__Run-Roll-Flight_7
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 639
+        width: 317
+        height: 493
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01d64fb3eda677c4682e1e12014163b1
+      internalID: -1680012192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dino___Sprite_sheet__Run-Roll-Flight_8
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 679
+        width: 299
+        height: 476
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f05c25ea61f09c24b907de4cfe514ef6
+      internalID: 148483373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dino___Sprite_sheet__Run-Roll-Flight_9
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 677
+        width: 292
+        height: 489
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ec827743772f5c40aeb33ca83542f3a
+      internalID: 1262420307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dino___Sprite_sheet__Run-Roll-Flight_11
+      rect:
+        serializedVersion: 2
+        x: 1119
+        y: 639
+        width: 317
+        height: 525
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f887c81cd754774ca79582cc6248c66
+      internalID: 2143398630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dino___Sprite_sheet__Run-Roll-Flight_12
+      rect:
+        serializedVersion: 2
+        x: 1507
+        y: 677
+        width: 293
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7aa808d6908ed34cbe6a86b2938d098
+      internalID: 1216060302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dino___Sprite_sheet__Run-Roll-Flight_13
+      rect:
+        serializedVersion: 2
+        x: 1868
+        y: 679
+        width: 299
+        height: 463
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d315a4c87466274fb1994b65148987c
+      internalID: 82262583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dino___Sprite_sheet__Run-Roll-Flight_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 85
+        width: 362
+        height: 545
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f289f91f243356448fd7130ff94cb4a
+      internalID: 1073355132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dino___Sprite_sheet__Run-Roll-Flight_15
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 0
+        width: 290
+        height: 630
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32471bc5f55fbd2498e3aeae14e2e828
+      internalID: -1985298884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dino___Sprite_sheet__Run-Roll-Flight_16
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 0
+        width: 295
+        height: 628
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 124c4630b64780244b2723e0e37698af
+      internalID: 791253452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dino___Sprite_sheet__Run-Roll-Flight_17
+      rect:
+        serializedVersion: 2
+        x: 1159
+        y: 85
+        width: 298
+        height: 545
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 914ad2e7209ea124fab4d7a1e736dd0a
+      internalID: 1262572506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dino___Sprite_sheet__Run-Roll-Flight_18
+      rect:
+        serializedVersion: 2
+        x: 1529
+        y: 97
+        width: 290
+        height: 533
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6236a9e08544ab947a3097361981b1ba
+      internalID: -2055111212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dino___Sprite_sheet__Run-Roll-Flight_19
+      rect:
+        serializedVersion: 2
+        x: 1898
+        y: 108
+        width: 292
+        height: 520
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79b2f99df2844e846841e2fe526147de
+      internalID: -1329444561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Dino___Sprite_sheet__Run-Roll-Flight_0: 605107343
+      Dino___Sprite_sheet__Run-Roll-Flight_1: 961996159
+      Dino___Sprite_sheet__Run-Roll-Flight_10: -91055777
+      Dino___Sprite_sheet__Run-Roll-Flight_11: 2143398630
+      Dino___Sprite_sheet__Run-Roll-Flight_12: 1216060302
+      Dino___Sprite_sheet__Run-Roll-Flight_13: 82262583
+      Dino___Sprite_sheet__Run-Roll-Flight_14: 1073355132
+      Dino___Sprite_sheet__Run-Roll-Flight_15: -1985298884
+      Dino___Sprite_sheet__Run-Roll-Flight_16: 791253452
+      Dino___Sprite_sheet__Run-Roll-Flight_17: 1262572506
+      Dino___Sprite_sheet__Run-Roll-Flight_18: -2055111212
+      Dino___Sprite_sheet__Run-Roll-Flight_19: -1329444561
+      Dino___Sprite_sheet__Run-Roll-Flight_2: 1060277157
+      Dino___Sprite_sheet__Run-Roll-Flight_20: -595241161
+      Dino___Sprite_sheet__Run-Roll-Flight_21: 1461122076
+      Dino___Sprite_sheet__Run-Roll-Flight_3: -59524227
+      Dino___Sprite_sheet__Run-Roll-Flight_4: -1027696455
+      Dino___Sprite_sheet__Run-Roll-Flight_5: 1158665044
+      Dino___Sprite_sheet__Run-Roll-Flight_6: -85658671
+      Dino___Sprite_sheet__Run-Roll-Flight_7: -1680012192
+      Dino___Sprite_sheet__Run-Roll-Flight_8: 148483373
+      Dino___Sprite_sheet__Run-Roll-Flight_9: 1262420307
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

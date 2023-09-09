@@ -15,7 +15,7 @@ public class TriggerSpawner : MonoBehaviour
 
    public void InstanceRun()
    {
-      GameObject run = (runTrigger);
+      GameObject run = Instantiate(runTrigger);
       garbage.Add(run);
    }
    
@@ -28,7 +28,7 @@ public class TriggerSpawner : MonoBehaviour
    public void InstanceFly()
    {
       GameObject fly = Instantiate(flyTrigger);
-      Instantiate(fly);
+      garbage.Add(fly);
    }
 
    private void Update()

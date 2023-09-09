@@ -486,7 +486,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 81e28fe06d092be4183454b1c101a55e, type: 3}
+  m_Sprite: {fileID: 605107343, guid: f728fe388907b384bac2c516ef48a35e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -2148,7 +2148,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 1000
-  field of view: 42
+  field of view: 40
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
@@ -2175,7 +2175,7 @@ Transform:
   m_GameObject: {fileID: 891345814}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5399996, z: -7.13}
+  m_LocalPosition: {x: 0, y: 2.3999996, z: -9.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
