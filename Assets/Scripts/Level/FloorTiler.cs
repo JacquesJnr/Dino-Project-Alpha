@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class FloorTiler : MonoBehaviour
 {
-    public GameObject floorPrefab;
+    public MeshRenderer floorPrefab;
     public Transform floorRoot;
     public int numTiles = 5;
     public float floorY;
     public float speed = 5f;
     public float wrapPosition = -25f;
 
+    public Material[] tileMaterials;
+
     const float PLANE_SIZE_UNITS = 10f;
     private float _tileSize;
 
-    [NonSerialized] public GameObject[] tiles;
+    [NonSerialized] public MeshRenderer[] tiles;
 
     private void Start()
     {
@@ -25,10 +27,11 @@ public class FloorTiler : MonoBehaviour
             Destroy(t.gameObject);
         }
 
-        tiles = new GameObject[numTiles];
+        tiles = new MeshRenderer[numTiles];
         for(int i = 0; i < numTiles; i++)
         {
-            GameObject tile = Instantiate(floorPrefab, floorRoot);
+            MeshRenderer tile = Instantiate(floorPrefab, floorRoot);
+            tile.sharedMaterial = tileMaterials.Choose();
             tile.transform.position = new Vector3(0f, floorY, _tileSize*i);
             tiles[i] = tile;
         }    
@@ -38,14 +41,17 @@ public class FloorTiler : MonoBehaviour
     {
         for(int i = 0; i < tiles.Length; i++)
         {
-            Transform tile = tiles[i].transform;
-            Vector3 pos = tile.position;
+            MeshRenderer tile = tiles[i];
+            Vector3 pos = tile.transform.position;
+
             pos.z -= speed*Time.deltaTime;
             if(pos.z <= wrapPosition)
             {
+                tile.sharedMaterial = tileMaterials.Choose();
                 pos.z += tiles.Length*_tileSize;
             }
-            tile.position = pos;
+
+            tile.transform.position = pos;
         }
     }
 }

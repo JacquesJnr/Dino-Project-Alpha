@@ -4945,9 +4945,9 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1841950189}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1858463884 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4580402536236115377, guid: 3b0847166cdb98849bf279ca0b3f3fa7, type: 3}
+--- !u!23 &1858463886 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3960058906431489785, guid: 3b0847166cdb98849bf279ca0b3f3fa7, type: 3}
   m_PrefabInstance: {fileID: 6320085435953432999}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1858463888 stripped
@@ -5000,12 +5000,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc9e0f9061285c64692e0e1b7f1bfda5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  floorPrefab: {fileID: 1858463884}
+  floorPrefab: {fileID: 1858463886}
   floorRoot: {fileID: 1864443645}
   numTiles: 8
   floorY: -2.710007
   speed: 8
   wrapPosition: -50
+  tileMaterials:
+  - {fileID: 2100000, guid: 077cf1c3946f1d543b7803d505c68b90, type: 2}
+  - {fileID: 2100000, guid: c64e7bac34bfb734f8d8861237ec75d6, type: 2}
 --- !u!1 &1865182521
 GameObject:
   m_ObjectHideFlags: 0
