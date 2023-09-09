@@ -20,7 +20,7 @@ public class FloorTiler : MonoBehaviour
 
     private void Start()
     {
-        _tileSize = floorPrefab.transform.localScale.z*PLANE_SIZE_UNITS;
+        _tileSize = floorPrefab.transform.localScale.x*PLANE_SIZE_UNITS;
 
         foreach(Transform t in floorRoot)
         {
@@ -32,7 +32,7 @@ public class FloorTiler : MonoBehaviour
         {
             MeshRenderer tile = Instantiate(floorPrefab, floorRoot);
             tile.sharedMaterial = tileMaterials.Choose();
-            tile.transform.position = new Vector3(0f, floorY, _tileSize*i);
+            tile.transform.position = new Vector3(floorPrefab.transform.position.x, floorY, _tileSize*i);
             tiles[i] = tile;
         }    
     }
