@@ -30,6 +30,11 @@ public class PlayerController : MonoBehaviour
         Instance = this;
     }
 
+    private void OnEnable()
+    {
+        AnimationManager.Instance.RunMode();
+    }
+
     void Update()
     {
         float input = Input.GetAxis("Horizontal");

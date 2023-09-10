@@ -17,6 +17,11 @@ public class Roller : MonoBehaviour
       startingDrag = rollBody.drag;
    }
 
+   private void OnEnable()
+   {
+      AnimationManager.Instance.RollMode();
+   }
+
    private void Update()
    {
       Vector3 moveVector = Vector3.zero;

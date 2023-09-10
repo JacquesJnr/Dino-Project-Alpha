@@ -47,21 +47,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f88134e1a4df7b4795c5b51fe64e640, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraBehavior:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11500000, guid: 91da42fbac4936143af03eff7d6ac57c, type: 3}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 0
 --- !u!33 &654327202755921796
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -178,7 +163,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f473de6ccd6bb64ba4fb7e91dc9a7b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  start: 50
-  distance: 100
-  duration: 5
-  speed: 1
+  speed: 10
+  transitPosition: -25
+  startPosition: 80

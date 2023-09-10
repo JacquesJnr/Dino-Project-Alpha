@@ -11,13 +11,21 @@ public struct StateBody
     public GameObject obj;
     public CinemachineVirtualCamera cam;
     public bool isStateActive() => StateMachine.Instance.GetState() == mode;
+    public Vector3 GetPos()
+    {
+        return obj.transform.localPosition;
+    }
 }
 
 public class StateBodies : MonoBehaviour
 {
-    [SerializeField] private List<StateBody> bodies = new List<StateBody>();
-    public Animator anim;
+    public StateBody activeBody;
     
+    [SerializeField] private List<StateBody> bodies = new List<StateBody>();
+    [SerializeField] private Animator anim;
+    
+    private Vector3 pos;
+
     private void Start()
     {
         StateMachine.Instance.OnStateChanged += SetBody;
@@ -30,11 +38,24 @@ public class StateBodies : MonoBehaviour
         {
             b.obj.SetActive(b.isStateActive());
             b.cam.enabled = b.isStateActive();
-                
+
             if (b.isStateActive())
             {
-                //TODO: Set Animator State
+                activeBody = b;
             }
+        }
+    }
+
+    private void Update()
+    {
+        CenterAnimOnBody();
+    }
+    
+    public void CenterAnimOnBody()
+    {
+        if (StateMachine.Instance.GetState() != Mode.Running)
+        {
+            anim.transform.localPosition = activeBody.GetPos();
         }
     }
 }
