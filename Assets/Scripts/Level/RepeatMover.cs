@@ -17,6 +17,8 @@ public class RepeatMover : MonoBehaviour
     {
         if(raisesFromFloor)
         {
+            var pos = transform.position;
+            pos.y = raiseStartY;
             StartCoroutine(RaiseFromFloorRoutine());
         }
     }

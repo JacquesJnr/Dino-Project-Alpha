@@ -52,6 +52,7 @@ public class Tiler : MonoBehaviour
                 tile = Instantiate(prefab, floorRoot);
                 tile.transform.localEulerAngles = tileRotation;
                 tiles[i] = tile;
+                pos.z += numTiles*_tileSize;
             }
 
             tile.transform.position = pos;
