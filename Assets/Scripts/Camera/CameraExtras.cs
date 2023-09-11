@@ -41,7 +41,7 @@ public class CameraExtras : MonoBehaviour
 
     private void SetCameraDeadzone()
     {
-        bool inMiddle = PlayerController.Instance.indexedPosition == 0;
+        bool inMiddle = PlayerController.Instance.LaneIndex == 0;
 
         // Center the camera when the player is in the middle lane
         if (inMiddle)
