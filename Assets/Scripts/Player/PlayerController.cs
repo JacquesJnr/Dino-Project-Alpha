@@ -32,13 +32,12 @@ public class PlayerController : MonoBehaviour
     
     public static PlayerController Instance;
 
-    private void Start()
+    private void Awake()
     {
         Instance = this;
-        AnimationManager.Instance.RunMode();
     }
 
-    private void OnEnable()
+    private void Start()
     {
         AnimationManager.Instance.RunMode();
     }

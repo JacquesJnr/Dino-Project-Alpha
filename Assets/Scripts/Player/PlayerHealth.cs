@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int health;
+    public static PlayerHealth Instance;
+
     public int maxHealth = 3;
 
-    public static PlayerHealth Instance;
+    public int Health { get; set; }
 
     void Start()
     {
         Instance = this;
-        health = maxHealth;
+        Health = maxHealth;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -20,7 +21,7 @@ public class PlayerHealth : MonoBehaviour
         switch(other.tag)
         {
             case "Obstacle":
-                health -= 1;
+                Health -= 1;
                 break;
             default:
                 throw new Exception($"Missing case: {other.tag}");

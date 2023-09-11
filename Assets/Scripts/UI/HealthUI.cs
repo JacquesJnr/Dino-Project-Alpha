@@ -8,6 +8,6 @@ public class HealthUI : MonoBehaviour
 
     void Update()
     {
-        healthText.text = $"Health: {PlayerHealth.Instance.health}";
+        healthText.text = $"Health: {PlayerHealth.Instance.Health}";
     }
 }
