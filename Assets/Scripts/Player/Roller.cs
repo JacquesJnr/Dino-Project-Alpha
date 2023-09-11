@@ -7,9 +7,16 @@ using UnityEngine;
 public class Roller : MonoBehaviour
 {
    public Rigidbody rollBody;
+   
+   [Header("Rolling")]
    public float rollSpeed = 10F;
    public float maxSpeed = 5F;
    [Range(1, 10)] public float decelerationSpeed;
+
+   [Header("Bounce")] 
+   public float bouncingForce;
+   public bool bouncing;
+   
    private float startingDrag;
 
    private void Start()
@@ -19,7 +26,8 @@ public class Roller : MonoBehaviour
 
    private void OnEnable()
    {
-      AnimationManager.Instance.RollMode();
+      AnimationManager.Instance.RollMode(); 
+      Bounce.OnBounce += OnBounce;
    }
 
    private void Update()
@@ -29,17 +37,40 @@ public class Roller : MonoBehaviour
       var force = moveVector * rollSpeed * Time.deltaTime;
       
       // Decelerate 
-      rollBody.drag = moveVector.x != 0 ? startingDrag : decelerationSpeed;
+      if (!bouncing)
+      {
+         rollBody.drag = moveVector.x != 0 ? startingDrag : decelerationSpeed;
+      }
+      else
+      {
+         rollBody.drag = startingDrag;
+      }
 
       rollBody.AddForce(force, ForceMode.VelocityChange);
       // Clamp Horizontal speed
       rollBody.velocity = new Vector3(Mathf.Clamp(rollBody.velocity.x, -maxSpeed, maxSpeed), 0F, 0F);
    }
-
-   private void OnCollisionEnter(Collision other)
+   private void OnBounce()
    {
-      // Cancel all forces for now so we can make out own bouncing logic
-      rollBody.velocity = Vector3.zero;
+      bool leftWall = rollBody.transform.position.x < 0;
+      bool rightWall = rollBody.transform.position.x > 0;
+
+      if (leftWall)
+      {
+         rollBody.AddForce(Vector3.right * bouncingForce,ForceMode.Impulse);
+         bouncing = true;
+      }
+      if (rightWall)
+      {
+         rollBody.AddForce(Vector3.left * bouncingForce, ForceMode.Impulse);
+         bouncing = true;  
+      }
+
+      bouncing = false;
    }
-   
+
+   private void OnDisable()
+   {
+      Bounce.OnBounce -= OnBounce;
+   }
 }

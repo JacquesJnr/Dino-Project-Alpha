@@ -11,7 +11,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Camera.unity
     guid: 5c98f01133b77424e947d2bcafe0278b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Controller.unity
     guid: 58d546b3afcb9dc4f9448141d001efcc
+  - enabled: 1
+    path: Assets/Scenes/DINOJAM.unity
+    guid: 6d163d71009e2524691b711798cf9da0
   m_configObjects: {}
