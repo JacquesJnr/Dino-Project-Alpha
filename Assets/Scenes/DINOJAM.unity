@@ -612,7 +612,7 @@ MonoBehaviour:
   swapSpeed: 0.35
   dashDuration: 0.5
   dashSpeedMultiplier: 2
-  dashCooldown: 0
+  dashCooldown: 2
 --- !u!114 &84697098
 MonoBehaviour:
   m_ObjectHideFlags: 0
