@@ -53,9 +53,6 @@ public class StateBodies : MonoBehaviour
     
     public void CenterAnimOnBody()
     {
-        if (StateMachine.Instance.GetState() != Mode.Running)
-        {
-            anim.transform.localPosition = activeBody.GetPos();
-        }
+        anim.transform.localPosition = activeBody.GetPos();
     }
 }
