@@ -668,7 +668,6 @@ GameObject:
   m_Component:
   - component: {fileID: 228150945}
   - component: {fileID: 228150944}
-  - component: {fileID: 228150943}
   - component: {fileID: 228150942}
   - component: {fileID: 228150941}
   m_Layer: 0
@@ -720,23 +719,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 228150940}
   m_Enabled: 1
---- !u!114 &228150943
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 228150940}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1edf55f60427f0145a7c1006483e27e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  brain: {fileID: 228150941}
-  Run:
-    cam: {fileID: 1197426470}
-    tranposer: {fileID: 0}
-    body: {fileID: 0}
 --- !u!20 &228150944
 Camera:
   m_ObjectHideFlags: 0
@@ -3900,7 +3882,7 @@ MonoBehaviour:
   m_XDamping: 0.1
   m_YDamping: 1
   m_ZDamping: 1
-  m_TargetMovementOnly: 1
+  m_TargetMovementOnly: 0
   m_ScreenX: 0.5
   m_ScreenY: 0.5
   m_CameraDistance: 5
