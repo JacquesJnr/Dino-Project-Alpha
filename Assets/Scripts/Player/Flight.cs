@@ -24,7 +24,7 @@ public class Flight : MonoBehaviour
 
     private void Start()
     {
-        groundHeight = flyBody.transform.localPosition.y;
+        groundHeight = flyBody.transform.position.y;
     }
 
     private void Update()
@@ -50,23 +50,23 @@ public class Flight : MonoBehaviour
             (flyBody.transform.up * activeVerticalSpeed * Time.deltaTime)
         );
         
-        bool withinX = Mathf.Abs(flyBody.transform.localPosition.x) < bound.x / 2;
-        bool withinY = Mathf.Abs(flyBody.transform.localPosition.y ) - flyHeight < bound.y / 2;
+        bool withinX = Mathf.Abs(flyBody.transform.position.x) < bound.x / 2;
+        bool withinY = Mathf.Abs(flyBody.transform.position.y ) - flyHeight < bound.y / 2;
         bool withinBounds = withinX && withinY;
         
-        if (flyBody.transform.localPosition.x < -bound.x / 2)
+        if (flyBody.transform.position.x < -bound.x / 2)
         {
             activeHorizontalSpeed = Mathf.Clamp(activeHorizontalSpeed, 0, float.MaxValue);
         } 
-        if (flyBody.transform.localPosition.x > bound.x / 2)
+        if (flyBody.transform.position.x > bound.x / 2)
         {
             activeHorizontalSpeed = Mathf.Clamp(activeHorizontalSpeed, float.MinValue, 0);
         }
-        if (flyBody.transform.localPosition.y - flyHeight > bound.y / 2)
+        if (flyBody.transform.position.y - flyHeight > bound.y / 2)
         {
             activeVerticalSpeed = Mathf.Clamp(activeVerticalSpeed, float.MinValue, 0);
         } 
-        if (flyBody.transform.localPosition.y- flyHeight < -bound.y / 2)
+        if (flyBody.transform.position.y- flyHeight < -bound.y / 2)
         {
             activeVerticalSpeed = Mathf.Clamp(activeVerticalSpeed, 0, float.MaxValue);
         }
