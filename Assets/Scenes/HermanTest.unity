@@ -366,9 +366,6 @@ MonoBehaviour:
   relativeSpeed: 5
   transitPosition: -10
   startPosition: 80
-  raisesFromFloor: 0
-  raiseStartY: 0
-  raiseTargetY: 0
 --- !u!4 &129907973
 Transform:
   m_ObjectHideFlags: 0
@@ -1422,9 +1419,6 @@ MonoBehaviour:
   relativeSpeed: 5
   transitPosition: -25
   startPosition: 80
-  raisesFromFloor: 0
-  raiseStartY: 0
-  raiseTargetY: 0
 --- !u!1 &468458326
 GameObject:
   m_ObjectHideFlags: 0
@@ -3618,6 +3612,7 @@ Transform:
   - {fileID: 362931687}
   - {fileID: 1148954299}
   - {fileID: 959579649}
+  - {fileID: 1941944744}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1434369305
@@ -3822,7 +3817,6 @@ GameObject:
   - component: {fileID: 1480966646}
   - component: {fileID: 1480966645}
   - component: {fileID: 1480966644}
-  - component: {fileID: 1480966647}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3904,26 +3898,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 13.415, y: -10.245, z: 1.456}
---- !u!114 &1480966647
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1480966643}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f4e6f5f56b5c6f41b93f51bcacfba0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 0}
-  lookAt: {fileID: 1148954299}
-  orbit: {fileID: 959579649}
-  distance: 20
-  xAngles: {x: -25, y: -25}
-  yAngles: {x: 35, y: 35}
-  timings: {x: 11.38, y: 13.98}
-  angleJiggle: {x: -0.13, y: 0.1}
 --- !u!1 &1532225997
 GameObject:
   m_ObjectHideFlags: 0
@@ -4075,10 +4049,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstaclePrefabs:
   - {fileID: 7490233144111733734, guid: 9ade1ecdd5549e640a1d5895e4e0a442, type: 3}
-  waveSize: 3
-  waveDelay: 10
+  waveSizeMin: 3
+  waveSizeMax: 5
+  waveDelay: 5
+  spawnDelay: 0.4
   distance: 100
-  obstacleDistance: 15
+  obstacleDistance: 12
 --- !u!1 &1721971887
 GameObject:
   m_ObjectHideFlags: 0
@@ -4945,6 +4921,72 @@ Transform:
   - {fileID: 515152663}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1941944743
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1941944744}
+  - component: {fileID: 1941944746}
+  - component: {fileID: 1941944745}
+  m_Layer: 0
+  m_Name: Animator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1941944744
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1941944743}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1406672432}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1941944745
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1941944743}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1941944746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1941944743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91da42fbac4936143af03eff7d6ac57c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1953299256
 GameObject:
   m_ObjectHideFlags: 0
@@ -5190,9 +5232,6 @@ MonoBehaviour:
   relativeSpeed: 5
   transitPosition: -25
   startPosition: 80
-  raisesFromFloor: 0
-  raiseStartY: 0
-  raiseTargetY: 0
 --- !u!4 &2129838380
 Transform:
   m_ObjectHideFlags: 0

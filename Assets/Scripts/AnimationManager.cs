@@ -5,6 +5,7 @@ using UnityEngine;
 public class AnimationManager : MonoBehaviour
 {
     private Animator anim;
+
     public static AnimationManager Instance;
 
     public void RunMode()
