@@ -18,8 +18,16 @@ public class PlayerController : MonoBehaviour
     public float dashSpeedMultiplier = 2f;
     public float dashCooldown;
 
+    [Header("Jumping")]
+    public bool isJumping;
+    public float jumpDuration = 1f;
+    public float jumpHeight = 2f;
+    public AnimationCurve jumpCurve = AnimationCurve.Linear(0f, 0f, 1f, 1f);
+
     public event Action StartTileSwitch;
     public event Action FinishTileSwitch;
+    public event Action JumpStarted;
+    public event Action JumpEnded;
 
     public int LaneIndex { get; set; }
 
@@ -65,12 +73,17 @@ public class PlayerController : MonoBehaviour
         }
 
         float verticalInput = Input.GetAxis("Vertical");
-        if(Time.time > _nextDashTimer && _lastVerticalInput <= 0f && verticalInput > 0f && dashRoutine == null)
+        if(Time.time > _nextDashTimer && _lastVerticalInput <= 0f && verticalInput > 0f && dashRoutine == null && !isJumping)
         {
             dashRoutine = StartCoroutine(Dash());
         }
 
         _lastVerticalInput = verticalInput;
+
+        if(Input.GetKeyDown(KeyCode.Space) && !isJumping && dashRoutine == null)
+        {
+            StartCoroutine(Jump());
+        }
     }
 
     IEnumerator MoveToTile(int from, int to)
@@ -110,5 +123,24 @@ public class PlayerController : MonoBehaviour
         dashRoutine = null;
         _nextDashTimer = Time.time + dashCooldown;
     }
-   
+
+    IEnumerator Jump()
+    {
+        float start = Time.time;
+        isJumping = true;
+        AnimationManager.Instance.Jumping();
+
+        while(Time.time < start + jumpDuration)
+        {
+            float t = jumpCurve.Evaluate((Time.time - start)/jumpDuration);
+            Vector3 position = transform.position;
+            position.y = jumpHeight*t;
+            transform.position = position;
+            yield return null;
+        }
+
+        AnimationManager.Instance.StopJumping();
+        isJumping = false;
+    }
+
 }
