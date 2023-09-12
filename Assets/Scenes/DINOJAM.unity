@@ -592,8 +592,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rollBody: {fileID: 2030992446}
   rollSpeed: 20
-  maxSpeed: 15
-  decelerationSpeed: 3.5
+  maxSpeed: 25
+  decelerationSpeed: 3
   bouncingForce: 25
   bouncing: 0
 --- !u!114 &84697097
@@ -803,13 +803,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilePrefabs:
-  - {fileID: 5473827358160952897, guid: e2c286334e9b9cf4e831bba19404f3b6, type: 3}
-  - {fileID: 5473827358160952897, guid: 9a18270ae55abe54e9a22c71fea1f05a, type: 3}
+  - {fileID: 5473827358160952897, guid: e63fd0fc73ad26345b92a99e3dbe4db7, type: 3}
   tileSizes:
   - 30
   - 30
+  - 30
   floorRoot: {fileID: 276145676}
-  numTiles: 25
+  numTiles: 6
   floorY: 0
   floorX: 0
   wrapPosition: -100
@@ -2447,7 +2447,7 @@ CapsuleCollider:
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: 0.5}
 --- !u!114 &833207041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2655,7 +2655,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &893233408
 MonoBehaviour:
   m_ObjectHideFlags: 0
