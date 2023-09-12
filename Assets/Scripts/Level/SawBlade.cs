@@ -15,10 +15,19 @@ public class SawBlade : MonoBehaviour
     [Header("References")]
     public Transform root;
     public Transform blade;
+    public Transform hurtbox;
 
     void Start()
     {
         StartCoroutine(BladeRoutine());
+    }
+
+    private void Update()
+    {
+        // Keep hurtbox upright (it rotates along with the arm)
+        Vector3 angle = hurtbox.transform.localEulerAngles;
+        angle.z = -root.transform.localEulerAngles.z;
+        hurtbox.transform.localEulerAngles = angle;
     }
 
     private IEnumerator BladeRoutine()
