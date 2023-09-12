@@ -803,13 +803,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilePrefabs:
+  - {fileID: 5473827358160952897, guid: 9a18270ae55abe54e9a22c71fea1f05a, type: 3}
+  - {fileID: 5473827358160952897, guid: f6a69c10c232f1d4281c12a30d0ec3d2, type: 3}
   - {fileID: 5473827358160952897, guid: e63fd0fc73ad26345b92a99e3dbe4db7, type: 3}
   tileSizes:
   - 30
   - 30
   - 30
   floorRoot: {fileID: 276145676}
-  numTiles: 6
+  numTiles: 20
   floorY: 0
   floorX: 0
   wrapPosition: -100
@@ -2113,7 +2115,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1920, y: 1070}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -2655,7 +2657,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &893233408
 MonoBehaviour:
   m_ObjectHideFlags: 0
