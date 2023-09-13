@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
         Instance = this;
     }
 
-    private void Start()
+    private void OnEnable()
     {
         AnimationManager.Instance.RunMode();
     }
