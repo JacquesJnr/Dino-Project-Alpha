@@ -33,7 +33,7 @@ public class SawBlade : MonoBehaviour
     private IEnumerator BladeRoutine()
     {
         Vector3 euler;
-        float start, angle, t;
+        float start, t;
         while(true)
         {
             start = Time.time;
@@ -51,7 +51,7 @@ public class SawBlade : MonoBehaviour
             {
                 t = (Time.time - start)/spinDuration;
                 euler = blade.localEulerAngles;
-                euler.x = t*360f;
+                euler.x = -t*540f;
                 blade.localEulerAngles = euler;
                 yield return null;
             }

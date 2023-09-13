@@ -3320,6 +3320,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 6
   hitFreezeDuration: 0.1
+  hitSlowFactor: 0.5
+  hitSlowDuration: 0.5
 --- !u!1 &1365462327
 GameObject:
   m_ObjectHideFlags: 0

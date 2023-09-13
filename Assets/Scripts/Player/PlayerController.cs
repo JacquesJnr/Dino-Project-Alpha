@@ -7,7 +7,8 @@ public class PlayerController : MonoBehaviour
 {
     // Note:
     // For now this script is disabled during states other than run to support the other movement types
-    public float speed = 1f;
+    [SerializeField] private float speed = 1f;
+    public float Speed => speed*PlayerHealth.Instance.GetSlowFactor();
 
     [Header("Lanes")]
     public float laneWidth = 1f;

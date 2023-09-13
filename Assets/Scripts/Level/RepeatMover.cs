@@ -9,7 +9,7 @@ public class RepeatMover : MonoBehaviour
     void Update()
     {
         Vector3 pos = transform.position;
-        pos.z -= Time.deltaTime*(relativeSpeed + PlayerController.Instance.speed);
+        pos.z -= Time.deltaTime*(relativeSpeed + PlayerController.Instance.Speed);
         if(pos.z < transitPosition)
         {
             pos.z = startPosition;
