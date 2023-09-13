@@ -32,6 +32,7 @@ public class SawBlade : MonoBehaviour
 
     private IEnumerator BladeRoutine()
     {
+        Vector3 euler;
         float start, angle, t;
         while(true)
         {
@@ -39,8 +40,9 @@ public class SawBlade : MonoBehaviour
             while(Time.time < start + moveDuration)
             {
                 t = (Time.time - start)/moveDuration;
-                angle = Mathf.Lerp(startAngle, targetAngle, t);
-                root.localEulerAngles = new Vector3(0f, 0f, angle);
+                euler = root.localEulerAngles;
+                euler.z = Mathf.Lerp(startAngle, targetAngle, t);
+                root.localEulerAngles = euler;
                 yield return null;
             }
 
@@ -48,8 +50,9 @@ public class SawBlade : MonoBehaviour
             while(Time.time < start + spinDuration)
             {
                 t = (Time.time - start)/spinDuration;
-                angle = t*360f;
-                blade.localEulerAngles = new Vector3(0f, 0f, angle);
+                euler = blade.localEulerAngles;
+                euler.z = t*360f;
+                blade.localEulerAngles = euler;
                 yield return null;
             }
             yield return new WaitForSeconds(moveUpDelay);
@@ -58,8 +61,9 @@ public class SawBlade : MonoBehaviour
             while(Time.time < start + moveDuration)
             {
                 t = (Time.time - start)/moveDuration;
-                angle = Mathf.Lerp(targetAngle, startAngle, t);
-                root.localEulerAngles = new Vector3(0f, 0f, angle);
+                euler = root.localEulerAngles;
+                euler.z = Mathf.Lerp(targetAngle, startAngle, t);
+                root.localEulerAngles = euler;
                 yield return null;
             }
             yield return new WaitForSeconds(sequenceDelay);

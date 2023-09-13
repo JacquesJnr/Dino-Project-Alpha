@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 
 using UnityEngine;
 
@@ -7,6 +8,7 @@ public class PlayerHealth : MonoBehaviour
     public static PlayerHealth Instance;
 
     public int maxHealth = 3;
+    public float hitFreezeDuration = 0.2f;
 
     public int Health { get; set; }
 
@@ -22,9 +24,15 @@ public class PlayerHealth : MonoBehaviour
         {
             case "Obstacle":
                 Health -= 1;
+                StartCoroutine(FreezeGame(hitFreezeDuration));
                 break;
-            default:
-                throw new Exception($"Missing case: {other.tag}");
         }
+    }
+
+    private IEnumerator FreezeGame(float time)
+    {
+        Time.timeScale = 0f;
+        yield return new WaitForSecondsRealtime(time);
+        Time.timeScale = 1f;
     }
 }
