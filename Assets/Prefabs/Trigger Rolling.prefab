@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f88134e1a4df7b4795c5b51fe64e640, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetMode: 1
 --- !u!33 &654327202755921796
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -75,7 +76,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c8901875f6fc7664b8aae2f47203cb51, type: 2}
+  - {fileID: 2100000, guid: 923f76867ef305a4f897ca5d50cc8441, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -127,7 +128,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 816883232286554383}
-  - component: {fileID: 7704878786727650296}
   m_Layer: 0
   m_Name: Trigger Rolling
   m_TagString: Untagged
@@ -151,18 +151,3 @@ Transform:
   - {fileID: 509381521273461554}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7704878786727650296
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7662996519325692721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f473de6ccd6bb64ba4fb7e91dc9a7b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  relativeSpeed: 50
-  transitPosition: -25
-  startPosition: 80
