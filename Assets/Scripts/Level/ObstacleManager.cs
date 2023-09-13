@@ -6,6 +6,7 @@ using UnityEngine;
 public class ObstacleManager : MonoBehaviour
 {
     public GameObject[] obstaclePrefabs;
+    public int[] lanes;
 
     public int waveSizeMin = 3;
     public int waveSizeMax = 5;
@@ -35,7 +36,7 @@ public class ObstacleManager : MonoBehaviour
             for(int i = 0; i < waveSize; i++)
             {
                 Vector3 pos = Vector3.forward*(distance + obstacleDistance*i);
-                pos.x = Random.Range(-1, 2)*Player.laneWidth;
+                pos.x = lanes.Choose()*Player.laneWidth;
                 GameObject obstacle = Instantiate(obstaclePrefabs.Choose(), pos, Quaternion.identity, transform);
                 yield return new WaitForSeconds(spawnDelay);
             }

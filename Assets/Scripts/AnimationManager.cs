@@ -22,7 +22,15 @@ public class AnimationManager : MonoBehaviour
         anim.SetTrigger("Fly");
         anim.SetBool("Run",false);
     }
-    
+    public void Jumping()
+    {
+        anim.SetBool("Jumping", true);
+    }
+    public void StopJumping()
+    {
+        anim.SetBool("Jumping", false);
+    }
+
     private void Awake()
     {
         Instance = this;
