@@ -50,6 +50,7 @@ public class Flight : MonoBehaviour
             (flyBody.transform.up * activeVerticalSpeed * Time.deltaTime)
         );
         
+        // Bounds Check
         bool withinX = Mathf.Abs(flyBody.transform.position.x) < bound.x / 2;
         bool withinY = Mathf.Abs(flyBody.transform.position.y ) - flyHeight < bound.y / 2;
         bool withinBounds = withinX && withinY;
@@ -72,6 +73,7 @@ public class Flight : MonoBehaviour
         }
     }
     
+    // Fly up / Come down
     public float ascendSpeed = 1f;
     private float lerp = 0;
     
@@ -91,8 +93,10 @@ public class Flight : MonoBehaviour
             yield return null;
         }
         lerp = endValue;
+        
     }
-
+    
+    // Draw bounds
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.cyan;
