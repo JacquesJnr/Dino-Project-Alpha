@@ -11,8 +11,13 @@ public class GameManager : MonoBehaviour
     public PlayerHealth playerHealth;
     public Transform runningRoot, rollingRoot, flyingRoot;
 
+    public static GameManager Instance;
+    
+    public bool grounded;
+
     private void Start()
     {
+        Instance = this;
         StateMachine.Instance.OnStateChanged += Swap;
         Swap();
     }
@@ -26,18 +31,21 @@ public class GameManager : MonoBehaviour
                 runningControls.enabled = true;
                 rollingControls.enabled = false;
                 flyingControls.enabled = false;
+                grounded = !PlayerController.Instance.isJumping;
                 break;
             case Mode.Rolling:
                 //playerHealth.transform.SetParent(rollingRoot, false);
                 rollingControls.enabled = true;
                 runningControls.enabled = false;
                 flyingControls.enabled = false;
+                grounded = true;
                 break;
             case Mode.Flying:
                 //playerHealth.transform.SetParent(flyingRoot, false);
                 runningControls.enabled = false;
                 rollingControls.enabled = false;
                 flyingControls.enabled = true;
+                grounded = false;
                 break;
         }
     }

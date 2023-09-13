@@ -89,7 +89,7 @@ public class Flight : MonoBehaviour
             lerp = Mathf.Lerp(startValue, endValue, time / ascendSpeed);
             time += Time.deltaTime;
            
-            var newPos = new Vector3(flyBody.transform.position.x, lerp, flyBody.transform.position.z);
+            var newPos = new Vector3(flyBody.transform.position.x, lerp, 0);
             flyBody.transform.position = newPos;
            
             yield return null;
