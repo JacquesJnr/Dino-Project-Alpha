@@ -16,6 +16,8 @@ public class Flight : MonoBehaviour
     
     public Vector3 bound = new Vector3();
 
+    public static event Action OnHeightChanged;
+
     private void OnEnable()
     {
         StartCoroutine(AscendDecend(flyHeight));
@@ -93,7 +95,8 @@ public class Flight : MonoBehaviour
             yield return null;
         }
         lerp = endValue;
-        
+        OnHeightChanged?.Invoke();
+        Debug.Log("Height Change Finished");
     }
     
     // Draw bounds
