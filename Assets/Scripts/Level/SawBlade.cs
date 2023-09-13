@@ -26,14 +26,14 @@ public class SawBlade : MonoBehaviour
     {
         // Keep hurtbox upright (it rotates along with the arm)
         Vector3 angle = hurtbox.transform.localEulerAngles;
-        angle.z = -root.transform.localEulerAngles.z;
+        angle.x = -root.transform.localEulerAngles.x;
         hurtbox.transform.localEulerAngles = angle;
     }
 
     private IEnumerator BladeRoutine()
     {
         Vector3 euler;
-        float start, angle, t;
+        float start, t;
         while(true)
         {
             start = Time.time;
@@ -41,7 +41,7 @@ public class SawBlade : MonoBehaviour
             {
                 t = (Time.time - start)/moveDuration;
                 euler = root.localEulerAngles;
-                euler.z = Mathf.Lerp(startAngle, targetAngle, t);
+                euler.x = Mathf.Lerp(startAngle, targetAngle, t);
                 root.localEulerAngles = euler;
                 yield return null;
             }
@@ -51,7 +51,7 @@ public class SawBlade : MonoBehaviour
             {
                 t = (Time.time - start)/spinDuration;
                 euler = blade.localEulerAngles;
-                euler.z = t*360f;
+                euler.x = -t*540f;
                 blade.localEulerAngles = euler;
                 yield return null;
             }
@@ -62,7 +62,7 @@ public class SawBlade : MonoBehaviour
             {
                 t = (Time.time - start)/moveDuration;
                 euler = root.localEulerAngles;
-                euler.z = Mathf.Lerp(targetAngle, startAngle, t);
+                euler.x = Mathf.Lerp(targetAngle, startAngle, t);
                 root.localEulerAngles = euler;
                 yield return null;
             }

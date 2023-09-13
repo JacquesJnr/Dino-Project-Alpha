@@ -7,7 +7,7 @@ public class SimpleMover : MonoBehaviour
     void Update()
     {
         Vector3 pos = transform.position;
-        pos.z -= Time.deltaTime*(relativeSpeed + PlayerController.Instance.speed);
+        pos.z -= Time.deltaTime*(relativeSpeed + PlayerController.Instance.Speed);
         transform.position = pos;
     }
 }
