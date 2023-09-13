@@ -14,7 +14,7 @@ public class Roller : MonoBehaviour
    [Range(1, 10)] public float decelerationSpeed;
 
    [Header("Bounce")] 
-   public float bouncingForce;
+   public float bouncingForce = 25F;
    public bool bouncing;
    
    private float startingDrag;
@@ -57,12 +57,12 @@ public class Roller : MonoBehaviour
 
       if (leftWall)
       {
-         rollBody.AddForce(Vector3.right * bouncingForce,ForceMode.Impulse);
+         rollBody.AddForce(Vector3.right * bouncingForce,ForceMode.VelocityChange);
          bouncing = true;
       }
       if (rightWall)
       {
-         rollBody.AddForce(Vector3.left * bouncingForce, ForceMode.Impulse);
+         rollBody.AddForce(Vector3.left * bouncingForce, ForceMode.VelocityChange);
          bouncing = true;  
       }
 

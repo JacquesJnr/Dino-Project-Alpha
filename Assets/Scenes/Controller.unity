@@ -862,6 +862,7 @@ GameObject:
   - component: {fileID: 607399288}
   - component: {fileID: 607399287}
   - component: {fileID: 607399286}
+  - component: {fileID: 607399290}
   m_Layer: 0
   m_Name: Roll
   m_TagString: Player
@@ -982,6 +983,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 607399283}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &607399290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607399283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c83bd6dd2151ea3438da6b23018221fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &664860745
 GameObject:
   m_ObjectHideFlags: 0
@@ -1558,11 +1571,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1edf55f60427f0145a7c1006483e27e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brain: {fileID: 953768424}
-  Run:
-    cam: {fileID: 577471724}
-    tranposer: {fileID: 0}
-    body: {fileID: 0}
 --- !u!1 &1000274446
 GameObject:
   m_ObjectHideFlags: 0
@@ -1577,7 +1585,7 @@ GameObject:
   - component: {fileID: 1000274448}
   m_Layer: 0
   m_Name: Right Wall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1715,7 +1723,7 @@ GameObject:
   - component: {fileID: 1045415546}
   m_Layer: 0
   m_Name: Left Wall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2955,6 +2963,8 @@ MonoBehaviour:
   rollSpeed: 10
   maxSpeed: 5
   decelerationSpeed: 3.5
+  bouncingForce: 0
+  bouncing: 0
 --- !u!114 &1647739517
 MonoBehaviour:
   m_ObjectHideFlags: 0
