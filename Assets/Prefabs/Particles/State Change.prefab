@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4718924446985647805}
   - component: {fileID: 7580870065837359929}
   m_Layer: 7
-  m_Name: Poof
+  m_Name: State Change
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
