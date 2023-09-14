@@ -41,6 +41,7 @@ public class PlayerHealth : MonoBehaviour
     public void OnStateChanged()
     {
         transform.parent = StateBodies.Instance.activeBody.obj.transform;
+        transform.position = Vector3.zero;
         transform.SetAsFirstSibling();  
     }
 
@@ -50,7 +51,6 @@ public class PlayerHealth : MonoBehaviour
         yield return new WaitForSecondsRealtime(time);
         Time.timeScale = 1f;
     }
-
 
     public float GetSlowFactor()
     {

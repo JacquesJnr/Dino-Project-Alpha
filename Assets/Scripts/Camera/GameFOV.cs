@@ -6,17 +6,35 @@ using Cinemachine;
 using UnityEngine;
 using UnityEngine.Serialization;
 
+[System.Serializable]
+public struct HitCamera
+{
+   public GameObject obj;
+   public CinemachineVirtualCamera cam;
+   public GameObject gameCamBrain;
+   public bool switchedOn => cam.enabled;
+   public void SwitchToHitCam()
+   {
+      cam.enabled = true;
+   }
+
+   public void SwitchToGameCam()
+   {
+      cam.enabled = false;
+   }
+}
+
 public class GameFOV : MonoBehaviour
 {
-   [SerializeField] private StateBody activeCamera;
-   [Range(1,5)]public int slowTime = 1;
-   
+   public HitCamera hitCamera;
+   [Range(1,5)]public int delay = 1;
+   public float hitFOV;
 
    private void OnEnable()
    {
       PlayerHealth.OnPlayerHit += PlayerHit;
    }
-
+   
    private void PlayerHit()
    {
       // Set FOV When Hit
@@ -25,16 +43,19 @@ public class GameFOV : MonoBehaviour
 
    async void PingPongFOV()
    {
-      activeCamera.hitCam.enabled = true;
-      await Task.Delay(slowTime * 1000);
-      activeCamera.hitCam.enabled = false;
+      // Switch to hit cam
+      hitCamera.SwitchToHitCam();
+      
+      // Wait a lil while
+      await Task.Delay(delay * 1000);
+      
+      // Return to game cam
+      hitCamera.SwitchToGameCam();
    }
 
    private void Update()
    {
-      // Get Active Game Camera
-      activeCamera = StateBodies.Instance.activeBody;
+      hitCamera.cam.m_Follow = StateBodies.Instance.activeBody.cam.m_Follow;
+      hitCamera.cam.m_LookAt = StateBodies.Instance.activeBody.cam.m_LookAt;
    }
-   
-   
 }
