@@ -20,7 +20,6 @@ public class StateMachine : MonoBehaviour
     {
         playerMode = newState;
         OnStateChanged?.Invoke();
-        Debug.Log($"Game State Changed - {playerMode}");
     }
 
     public Mode GetState()

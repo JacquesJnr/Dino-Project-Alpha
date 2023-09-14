@@ -96,7 +96,6 @@ public class Flight : MonoBehaviour
         }
         lerp = endValue;
         OnHeightChanged?.Invoke();
-        Debug.Log("Height Change Finished");
     }
     
     // Draw bounds

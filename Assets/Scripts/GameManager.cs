@@ -27,21 +27,18 @@ public class GameManager : MonoBehaviour
         switch (StateMachine.Instance.GetState())
         {
             case Mode.Running:
-                //playerHealth.transform.SetParent(runningRoot, false);
                 runningControls.enabled = true;
                 rollingControls.enabled = false;
                 flyingControls.enabled = false;
                 grounded = !PlayerController.Instance.isJumping;
                 break;
             case Mode.Rolling:
-                //playerHealth.transform.SetParent(rollingRoot, false);
                 rollingControls.enabled = true;
                 runningControls.enabled = false;
                 flyingControls.enabled = false;
                 grounded = true;
                 break;
             case Mode.Flying:
-                //playerHealth.transform.SetParent(flyingRoot, false);
                 runningControls.enabled = false;
                 rollingControls.enabled = false;
                 flyingControls.enabled = true;

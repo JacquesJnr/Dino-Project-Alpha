@@ -20,6 +20,8 @@ public class PlayerHealth : MonoBehaviour
     {
         Instance = this;
         Health = maxHealth;
+
+        StateMachine.Instance.OnStateChanged += OnStateChanged;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -30,9 +32,16 @@ public class PlayerHealth : MonoBehaviour
                 _lastHit = Time.time;
                 Health -= 1;
                 StartCoroutine(FreezeGame(hitFreezeDuration));
+                Debug.Log("Player Hit " + other.name);
                 OnPlayerHit?.Invoke();
                 break;
         }
+    }
+
+    public void OnStateChanged()
+    {
+        transform.parent = StateBodies.Instance.activeBody.obj.transform;
+        transform.SetAsFirstSibling();  
     }
 
     private IEnumerator FreezeGame(float time)

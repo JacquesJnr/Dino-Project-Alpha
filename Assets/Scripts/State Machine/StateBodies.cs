@@ -10,6 +10,7 @@ public struct StateBody
     public Mode mode;
     public GameObject obj;
     public CinemachineVirtualCamera cam;
+    public CinemachineVirtualCamera hitCam;
     public bool isStateActive() => StateMachine.Instance.GetState() == mode;
     public Vector3 GetPos()
     {
@@ -28,6 +29,11 @@ public class StateBodies : MonoBehaviour
 
     public static StateBodies Instance;
 
+    private void Awake()
+    {
+        activeBody = bodies[0];
+    }
+
     private void Start()
     {
         Instance = this;
@@ -41,6 +47,7 @@ public class StateBodies : MonoBehaviour
         {
             b.obj.SetActive(b.isStateActive());
             b.cam.enabled = b.isStateActive();
+            b.hitCam.enabled = false;
 
             if (b.isStateActive())
             {

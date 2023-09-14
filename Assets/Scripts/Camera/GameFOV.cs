@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
@@ -7,12 +8,9 @@ using UnityEngine.Serialization;
 
 public class GameFOV : MonoBehaviour
 {
-   public CinemachineVirtualCamera activeCamera;
-   public AnimationCurve slowFactor;
-   public AnimationCurve rampUp;
-
-   public float decreaseSpeed = 1F;
-   public float hitTarget = 60F;
+   [SerializeField] private StateBody activeCamera;
+   [Range(1,5)]public int slowTime = 1;
+   
 
    private void OnEnable()
    {
@@ -22,28 +20,20 @@ public class GameFOV : MonoBehaviour
    private void PlayerHit()
    {
       // Set FOV When Hit
-      DecreaseFOVSmoothly();
+     PingPongFOV();
    }
 
-   private IEnumerator DecreaseFOVSmoothly()
+   async void PingPongFOV()
    {
-      float start = Time.time;
-      
-      while (Time.time < activeCamera.m_Lens.FieldOfView + decreaseSpeed)
-      {
-         float t = slowFactor.Evaluate((Time.time - start)/decreaseSpeed);
-         LensSettings lens = activeCamera.m_Lens;
-         lens.FieldOfView = hitTarget * t;
-         yield return null;
-      }
-
-      activeCamera.m_Lens.FieldOfView = hitTarget;
+      activeCamera.hitCam.enabled = true;
+      await Task.Delay(slowTime * 1000);
+      activeCamera.hitCam.enabled = false;
    }
 
    private void Update()
    {
       // Get Active Game Camera
-      activeCamera = StateBodies.Instance.activeBody.cam;
+      activeCamera = StateBodies.Instance.activeBody;
    }
    
    
