@@ -11,10 +11,10 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private float hitFreezeDuration = 0.2f;
     [SerializeField] private float hitSlowFactor = 0.5f;
     [SerializeField] public float hitSlowDuration = 0.5f;
-
     public int Health { get; private set; }
 
     private float _lastHit = -999;
+    public static event Action OnPlayerHit; 
 
     void Start()
     {
@@ -30,6 +30,7 @@ public class PlayerHealth : MonoBehaviour
                 _lastHit = Time.time;
                 Health -= 1;
                 StartCoroutine(FreezeGame(hitFreezeDuration));
+                OnPlayerHit?.Invoke();
                 break;
         }
     }

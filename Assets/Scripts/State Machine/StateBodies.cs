@@ -26,8 +26,11 @@ public class StateBodies : MonoBehaviour
     
     private Vector3 pos;
 
+    public static StateBodies Instance;
+
     private void Start()
     {
+        Instance = this;
         StateMachine.Instance.OnStateChanged += SetBody;
     }
 
