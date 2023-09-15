@@ -10,7 +10,7 @@ public class StateMachine : MonoBehaviour
 
     [SerializeField] private Mode currentState;
 
-    private void Start()
+    private void Awake()
     {
         Instance = this;
         DontDestroyOnLoad(gameObject);
