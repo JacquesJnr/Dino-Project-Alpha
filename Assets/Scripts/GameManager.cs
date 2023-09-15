@@ -4,8 +4,11 @@ using UnityEngine;
 [RequireComponent(typeof(StateMachine))]
 public class GameManager : MonoBehaviour
 {
+    [Header("Bend config")]
     [Range(-0.015f, 0.015f)]
-    public float bend;
+    public float bendRange;
+    public float bendDuration = 1f;
+
     public PlayerController runningControls;
     public Roller rollingControls;
     public Flight flyingControls;
@@ -16,6 +19,8 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     
     public bool grounded;
+
+    [NonSerialized] public float bend;
 
     private void Start()
     {
@@ -51,6 +56,8 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        float t = Time.time/bendDuration;
+        bend = Mathf.Sin(t*2f*Mathf.PI)*bendRange;
         Shader.SetGlobalFloat("_Curvature", bend);
     }
 }
