@@ -302,14 +302,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8654483616398460152, guid: 622bb6ea2ca41174b84599e51049b13e, type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 0.22
-      objectReference: {fileID: 0}
-    - target: {fileID: 8654483616398460152, guid: 622bb6ea2ca41174b84599e51049b13e, type: 3}
-      propertyPath: ColorModule.gradient.maxGradient.key0.a
-      value: 0.19607843
-      objectReference: {fileID: 0}
-    - target: {fileID: 8654483616398460152, guid: 622bb6ea2ca41174b84599e51049b13e, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[0].probability
       value: 1
       objectReference: {fileID: 0}
@@ -320,10 +312,6 @@ PrefabInstance:
     - target: {fileID: 8654483616398460152, guid: 622bb6ea2ca41174b84599e51049b13e, type: 3}
       propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].value
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8654483616398460152, guid: 622bb6ea2ca41174b84599e51049b13e, type: 3}
-      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8654483616398460152, guid: 622bb6ea2ca41174b84599e51049b13e, type: 3}
       propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].inSlope
