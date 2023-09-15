@@ -4,6 +4,8 @@ using UnityEngine;
 [RequireComponent(typeof(StateMachine))]
 public class GameManager : MonoBehaviour
 {
+    [Range(-0.015f, 0.015f)]
+    public float bend;
     public PlayerController runningControls;
     public Roller rollingControls;
     public Flight flyingControls;
@@ -45,5 +47,10 @@ public class GameManager : MonoBehaviour
                 grounded = false;
                 break;
         }
+    }
+
+    private void Update()
+    {
+        Shader.SetGlobalFloat("_Curvature", bend);
     }
 }

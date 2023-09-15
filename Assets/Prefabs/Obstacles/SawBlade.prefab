@@ -51,8 +51,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 4, y: 0.5, z: 3.75}
-  m_Center: {x: 0, y: 0, z: 0.25}
+  m_Size: {x: 4, y: 0.5, z: 4}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2755042225894651079
 GameObject:
   m_ObjectHideFlags: 0
@@ -80,8 +80,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -22, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8374847492418426809}
   m_Father: {fileID: 0}
@@ -155,6 +155,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: bb3b7ee7fb4e5084db36a4cdedaa8eda, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fa2b04c59afcaa5468187eeb259acac8, type: 2}
+    - target: {fileID: -7279273319459097461, guid: bb3b7ee7fb4e5084db36a4cdedaa8eda, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fa2b04c59afcaa5468187eeb259acac8, type: 2}
+    - target: {fileID: -3351928738039106986, guid: bb3b7ee7fb4e5084db36a4cdedaa8eda, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fa2b04c59afcaa5468187eeb259acac8, type: 2}
     - target: {fileID: 919132149155446097, guid: bb3b7ee7fb4e5084db36a4cdedaa8eda, type: 3}
       propertyPath: m_Name
       value: Saw _ Fixed
