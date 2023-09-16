@@ -52,7 +52,14 @@ public class GameManager : MonoBehaviour
     public void OnPlayerHit()
     {
         OnPhaseDecreased?.Invoke();
-        gameSpeed -= hitDecrease;
+        if (gameSpeed >= hitDecrease)
+        {
+            gameSpeed -= hitDecrease;
+        }
+        else
+        {
+            // Die();
+        }
     }
 
 

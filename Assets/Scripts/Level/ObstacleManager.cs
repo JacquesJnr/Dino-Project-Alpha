@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class ObstacleManager : MonoBehaviour
 {
@@ -35,7 +37,7 @@ public class ObstacleManager : MonoBehaviour
             waveSize = Random.Range(waveSizeMin, waveSizeMax + 1);
             for(int i = 0; i < waveSize; i++)
             {
-                Vector3 pos = Vector3.forward*(distance + obstacleDistance*i);
+                Vector3 pos = Vector3.forward*(distance + obstacleDistance *i);
                 pos.x = lanes.Choose()*Player.laneWidth;
                 GameObject obstacle = Instantiate(obstaclePrefabs.Choose(), pos, Quaternion.identity, transform);
                 yield return new WaitForSeconds(spawnDelay);
@@ -43,5 +45,10 @@ public class ObstacleManager : MonoBehaviour
 
             yield return new WaitForSeconds(waveDelay);
         }
+    }
+
+    private void Update()
+    {
+        obstacleDistance = GamePhases.Instance.activePhase.obstacleDistance;
     }
 }

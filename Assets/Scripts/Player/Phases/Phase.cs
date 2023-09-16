@@ -10,6 +10,7 @@ public class Phase
    public float FOV;
 
    public float tileSpeed;
+   public float obstacleDistance;
 
    // UI Bar Value - either 0.33, 0.66 or 1
    [Range(0,1)]public float ui_velocity;
