@@ -822,9 +822,10 @@ MonoBehaviour:
     height: 25
   props:
   - {fileID: 3670579958458730319, guid: 5b61494b3b826014ea82a68e19fd43c4, type: 3}
-  spawnChance: 0.05
-  spawnAttempts: 2
-  yPos: 50
+  spawnChance: 1
+  spawnAttempts: 10
+  yPos: 40
+  yRange: 20
   rotationAxis: {x: 0, y: 0, z: 0}
 --- !u!1 &3098881599039977305
 GameObject:
@@ -2610,4 +2611,5 @@ MonoBehaviour:
   spawnChance: 0.2
   spawnAttempts: 3
   yPos: 0
+  yRange: 0
   rotationAxis: {x: 0, y: 0, z: 1}
