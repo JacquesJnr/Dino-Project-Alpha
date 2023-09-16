@@ -1,5 +1,7 @@
 using System;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,17 +16,20 @@ public class GameManager : MonoBehaviour
     public Roller rollingControls;
     public Flight flyingControls;
     public bool grounded;
-    
-    public PlayerHealth playerHealth;
 
-    [Header("VELOCITY PARAMS")]
+    [Header("VELOCITY PARAMS")] 
+    // public Phase phase;
+    // [Space(10)]
     [Range(0,1)]public float gameSpeed;
     public float acceleration;
     public AnimationCurve curve;
+    public float delay;
+    private bool waiting;
+    [Range(0,1)] public float hitDecrease;
+    public event Action OnPhaseIncreased;
+    public event Action OnPhaseDecreased;
     
-    [Header("STATE MACHINE")]
-    public bool stateMachineEnabled;
-    
+
     public static GameManager Instance;
 
     private void Awake()
@@ -34,15 +39,22 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        StateMachine.Instance.OnStateChanged += Swap;
-        Swap();
+        StateMachine.Instance.OnStateChanged += OnStateChanged;
+        PlayerHealth.OnPlayerHit += OnPlayerHit;
+        OnStateChanged();
     }
 
-    public void Swap()
+    public void OnStateChanged()
     {
-       if(!stateMachineEnabled){return;}
-       SetGameControls();
+        SetGameControls();
     }
+    
+    public void OnPlayerHit()
+    {
+        OnPhaseDecreased?.Invoke();
+        gameSpeed -= hitDecrease;
+    }
+
 
     public void SetGameControls()
     {
@@ -71,7 +83,7 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
-
+    
     private void Update()
     {
         // World Bend
@@ -82,11 +94,35 @@ public class GameManager : MonoBehaviour
         // Increase Game Speed
         if(gameSpeed < 1)
         {
+            if (waiting)
+            {
+                return;
+            }
+
+            if (gameSpeed >= 0.33F && gameSpeed < 0.34F)
+            {
+                StartCoroutine(VelocityDelay(0.33f,delay));
+            }
+            
+            if (gameSpeed >= 0.66F && gameSpeed < 0.67F)
+            {
+                StartCoroutine(VelocityDelay(0.66f,delay));
+            }
+            
             gameSpeed += acceleration * curve.Evaluate(Time.deltaTime);
         }
         if (gameSpeed >= 1)
         {
-            gameSpeed = 0;
+            //gameSpeed = 0;
         }
+    }
+
+    private IEnumerator VelocityDelay(float amount ,float duration)
+    {
+        waiting = true;
+        yield return new WaitForSeconds(duration);
+        gameSpeed = amount + 0.01f;
+        waiting = false;
+        OnPhaseIncreased?.Invoke();
     }
 }

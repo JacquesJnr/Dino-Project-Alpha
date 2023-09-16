@@ -9,6 +9,7 @@ public class GameParticles : MonoBehaviour
     public ParticleSystem runDustFX;
     public GameObject jetPackFX;
     public ParticleSystem swapFX;
+    public ParticleSystem speedLineFX;
 
     [Header("Ground FX Params")] 
     public float spawnInterval;
@@ -17,10 +18,16 @@ public class GameParticles : MonoBehaviour
     private Mode currentMode;
 
     private bool grounded => GameManager.Instance.grounded;
-    
+
+    public static GameParticles Instance;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     private void Start()
     {
-        //TODO: Get Player Particle Transform
         playerVFX = GameObject.FindGameObjectWithTag("PlayerVFX").transform;
         
         StateMachine.Instance.OnStateChanged += OnStateChanged;
@@ -49,6 +56,12 @@ public class GameParticles : MonoBehaviour
             case Mode.Flying:
                 // Jetpack FX   
                 FlyVFX();
+                break;
+            case Mode.Rolling:
+                jetPackFX.SetActive(false);
+                break;
+            case Mode.Running:
+                jetPackFX.SetActive(false);
                 break;
         }
     }
@@ -80,4 +93,15 @@ public class GameParticles : MonoBehaviour
         GameObject fx = Instantiate(particle, parent);
     }
 
+    public void OnPhaseChange(float dustSize, Vector3 lineSize)
+    {
+        var linesMain = speedLineFX.main;
+        var dustMain = runDustFX.main;
+
+        dustMain.startSize = dustSize;
+        
+        linesMain.startSizeX = lineSize.x;
+        linesMain.startSizeY = lineSize.y;
+        linesMain.startSizeZ = lineSize.z;
+    }
 }

@@ -41,6 +41,6 @@ public class GameFOV : MonoBehaviour
 
     private void Update()
     {
-        //TODO: Set active camera using StateBodies!
+        activeGameCamera = StateBodies.Instance.activeBody.cam;
     }
 }
