@@ -20,8 +20,6 @@ public class PlayerHealth : MonoBehaviour
     {
         Instance = this;
         Health = maxHealth;
-
-        StateMachine.Instance.OnStateChanged += OnStateChanged;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -38,14 +36,6 @@ public class PlayerHealth : MonoBehaviour
         }
     }
     
-    // TODO: REMOVE THIS & ADD INDIVIDUAL HITBOXES
-    public void OnStateChanged()
-    {
-        transform.parent = StateBodies.Instance.activeBody.obj.transform;
-        transform.position = Vector3.zero;
-        transform.SetAsFirstSibling();  
-    }
-
     private IEnumerator FreezeGame(float time)
     {
         Time.timeScale = 0f;

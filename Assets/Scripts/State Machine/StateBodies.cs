@@ -10,6 +10,7 @@ public struct StateBody
     public Mode mode;
     public GameObject obj;
     public CinemachineVirtualCamera cam;
+    public PlayerHealth health;
     public bool isStateActive() => StateMachine.Instance.GetState() == mode;
     public Vector3 GetPos()
     {
