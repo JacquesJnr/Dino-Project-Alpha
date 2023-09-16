@@ -2549,5 +2549,6 @@ MonoBehaviour:
     height: 25
   props:
   - {fileID: 6734784416047386538, guid: 1824fb50a650eaa4b9a509ae43da9cae, type: 3}
+  - {fileID: 7186178285985692490, guid: d4422a18a2c3ced4c9e6c3261b8310f4, type: 3}
   spawnChance: 0.2
   spawnAttempts: 3
