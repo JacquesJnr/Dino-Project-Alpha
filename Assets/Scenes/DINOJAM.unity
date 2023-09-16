@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0052671554, g: 0.0075603146, b: 0.008243821, a: 1}
+  m_IndirectSpecularColor: {r: 0.0051886793, g: 0.007476198, b: 0.008159966, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6915,6 +6915,7 @@ MonoBehaviour:
   stompFX: {fileID: 5208918185533290101, guid: f98ce0ed313d3a144a65edd9092ee0e9, type: 3}
   runDustFX: {fileID: 6986604647407110011}
   jetPackFX: {fileID: 4414743535925301913}
+  swapFX: {fileID: 1254951896086731005}
   spawnInterval: 0.33
 --- !u!1 &531682249
 GameObject:
@@ -9851,7 +9852,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 491629235432518272, guid: 85012b1538afea044a8c9bdb6673daf9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3885351115110071555, guid: 85012b1538afea044a8c9bdb6673daf9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9921,7 +9922,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poof: {fileID: 1254951896086731005}
-  currentMode: 0
 --- !u!4 &3339185447338509757
 Transform:
   m_ObjectHideFlags: 0

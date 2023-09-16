@@ -6990,6 +6990,7 @@ MonoBehaviour:
   stompFX: {fileID: 5208918185533290101, guid: f98ce0ed313d3a144a65edd9092ee0e9, type: 3}
   runDustFX: {fileID: 1796796714414490395}
   jetPackFX: {fileID: 9055423603474211046}
+  swapFX: {fileID: 5770941610063392476}
   spawnInterval: 0.33
 --- !u!1 &1979072801
 GameObject:

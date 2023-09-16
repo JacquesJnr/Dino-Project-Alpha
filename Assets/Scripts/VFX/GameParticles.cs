@@ -8,10 +8,13 @@ public class GameParticles : MonoBehaviour
     public GameObject stompFX;
     public ParticleSystem runDustFX;
     public GameObject jetPackFX;
+    public ParticleSystem swapFX;
 
     [Header("Ground FX Params")] 
     public float spawnInterval;
     private float timer = 0F;
+    
+    private Mode currentMode;
 
     private bool grounded => GameManager.Instance.grounded;
     
@@ -19,8 +22,19 @@ public class GameParticles : MonoBehaviour
     {
         //TODO: Get Player Particle Transform
         playerVFX = GameObject.FindGameObjectWithTag("PlayerVFX").transform;
+        
+        StateMachine.Instance.OnStateChanged += OnStateChanged;
     }
-    
+
+    private void OnStateChanged()
+    {
+        if (currentMode != StateMachine.Instance.GetState())
+        {
+            swapFX.Play();
+            currentMode = StateMachine.Instance.GetState();
+        }
+    }
+
     private void Update()
     {
         timer += Time.deltaTime;

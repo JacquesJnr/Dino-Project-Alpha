@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     
     public PlayerHealth playerHealth;
 
-    [Header("VELOCITY PHASE")]
+    [Header("VELOCITY PARAMS")]
     [Range(0,1)]public float gameSpeed;
     public float acceleration;
     public AnimationCurve curve;
