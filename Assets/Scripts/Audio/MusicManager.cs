@@ -85,7 +85,7 @@ public class MusicManager : MonoBehaviour
     {
         if(t < 0.5f)
         {
-            from.volume = t*2f;
+            from.volume = 1f - t*2f;
             to.volume = 0f;
         }
         else
