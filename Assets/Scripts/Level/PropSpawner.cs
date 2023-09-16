@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PropSpawner : MonoBehaviour
@@ -8,6 +6,9 @@ public class PropSpawner : MonoBehaviour
     public GameObject[] props;
     public float spawnChance;
     public int spawnAttempts;
+    public float yPos;
+    public float yRange;
+    public Vector3 rotationAxis;
 
     void Start()
     {
@@ -20,9 +21,9 @@ public class PropSpawner : MonoBehaviour
 
                 Vector3 pos = new Vector2(location.x, location.y) + new Vector2(Random.value*location.size.x - location.size.x/2f, Random.value*location.size.y - location.size.y/2f);
                 pos.z = pos.y;
-                pos.y = 0f;
+                pos.y = yPos + (Random.value-0.5f)*yRange;
                 prop.transform.localPosition = pos;
-                prop.transform.localRotation *= Quaternion.Euler(0f, 0f, Random.value*360f);
+                prop.transform.localRotation *= Quaternion.Euler(360f*Random.value*rotationAxis);
             }
         }
     }
@@ -34,7 +35,9 @@ public class PropSpawner : MonoBehaviour
             Gizmos.color = Color.cyan;
             foreach(Rect location in locations)
             {
-                Gizmos.DrawWireCube(location.position, new Vector3(location.width, 1f, location.height));
+                Vector3 pos = location.position;
+                pos.y = yPos;
+                Gizmos.DrawWireCube(pos, new Vector3(location.width, Mathf.Max(1f, yRange*2f), location.height));
             }
         }
     }
