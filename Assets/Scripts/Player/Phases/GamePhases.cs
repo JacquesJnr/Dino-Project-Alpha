@@ -8,13 +8,10 @@ using UnityEngine.UI;
 public class GamePhases : MonoBehaviour
 {
  
-   [SerializeField] private List<Phase> gamePhases;
+   [FormerlySerializedAs("gamePhases")] [SerializeField] private List<Phase> phases;
    public Phase activePhase;
 
    public static GamePhases Instance;
-   
-   private PhaseUI phaseUI;
-   private PhaseParticles phaseParticles;
 
    private void Awake()
    {
@@ -23,12 +20,33 @@ public class GamePhases : MonoBehaviour
 
    private void Start()
    {
-      activePhase = gamePhases[0];
-      
-      phaseUI = FindObjectOfType<PhaseUI>();
-      phaseParticles = FindObjectOfType<PhaseParticles>();
-      
+      activePhase = phases[0];
       SetPhase(activePhase);
+
+      GameManager.Instance.OnPhaseIncreased += OnPhaseIncrease;
+      GameManager.Instance.OnPhaseDecreased += OnPhaseDecreased;
+   }
+
+   public void OnPhaseIncrease()
+   {
+      if (activePhase.index == phases.Count - 1)
+      {
+         Debug.Log("Max Phase Reached");
+         return;
+      }
+      
+      SetPhase(phases[activePhase.index+1]);
+   }
+   
+   public void OnPhaseDecreased()
+   {
+      if (activePhase.index == 0)
+      {
+         Debug.Log("Min Phase Reached");
+         return;
+      }
+      
+      SetPhase(phases[activePhase.index-1]);
    }
 
    public void SetPhase(Phase phase)
@@ -36,45 +54,13 @@ public class GamePhases : MonoBehaviour
       // Get Camera
       GameFOV.Instance.SetFOV(phase.FOV);
 
-      // // Get UI
-      // phaseUI.velocityBar = phase.ui_velocity;
-      // phaseUI.playerPortrait = phase.portrait;
-      //
-      // // Get Particles
-      // phaseParticles.runDustSize = phase.dustSize;
-      // phaseParticles.speedLinesSize = phase.lineSize;
+      // Get Particles
+      GameParticles.Instance.OnPhaseChange(phase.dustSize, phase.lineSize);
+      
+      // Get UI
+      PhaseUI.Instance.SetPlayerPortrait(phase.portrait);
 
       activePhase = phase;
    }
-
-   public void Phase2()
-   {
-      SetPhase(gamePhases[1]);
-   }
-
-   // public void IncreasePhase(int index)
-   // {
-   //    if (index == 2)
-   //    {
-   //       Debug.Log("Sanity Check ");
-   //       return;
-   //    }
-   //
-   //    SetPhase(gamePhases[index+1]);
-   // }
-   //
-   // public void DeacreasePhase(int index)
-   // {
-   //    if (index < 0)
-   //    {
-   //       return;
-   //    }
-   //    
-   //    SetPhase(gamePhases[index-1]);
-   // }
-   // public void GetHit()
-   // {
-   //    // Swap Portrait On Hit
-   //    DeacreasePhase(activePhase.index);
-   // }
+   
 }

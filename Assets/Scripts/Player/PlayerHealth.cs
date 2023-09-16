@@ -37,7 +37,8 @@ public class PlayerHealth : MonoBehaviour
                 break;
         }
     }
-
+    
+    // TODO: REMOVE THIS & ADD INDIVIDUAL HITBOXES
     public void OnStateChanged()
     {
         transform.parent = StateBodies.Instance.activeBody.obj.transform;
