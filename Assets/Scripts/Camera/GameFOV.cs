@@ -4,58 +4,43 @@ using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
-using UnityEngine.Serialization;
-
-[System.Serializable]
-public struct HitCamera
-{
-   public GameObject obj;
-   public CinemachineVirtualCamera cam;
-   public GameObject gameCamBrain;
-   public bool switchedOn => cam.enabled;
-   public void SwitchToHitCam()
-   {
-      cam.enabled = true;
-   }
-
-   public void SwitchToGameCam()
-   {
-      cam.enabled = false;
-   }
-}
 
 public class GameFOV : MonoBehaviour
 {
-   public HitCamera hitCamera;
-   [Range(1,5)]public int delay = 1;
-   public float hitFOV;
+    public CinemachineVirtualCamera activeGameCamera;
+    public float fovDuration;
 
-   private void OnEnable()
-   {
-      PlayerHealth.OnPlayerHit += PlayerHit;
-   }
-   
-   private void PlayerHit()
-   {
-      // Set FOV When Hit
-     PingPongFOV();
-   }
+    public static GameFOV Instance;
 
-   async void PingPongFOV()
-   {
-      // Switch to hit cam
-      hitCamera.SwitchToHitCam();
-      
-      // Wait a lil while
-      await Task.Delay(delay * 1000);
-      
-      // Return to game cam
-      hitCamera.SwitchToGameCam();
-   }
+    private void Awake()
+    {
+        Instance = this;
+    }
+    
+    public void SetFOV(float FOV)
+    {
+        StartCoroutine(FOVChange(FOV));
+    }
+    
+    private IEnumerator FOVChange(float targetFOV)
+    {
+        float time = Time.time;
+        float start = activeGameCamera.m_Lens.FieldOfView;
+        while (time < fovDuration)
+        {
+            // Increse FOV
+            var lerp = Mathf.Lerp(start, targetFOV, time / fovDuration);
+            activeGameCamera.m_Lens.FieldOfView = lerp;
+            
+            time += Time.deltaTime;
+            yield return null;
+        }
+        
+        activeGameCamera.m_Lens.FieldOfView = targetFOV;
+    }
 
-   private void Update()
-   {
-      hitCamera.cam.m_Follow = StateBodies.Instance.activeBody.cam.m_Follow;
-      hitCamera.cam.m_LookAt = StateBodies.Instance.activeBody.cam.m_LookAt;
-   }
+    private void Update()
+    {
+        //TODO: Set active camera using StateBodies!
+    }
 }

@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - CameraTigger
   - Wall
+  - PlayerVFX
   layers:
   - Default
   - TransparentFX

@@ -21,6 +21,5 @@ public class SwapParticles : MonoBehaviour
             poof.Play();
             currentMode = StateMachine.Instance.GetState();
         }
-        
     }
 }
