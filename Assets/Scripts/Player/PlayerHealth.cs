@@ -50,7 +50,11 @@ public class PlayerHealth : MonoBehaviour
     {
         Time.timeScale = 0f;
         yield return new WaitForSecondsRealtime(time);
-        Time.timeScale = 1f;
+        if(!GameManager.Instance.gameOverMenu.isActiveAndEnabled)
+        {
+            // don't unpause time if the pausemenu is opened
+            Time.timeScale = 1f;
+        }
     }
 
     public float GetSlowFactor()

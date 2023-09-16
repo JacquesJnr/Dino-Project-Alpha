@@ -28,7 +28,9 @@ public class GameManager : MonoBehaviour
     [Range(0,1)] public float hitDecrease;
     public event Action OnPhaseIncreased;
     public event Action OnPhaseDecreased;
-    
+
+    public int score;
+    public GameOverMenu gameOverMenu;
 
     public static GameManager Instance;
 
@@ -114,6 +116,22 @@ public class GameManager : MonoBehaviour
         if (gameSpeed >= 1)
         {
             //gameSpeed = 0;
+        }
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(gameOverMenu.isActiveAndEnabled)
+            {
+                gameOverMenu.OnContinueButtonPressed();
+            }
+            else
+            {
+                gameOverMenu.ShowPauseMenu();
+            }
+        }
+        else if(PlayerHealth.Instance.Health <= 0 && !gameOverMenu.isActiveAndEnabled)
+        {
+            gameOverMenu.ShowGameOverMenu();
         }
     }
 
