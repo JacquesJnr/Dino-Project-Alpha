@@ -10711,6 +10711,11 @@ MonoBehaviour:
   - {fileID: 1198364410205225951, guid: 5f1695d68e67fa240a4d0913fc0423bb, type: 3}
   - {fileID: 4653233823491658237, guid: c299074046822e1489b25e059bdc7925, type: 3}
   - {fileID: -6282598515722085154, guid: 9a18270ae55abe54e9a22c71fea1f05a, type: 3}
+  - {fileID: 7724241378157840544, guid: ab2f76d63979a5040937f7fc9b289bca, type: 3}
+  - {fileID: 602508339647211619, guid: 270c4ee8d99569b4083dc88703909a25, type: 3}
+  - {fileID: 686690473206261695, guid: c2431a466278a3d4cbe320d3a4e21688, type: 3}
+  - {fileID: 5082573803588018129, guid: c785030cc6dc89841a5a6c1f4800a624, type: 3}
+  - {fileID: 5082573803588018129, guid: ef1a377898c5efc45886fe5b28c7d3a0, type: 3}
   rollingTilePrefabs:
   - {fileID: 8402986521541855376, guid: a8f6975ac82869c439d1dcf8204fa493, type: 3}
   flyingTilePrefabs:
@@ -17076,7 +17081,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &893233408
 MonoBehaviour:
   m_ObjectHideFlags: 0

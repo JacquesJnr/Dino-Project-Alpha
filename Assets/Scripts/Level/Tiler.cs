@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 
@@ -34,6 +35,8 @@ public class Tiler : MonoBehaviour
 
     private void Start()
     {
+        currentModeLength = maxModeLength;
+
         foreach(Transform t in floorRoot)
         {
             Destroy(t.gameObject);
@@ -42,12 +45,7 @@ public class Tiler : MonoBehaviour
         tiles = new LevelTile[numTiles];
         for(int i = 0; i < numTiles; i++)
         {
-            LevelTile prefab = tilePrefabs.Choose(out int tileIndex);
-            LevelTile tile = Instantiate(prefab, floorRoot);
-            tile.transform.localEulerAngles = tileRotation;
-            tile.transform.position = new Vector3(floorX, floorY, _lastTilePos);
-            _lastTilePos += tile.tileSize;
-            tiles[i] = tile;
+            tiles[i] = CreateTile();
         }    
     }
 
@@ -55,41 +53,59 @@ public class Tiler : MonoBehaviour
     {
         float speed = GamePhases.Instance.activePhase.tileSpeed*Time.deltaTime*PlayerController.Instance.DashSpeedMultipiplier;
         _lastTilePos -= speed;
+
         for(int i = 0; i < tiles.Length; i++)
         {
             LevelTile tile = tiles[i];
-            Vector3 pos = tile.transform.position;
 
+            Vector3 pos = tile.transform.position;
             pos.z -= speed;
+            tile.transform.position = pos;
+
             if(pos.z <= wrapPosition)
             {
-                Destroy(tile);
-                LevelTile prefab;
-                int tileIndex;
-
-                currentModeTiles++;
-                if(currentModeTiles > currentModeLength)
-                {
-                    currentModeLength = UnityEngine.Random.Range(minModeLength, maxModeLength + 1);
-                    currentModeTiles = 0;
-                    Mode[] possibleModes = ((Mode[])Enum.GetValues(typeof(Mode))).Where(x => x != currentMode).ToArray();
-                    Mode newMode = possibleModes.Choose();
-                    prefab = GetTilesForModeSwap(currentMode, newMode).Choose(out tileIndex);
-                    currentMode = newMode;
-                }
-                else
-                {
-                    prefab = GetTilesForMode(currentMode).Choose(out tileIndex);
-                }
-                tile = Instantiate(prefab, floorRoot);
-                tile.transform.localEulerAngles = tileRotation;
-                tiles[i] = tile;
-                pos.z = _lastTilePos;
-                _lastTilePos += tile.tileSize;
+                Destroy(tile.gameObject);
+                tiles[i] = CreateTile();
             }
-
-            tile.transform.position = pos;
         }
+    }
+
+    private LevelTile CreateTile()
+    {
+        currentModeTiles++;
+        LevelTile[] possibleTiles;
+        if(currentModeTiles > currentModeLength)
+        {
+            currentModeLength = UnityEngine.Random.Range(minModeLength, maxModeLength + 1);
+            currentModeTiles = 0;
+
+            Mode[] possibleModes = ((Mode[])Enum.GetValues(typeof(Mode))).Where(x => x != currentMode).ToArray();
+            Mode newMode = possibleModes.Choose();
+            possibleTiles = GetTilesForModeSwap(currentMode, newMode);
+            currentMode = newMode;
+        }
+        else
+        {
+             possibleTiles = GetTilesForMode(currentMode);
+        }
+
+        Dictionary<LevelTile, int> tileWeights = new();
+        foreach(var t in possibleTiles)
+        {
+            int weight = t.GetSpawnWeight();
+            if(weight <= 0) continue;
+            tileWeights.Add(t, weight);
+        }
+
+        Distribution<LevelTile> tileDistribution = new Distribution<LevelTile>(tileWeights);
+        LevelTile prefab = tileDistribution.NextValue();
+
+        LevelTile tile = Instantiate(prefab, floorRoot);
+        tile.transform.localEulerAngles = tileRotation;
+        tile.transform.localPosition = new Vector3(0f, 0f, _lastTilePos);
+        _lastTilePos += tile.tileSize;
+
+        return tile;
     }
 
     private LevelTile[] GetTilesForMode(Mode mode)

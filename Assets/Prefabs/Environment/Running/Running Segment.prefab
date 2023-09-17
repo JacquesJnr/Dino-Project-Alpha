@@ -880,7 +880,7 @@ MonoBehaviour:
   props:
   - {fileID: 3670579958458730319, guid: 5b61494b3b826014ea82a68e19fd43c4, type: 3}
   spawnChance: 1
-  spawnAttempts: 10
+  spawnAttempts: 5
   yPos: 40
   yRange: 20
   rotationAxis: {x: 0, y: 0, z: 0}
@@ -1643,8 +1643,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5416b8ef55c4a4b4db1ef70261487a21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnChance: 1
-  length: 30
+  tileSize: 30
+  spawnWeight: 5
+  spawnWeightPerSecond: 0
+  maxSpawnWeight: 5
 --- !u!1 &5523458490897904692
 GameObject:
   m_ObjectHideFlags: 0

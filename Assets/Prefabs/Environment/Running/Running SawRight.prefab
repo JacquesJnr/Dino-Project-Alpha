@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1198364410205225951, guid: 5f1695d68e67fa240a4d0913fc0423bb, type: 3}
+      propertyPath: maxSpawnWeight
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1975868551906488616, guid: 5f1695d68e67fa240a4d0913fc0423bb, type: 3}
       propertyPath: locations.Array.data[0].y
       value: 8
@@ -82,7 +86,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8329472382993580352, guid: 5f1695d68e67fa240a4d0913fc0423bb, type: 3}
       propertyPath: m_Name
-      value: Lab Segment2 SawRight
+      value: Running SawRight
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
