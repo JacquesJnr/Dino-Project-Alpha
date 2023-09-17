@@ -5,10 +5,24 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
-   public TMP_Text score;
+   public TMP_Text scoreUI;
+   public int score;
+   public int collectibleModifier;
+   public int normalModifier;
 
+   public static Score Instance;
+   public void Start()
+   {
+      Instance = this;
+   }
    private void Update()
    {
-      score.text = GameManager.Instance.score.ToString();
+      // Increase Score
+      score += 1;
+      scoreUI.text = score.ToString();
+   }
+   private void OnCollisionEnter(Collision other)
+   {
+      // OnCollectableGet
    }
 }

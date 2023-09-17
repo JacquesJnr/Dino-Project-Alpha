@@ -16,7 +16,7 @@ public class GameOverMenu : MonoBehaviour
     {
         gameObject.SetActive(true);
         Time.timeScale = 0f;
-        scoreText.text = $"Score\n{GameManager.Instance.score}";
+        scoreText.text = $"Score\n{Score.Instance.score}";
 
         header.text = "Game\nover";
         scoreText.gameObject.SetActive(true);
@@ -41,6 +41,7 @@ public class GameOverMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        GameManager.Instance.dead = false;
     }
 
     public void OnContinueButtonPressed()

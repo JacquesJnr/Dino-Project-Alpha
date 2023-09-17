@@ -32780,7 +32780,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -140.9, y: 37.222}
+  m_AnchoredPosition: {x: -145.4, y: -8.52}
   m_SizeDelta: {x: 203.05, y: 39.18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1254316815
@@ -43544,7 +43544,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 47.5, y: -0.0020370483}
+  m_AnchoredPosition: {x: 47.5, y: 2.51}
   m_SizeDelta: {x: 312.938, y: 113.62}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1642447547
@@ -44152,6 +44152,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   delay: 1.5
   hitDecrease: 0.25
+  godMode: 0
   score: 0
   gameOverMenu: {fileID: 1571947528}
 --- !u!4 &1895288447
@@ -44192,6 +44193,7 @@ MonoBehaviour:
     portrait: {fileID: 21300000, guid: f9842939548423547a8486341cf1bc17, type: 3}
     dustSize: 0
     lineSize: {x: 0.82, y: 1.25, z: 0.5}
+    batteryColor: {r: 0, g: 0, b: 0, a: 0}
   - name: Phase 2
     index: 1
     FOV: 95
@@ -44201,6 +44203,7 @@ MonoBehaviour:
     portrait: {fileID: 21300000, guid: d2d1d89978e959c4bad1668bfe1202b2, type: 3}
     dustSize: 0.36
     lineSize: {x: 0.5, y: 2, z: 0.5}
+    batteryColor: {r: 0, g: 0, b: 0, a: 0}
   - name: Phase 3
     index: 2
     FOV: 100
@@ -44210,6 +44213,7 @@ MonoBehaviour:
     portrait: {fileID: 21300000, guid: bd6fb16f35323b14c9b63d4f9143c975, type: 3}
     dustSize: 0.64
     lineSize: {x: 0.24, y: 2.5, z: 0.5}
+    batteryColor: {r: 0, g: 0, b: 0, a: 0}
   activePhase:
     name: 
     index: 0
@@ -44220,6 +44224,7 @@ MonoBehaviour:
     portrait: {fileID: 0}
     dustSize: 1
     lineSize: {x: 1, y: 1, z: 1}
+    batteryColor: {r: 0, g: 0, b: 0, a: 0}
   hitPortrait: {fileID: 21300000, guid: ae82057ec8abbc54c82f3746b9ad9e52, type: 3}
   deadPortrait: {fileID: 21300000, guid: 98b3f8bce3332274bbf8580f9f89d213, type: 3}
 --- !u!114 &1895288449
@@ -44443,7 +44448,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0.71000004}
-  m_AnchoredPosition: {x: -0.000061035156, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 472.681, y: 5.459999}
   m_Pivot: {x: 1, y: 0}
 --- !u!1 &1984206167

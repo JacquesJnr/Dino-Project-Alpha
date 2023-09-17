@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     
     [Header("GAME OVER / PAUSE MENU")]
     public bool godMode;
-    public int score;
+    public bool dead;
     public GameOverMenu gameOverMenu;
 
     public static GameManager Instance;
@@ -64,6 +64,7 @@ public class GameManager : MonoBehaviour
             {
                 Debug.Log("You are Dead!");
                 gameOverMenu.ShowGameOverMenu();
+                dead = true;
             }
         }
     }
@@ -102,7 +103,7 @@ public class GameManager : MonoBehaviour
         float t = Time.time/bendDuration;
         bend = Mathf.Sin(t*2f*Mathf.PI)*bendRange;
         Shader.SetGlobalFloat("_Curvature", bend);
-        
+
         // Increase Game Speed
         if(gameSpeed < 1)
         {
@@ -123,10 +124,6 @@ public class GameManager : MonoBehaviour
             
             gameSpeed += acceleration * curve.Evaluate(Time.deltaTime);
         }
-        if (gameSpeed >= 1)
-        {
-            //gameSpeed = 0;
-        }
 
         if(Input.GetKeyDown(KeyCode.Escape))
         {
@@ -139,7 +136,6 @@ public class GameManager : MonoBehaviour
                 gameOverMenu.ShowPauseMenu();
             }
         }
-        //TODO: Update death logic to be based on speedphase
     }
 
     private IEnumerator VelocityDelay(float amount ,float duration)
