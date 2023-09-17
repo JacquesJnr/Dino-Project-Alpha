@@ -62,7 +62,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
     public void SetGameControls()
     {
         switch (StateMachine.Instance.GetState())

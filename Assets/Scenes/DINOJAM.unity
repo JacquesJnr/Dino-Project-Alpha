@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0051886793, g: 0.007476198, b: 0.008159966, a: 1}
+  m_IndirectSpecularColor: {r: 0.0052671554, g: 0.0075603146, b: 0.008243821, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5567,7 +5567,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08d97537ac4218f458a84af09aa5a9e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
   laneWidth: 11
   swapSpeed: 0.35
   dashDuration: 0.5
@@ -38558,7 +38557,7 @@ MonoBehaviour:
   - name: Phase 1
     index: 0
     FOV: 75
-    tileSpeed: 0.4
+    tileSpeed: 40
     obstacleDistance: 15
     ui_velocity: 0.33
     portrait: {fileID: 21300000, guid: f9842939548423547a8486341cf1bc17, type: 3}
@@ -38567,7 +38566,7 @@ MonoBehaviour:
   - name: Phase 2
     index: 1
     FOV: 95
-    tileSpeed: 0.6
+    tileSpeed: 60
     obstacleDistance: 30
     ui_velocity: 0.6
     portrait: {fileID: 21300000, guid: d2d1d89978e959c4bad1668bfe1202b2, type: 3}
@@ -38576,7 +38575,7 @@ MonoBehaviour:
   - name: Phase 3
     index: 2
     FOV: 100
-    tileSpeed: 0.8
+    tileSpeed: 80
     obstacleDistance: 45
     ui_velocity: 1
     portrait: {fileID: 21300000, guid: bd6fb16f35323b14c9b63d4f9143c975, type: 3}

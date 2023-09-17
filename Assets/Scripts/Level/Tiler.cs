@@ -56,7 +56,7 @@ public class Tiler : MonoBehaviour
     private void Update()
     {
 
-        float speed = GamePhases.Instance.activePhase.tileSpeed;
+        float speed = GamePhases.Instance.activePhase.tileSpeed*Time.deltaTime*PlayerController.Instance.DashSpeedMultipiplier;
         _lastTilePos -= speed;
         for(int i = 0; i < tiles.Length; i++)
         {
