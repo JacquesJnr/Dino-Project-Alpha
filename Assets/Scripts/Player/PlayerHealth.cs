@@ -55,4 +55,9 @@ public class PlayerHealth : MonoBehaviour
         }
         return 1f - hitSlowFactor + (Time.time - _lastHit)/hitSlowDuration*hitSlowFactor;
     }
+
+    public void Button_SimulateHit()
+    {
+        OnPlayerHit?.Invoke();
+    }
 }

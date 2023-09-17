@@ -67,9 +67,26 @@ public class GamePhases : MonoBehaviour
 
    public IEnumerator HitPortrait()
    {
-      PhaseUI.Instance.SetPlayerPortrait(hitPortrait);
-      yield return new WaitForSeconds(GameManager.Instance.delay);
+      
       SetPhase(phases[activePhase.index-1]);
+      PhaseUI.Instance.SetPlayerPortrait(hitPortrait);
+      PhaseUI.Instance.HitAlpha();
+      yield return new WaitForSeconds(GameManager.Instance.delay);
+      PhaseUI.Instance.SetPlayerPortrait(activePhase.portrait);
    }
-   
+
+   public void Button_Phase1()
+   {
+      SetPhase(phases[0]);
+   }
+
+   public void Button_Phase2()
+   {
+      SetPhase(phases[1]);
+   }
+
+   public void Button_Phase3()
+   {
+      SetPhase(phases[2]);
+   }
 }

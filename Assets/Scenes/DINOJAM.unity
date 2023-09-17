@@ -28411,7 +28411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed9f8a638f98d2e48962b916521642cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeGameCamera: {fileID: 0}
+  activeGameCamera: {fileID: 1197426470}
   fovDuration: 2
 --- !u!114 &1762279547
 MonoBehaviour:
@@ -38561,7 +38561,7 @@ MonoBehaviour:
     tileSpeed: 0.4
     obstacleDistance: 15
     ui_velocity: 0.33
-    portrait: {fileID: 21300000, guid: 69a2d420fad617746b4fc2e03eba7452, type: 3}
+    portrait: {fileID: 21300000, guid: f9842939548423547a8486341cf1bc17, type: 3}
     dustSize: 0
     lineSize: {x: 0.82, y: 1.25, z: 0.5}
   - name: Phase 2
@@ -38570,7 +38570,7 @@ MonoBehaviour:
     tileSpeed: 0.6
     obstacleDistance: 30
     ui_velocity: 0.6
-    portrait: {fileID: 21300000, guid: 161250daf5d4fe440aac37ee11670e40, type: 3}
+    portrait: {fileID: 21300000, guid: d2d1d89978e959c4bad1668bfe1202b2, type: 3}
     dustSize: 0.36
     lineSize: {x: 0.5, y: 2, z: 0.5}
   - name: Phase 3
@@ -38579,7 +38579,7 @@ MonoBehaviour:
     tileSpeed: 0.8
     obstacleDistance: 45
     ui_velocity: 1
-    portrait: {fileID: 21300000, guid: e06bd4d64e0aa0a44b663a84cb8cd018, type: 3}
+    portrait: {fileID: 21300000, guid: bd6fb16f35323b14c9b63d4f9143c975, type: 3}
     dustSize: 0.64
     lineSize: {x: 0.24, y: 2.5, z: 0.5}
   activePhase:
@@ -38592,8 +38592,8 @@ MonoBehaviour:
     portrait: {fileID: 0}
     dustSize: 1
     lineSize: {x: 1, y: 1, z: 1}
-  hitPortrait: {fileID: 21300000, guid: 7377503aa2580bf40b506af90062a847, type: 3}
-  deadPortrait: {fileID: -97199967, guid: 239ea085b8899364a8effdf3cb5a4e9f, type: 3}
+  hitPortrait: {fileID: 21300000, guid: ae82057ec8abbc54c82f3746b9ad9e52, type: 3}
+  deadPortrait: {fileID: 21300000, guid: 98b3f8bce3332274bbf8580f9f89d213, type: 3}
 --- !u!1 &2027079278
 GameObject:
   m_ObjectHideFlags: 0
