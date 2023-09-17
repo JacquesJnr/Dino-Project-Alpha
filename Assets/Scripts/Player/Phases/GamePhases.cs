@@ -13,7 +13,6 @@ public class GamePhases : MonoBehaviour
    public Sprite deadPortrait;
 
    public static GamePhases Instance;
-   
 
    private void Awake()
    {
