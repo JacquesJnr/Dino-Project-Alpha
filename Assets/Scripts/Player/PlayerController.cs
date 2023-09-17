@@ -7,8 +7,8 @@ public class PlayerController : MonoBehaviour
 {
     // Note:
     // For now this script is disabled during states other than run to support the other movement types
-    [SerializeField] private float speed = 1f;
-    public float Speed => speed*PlayerHealth.Instance.GetSlowFactor();
+    //[SerializeField] private float speed = 1f;
+    //public float Speed => speed*PlayerHealth.Instance.GetSlowFactor();
 
     [Header("Lanes")]
     public float laneWidth = 1f;
@@ -40,6 +40,8 @@ public class PlayerController : MonoBehaviour
     private Coroutine dashRoutine;
     
     public static PlayerController Instance;
+
+    public float DashSpeedMultipiplier { get; private set; } = 1f;
 
     private void Awake()
     {
@@ -115,12 +117,9 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Dash()
     {
-        float originalSpeed = speed;
-        speed = originalSpeed*dashSpeedMultiplier;
-
+        DashSpeedMultipiplier = dashSpeedMultiplier;
         yield return new WaitForSeconds(dashDuration);
-
-        speed = originalSpeed;
+        DashSpeedMultipiplier = 1f;
         dashRoutine = null;
         _nextDashTimer = Time.time + dashCooldown;
     }
