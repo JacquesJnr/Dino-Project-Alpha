@@ -31,4 +31,22 @@ public class StateMachine : MonoBehaviour
     {
         currentState = playerMode;
     }
+
+    public void Button_StateRun()
+    {
+        playerMode = Mode.Running;
+        OnStateChanged?.Invoke();
+    }
+    
+    public void Button_StateRoll()
+    {
+        playerMode = Mode.Rolling;
+        OnStateChanged?.Invoke();
+    }
+    
+    public void Button_StateFly()
+    {
+        playerMode = Mode.Flying;
+        OnStateChanged?.Invoke();
+    }
 }
