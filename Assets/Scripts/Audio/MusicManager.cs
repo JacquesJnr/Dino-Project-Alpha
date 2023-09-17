@@ -1,59 +1,102 @@
 using System.Collections;
+using System.Linq;
 
 using UnityEngine;
 
 public class MusicManager : MonoBehaviour
 {
     public float transitionDuration = 1f;
-    public AudioSource @base, running, flying, rolling;
+    public float phaseTransitionDuration = 1f;
+    public AudioSource[] @base, running, flying, rolling;
 
     private AudioSource[] layers;
-    private AudioSource currentLayer;
-    private AudioSource toLayer;
-
-    //public static MusicManager Instance;
+    private AudioSource[] currentLayer;
+    private AudioSource[] toLayer;
 
     private Coroutine transitionRoutine;
+    private float lastPhaseChange;
+
+    public int PhaseIndex => GamePhases.Instance.activePhase.index;
 
     private void Awake()
     {
         //Instance = this;
-        layers = new[] { running, flying, rolling };
+        layers = running.Concat(flying).Concat(rolling).ToArray();
         for(int i = 0; i < layers.Length; i++) layers[i].volume = 0f;
+        SetLayerVolumes(0f, @base);
 
         currentLayer = running;
-        currentLayer.volume = 1f;
+        currentLayer[0].volume = 1f;
+        @base[0].volume = 1f;
     }
 
     private void Start()
     {
-        StateMachine.Instance.OnStateChanged += StateMachine_OnStateChanged;
+        StateMachine.Instance.OnStateChanged += OnStateChanged;
+        GameManager.Instance.OnPhaseIncreased += OnPhaseIncreased;
+        GameManager.Instance.OnPhaseDecreased += OnPhaseDecreased;
     }
 
-    private void StateMachine_OnStateChanged()
+    private void SetLayerVolumes(float volume, AudioSource[] layers)
+    {
+        for(int i = 0; i < layers.Length; i++) layers[i].volume = volume;
+    }
+
+    private void OnPhaseIncreased()
+    {
+        lastPhaseChange = Time.time;
+        StartCoroutine(TransitionPhaseRoutine(PhaseIndex - 1, PhaseIndex));
+    }
+
+    private void OnPhaseDecreased()
+    {
+        lastPhaseChange = Time.time;
+        StartCoroutine(TransitionPhaseRoutine(PhaseIndex + 1, PhaseIndex));
+    }
+
+    private void OnStateChanged()
     {
         TransitionLayer(StateMachine.Instance.GetState());
     }
 
     private void TransitionLayer(Mode mode)
     {
-        AudioSource to = GetLayerAudioSource(mode);
+        AudioSource[] to = GetLayerAudioSources(mode);
         StartTransitionLayerRoutine(currentLayer, to);
     }
 
-    private void StartTransitionLayerRoutine(AudioSource from, AudioSource to)
+    private void StartTransitionLayerRoutine(AudioSource[] from, AudioSource[] to)
     {
         if(transitionRoutine != null)
         {
-            currentLayer.volume = 0f;
-            toLayer.volume = 1f;
+            SetLayerVolumes(0f, currentLayer);
+            //toLayer.volume = 1f;
             currentLayer = toLayer;
             StopCoroutine(transitionRoutine);
         }
         transitionRoutine = StartCoroutine(TransitionLayerRoutine(from, to));
     }
 
-    private IEnumerator TransitionLayerRoutine(AudioSource from, AudioSource to)
+    private IEnumerator TransitionPhaseRoutine(int from, int to)
+    {
+        Debug.Log($"Transition phase from {from} to {to}");
+        float start = Time.time;
+        while(Time.time < start + phaseTransitionDuration)
+        {
+            float phaseVolume = Mathf.Clamp01((Time.time - lastPhaseChange)/phaseTransitionDuration);
+            if(to < from) phaseVolume = 1f - phaseVolume;
+            currentLayer[to].volume = phaseVolume;
+            @base[to].volume = phaseVolume;
+            yield return null;
+        }
+
+        float finalVolume = 1f;
+        if(to < from) finalVolume = 0f;
+        currentLayer[to].volume = finalVolume;
+        @base[to].volume = finalVolume;
+    }
+
+    private IEnumerator TransitionLayerRoutine(AudioSource[] from, AudioSource[] to)
     {
         float start = Time.time;
         toLayer = to;
@@ -70,7 +113,7 @@ public class MusicManager : MonoBehaviour
         transitionRoutine = null;
     }
 
-    private AudioSource GetLayerAudioSource(Mode mode)
+    private AudioSource[] GetLayerAudioSources(Mode mode)
     {
         switch(mode)
         {
@@ -81,17 +124,13 @@ public class MusicManager : MonoBehaviour
         }
     }
 
-    void SetLayerVolumesFromTo(float t, AudioSource from, AudioSource to)
+    void SetLayerVolumesFromTo(float t, AudioSource[] from, AudioSource[] to)
     {
-        if(t < 0.5f)
+        for(int phase = 0; phase < from.Length; phase++)
         {
-            from.volume = 1f - t*2f;
-            to.volume = 0f;
-        }
-        else
-        {
-            from.volume = 0f;
-            to.volume = t*2f - 1f;
+            float phaseVolume = Mathf.Clamp01((Time.time - lastPhaseChange)/phaseTransitionDuration);
+            from[phase].volume = t*phaseVolume;
+            to[phase].volume = (1f - t)*phaseVolume;
         }
     }
 }
