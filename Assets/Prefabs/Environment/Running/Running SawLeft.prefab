@@ -70,6 +70,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6282598515722085154, guid: 9a18270ae55abe54e9a22c71fea1f05a, type: 3}
+      propertyPath: spawnWeight
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: -6282598515722085154, guid: 9a18270ae55abe54e9a22c71fea1f05a, type: 3}
+      propertyPath: maxSpawnWeight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6282598515722085154, guid: 9a18270ae55abe54e9a22c71fea1f05a, type: 3}
+      propertyPath: spawnWeightPerSecond
+      value: 0.002
+      objectReference: {fileID: 0}
     - target: {fileID: 3529799105245744436, guid: 9a18270ae55abe54e9a22c71fea1f05a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -120,7 +132,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5473827358160952897, guid: 9a18270ae55abe54e9a22c71fea1f05a, type: 3}
       propertyPath: m_Name
-      value: Lab Segment2 SawLeft
+      value: Running SawLeft
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

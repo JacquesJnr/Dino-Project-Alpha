@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 
@@ -6,15 +7,15 @@ using UnityEngine;
 
 public class Tiler : MonoBehaviour
 {
-    public GameObject[] tilePrefabs;
-    public GameObject[] rollingTilePrefabs;
-    public GameObject[] flyingTilePrefabs;
-    public GameObject[] runningToRollingTiles;
-    public GameObject[] runningToFlyingTiles;
-    public GameObject[] rollingToRunningTiles;
-    public GameObject[] rollingToFlyingTiles;
-    public GameObject[] flyingToRunningTiles;
-    public GameObject[] flyingToRollingTiles;
+    public LevelTile[] tilePrefabs;
+    public LevelTile[] rollingTilePrefabs;
+    public LevelTile[] flyingTilePrefabs;
+    public LevelTile[] runningToRollingTiles;
+    public LevelTile[] runningToFlyingTiles;
+    public LevelTile[] rollingToRunningTiles;
+    public LevelTile[] rollingToFlyingTiles;
+    public LevelTile[] flyingToRunningTiles;
+    public LevelTile[] flyingToRollingTiles;
 
     public Transform floorRoot;
     public int numTiles = 5;
@@ -29,73 +30,85 @@ public class Tiler : MonoBehaviour
     private int currentModeTiles;
     private int currentModeLength;
 
-    [NonSerialized] public GameObject[] tiles;
+    [NonSerialized] public LevelTile[] tiles;
     [SerializeField] private float _lastTilePos;
-
-    const float TILE_SIZE = 30f;
 
     private void Start()
     {
+        currentModeLength = maxModeLength;
+
         foreach(Transform t in floorRoot)
         {
             Destroy(t.gameObject);
         }
 
-        tiles = new GameObject[numTiles];
+        tiles = new LevelTile[numTiles];
         for(int i = 0; i < numTiles; i++)
         {
-            GameObject prefab = tilePrefabs.Choose(out int tileIndex);
-            GameObject tile = Instantiate(prefab, floorRoot);
-            tile.transform.localEulerAngles = tileRotation;
-            tile.transform.position = new Vector3(floorX, floorY, TILE_SIZE*i);
-            _lastTilePos += TILE_SIZE;
-            tiles[i] = tile;
+            tiles[i] = CreateTile();
         }    
     }
 
     private void Update()
     {
-
         float speed = GamePhases.Instance.activePhase.tileSpeed*Time.deltaTime*PlayerController.Instance.DashSpeedMultipiplier;
         _lastTilePos -= speed;
+
         for(int i = 0; i < tiles.Length; i++)
         {
-            GameObject tile = tiles[i];
-            Vector3 pos = tile.transform.position;
+            LevelTile tile = tiles[i];
 
+            Vector3 pos = tile.transform.position;
             pos.z -= speed;
+            tile.transform.position = pos;
+
             if(pos.z <= wrapPosition)
             {
-                Destroy(tile);
-                GameObject prefab;
-                int tileIndex;
-
-                currentModeTiles++;
-                if(currentModeTiles > currentModeLength)
-                {
-                    currentModeLength = UnityEngine.Random.Range(minModeLength, maxModeLength + 1);
-                    currentModeTiles = 0;
-                    Mode[] possibleModes = ((Mode[])Enum.GetValues(typeof(Mode))).Where(x => x != currentMode).ToArray();
-                    Mode newMode = possibleModes.Choose();
-                    prefab = GetTilesForModeSwap(currentMode, newMode).Choose(out tileIndex);
-                    currentMode = newMode;
-                }
-                else
-                {
-                    prefab = GetTilesForMode(currentMode).Choose(out tileIndex);
-                }
-                tile = Instantiate(prefab, floorRoot);
-                tile.transform.localEulerAngles = tileRotation;
-                tiles[i] = tile;
-                pos.z = _lastTilePos;
-                _lastTilePos += TILE_SIZE;
+                Destroy(tile.gameObject);
+                tiles[i] = CreateTile();
             }
-
-            tile.transform.position = pos;
         }
     }
 
-    private GameObject[] GetTilesForMode(Mode mode)
+    private LevelTile CreateTile()
+    {
+        currentModeTiles++;
+        LevelTile[] possibleTiles;
+        if(currentModeTiles > currentModeLength)
+        {
+            currentModeLength = UnityEngine.Random.Range(minModeLength, maxModeLength + 1);
+            currentModeTiles = 0;
+
+            Mode[] possibleModes = ((Mode[])Enum.GetValues(typeof(Mode))).Where(x => x != currentMode).ToArray();
+            Mode newMode = possibleModes.Choose();
+            possibleTiles = GetTilesForModeSwap(currentMode, newMode);
+            currentMode = newMode;
+        }
+        else
+        {
+             possibleTiles = GetTilesForMode(currentMode);
+        }
+
+        Dictionary<LevelTile, int> tileWeights = new();
+        foreach(var t in possibleTiles)
+        {
+            int weight = t.GetSpawnWeight();
+            if(weight <= 0) continue;
+            tileWeights.Add(t, weight);
+        }
+
+        Distribution<LevelTile> tileDistribution = new Distribution<LevelTile>(tileWeights);
+        LevelTile prefab = tileDistribution.NextValue();
+
+        LevelTile tile = Instantiate(prefab, floorRoot);
+        tile.transform.localEulerAngles = tileRotation;
+        tile.transform.localPosition = new Vector3(0f, 0f, _lastTilePos);
+        _lastTilePos += tile.tileSize;
+
+        return tile;
+    }
+
+    private LevelTile[] GetTilesForMode(Mode mode)
     {
         switch(mode)
         {
@@ -107,7 +120,7 @@ public class Tiler : MonoBehaviour
         }
     }
 
-    private GameObject[] GetTilesForModeSwap(Mode from, Mode to)
+    private LevelTile[] GetTilesForModeSwap(Mode from, Mode to)
     {
         if(from == Mode.Running && to == Mode.Flying)
         {

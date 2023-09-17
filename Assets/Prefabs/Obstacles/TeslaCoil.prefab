@@ -9,8 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6232435797727960585}
-  - component: {fileID: 4674179034650801300}
-  - component: {fileID: 7713222947651632570}
   m_Layer: 0
   m_Name: TeslaCoil
   m_TagString: Obstacle
@@ -34,32 +32,6 @@ Transform:
   - {fileID: 3394037926676702683}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4674179034650801300
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7490233144111733734}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 933ed7f7c49c22b4c886ef01adf64abd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  posZ: -30
---- !u!114 &7713222947651632570
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7490233144111733734}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd3c12b235760e24187098ae997d7d9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  relativeSpeed: 0
 --- !u!1001 &5803850588429475848
 PrefabInstance:
   m_ObjectHideFlags: 0

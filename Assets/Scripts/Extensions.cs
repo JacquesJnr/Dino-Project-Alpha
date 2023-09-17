@@ -1,6 +1,8 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Diagnostics.Contracts;
+using System.Linq;
 
-using UnityEngine;
+using Random = UnityEngine.Random;
 
 public static class Extensions
 {
@@ -46,5 +48,54 @@ public static class Extensions
         }
 
         return dict[key];
+    }
+}
+
+public class Distribution<T>
+{
+    private Dictionary<Range, T> _ranges;
+    private Dictionary<T, int> _distribution;
+
+    internal Distribution(Dictionary<T, int> distribution)
+    {
+        _distribution = distribution;
+        _ranges = DistributionToRanges(_distribution);
+    }
+
+    [Pure]
+    private static Dictionary<Range, T> DistributionToRanges(Dictionary<T, int> distribution)
+    {
+        Dictionary<Range, T> ranges = new();
+
+        int total = 0;
+        foreach(var kv in distribution)
+        {
+            var min = total;
+            total += kv.Value;
+            var max = total;
+            ranges.Add(new Range(min, max), kv.Key);
+        }
+
+        return ranges;
+    }
+
+    public T NextValue()
+    {
+        int max = _ranges.Max(kv => kv.Key.Max);
+        int selection = Random.Range(0, max);
+
+        return _ranges.First(kv => kv.Key.Min <= selection && kv.Key.Max > selection).Value;
+    }
+}
+
+internal struct Range
+{
+    public int Min { get; }
+    public int Max { get; }
+
+    public Range(int min, int max)
+    {
+        Min = min;
+        Max = max;
     }
 }
