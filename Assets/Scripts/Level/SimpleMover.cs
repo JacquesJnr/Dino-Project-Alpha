@@ -3,11 +3,13 @@
 public class SimpleMover : MonoBehaviour
 {
     public float relativeSpeed = 5f;
+    public bool ignoreTileSpeed = false;
 
     void Update()
     {
         Vector3 pos = transform.position;
-        pos.z -= PlayerController.Instance.DashSpeedMultipiplier*Time.deltaTime*(relativeSpeed + GamePhases.Instance.activePhase.tileSpeed);
+        float tileSpeed = ignoreTileSpeed ? 0f : GamePhases.Instance.activePhase.tileSpeed;
+        pos.z -= PlayerController.Instance.DashSpeedMultipiplier*Time.deltaTime*(relativeSpeed + tileSpeed);
         transform.position = pos;
     }
 }
