@@ -1155,8 +1155,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5416b8ef55c4a4b4db1ef70261487a21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnChance: 1
-  length: 30
+  tileSize: 30
+  spawnWeight: 1
+  spawnWeightPerSecond: 0.01
+  maxSpawnWeight: 1
 --- !u!1 &5523458490897904692
 GameObject:
   m_ObjectHideFlags: 0
@@ -2016,6 +2018,7 @@ MonoBehaviour:
   props:
   - {fileID: 6734784416047386538, guid: 1824fb50a650eaa4b9a509ae43da9cae, type: 3}
   - {fileID: 7186178285985692490, guid: d4422a18a2c3ced4c9e6c3261b8310f4, type: 3}
+  - {fileID: 502185038449762213, guid: b67ce4e185c3932479d8497255af95db, type: 3}
   spawnChance: 0.2
   spawnAttempts: 3
   yPos: 0

@@ -43,7 +43,6 @@ public class GamePhases : MonoBehaviour
    {
       if (activePhase.index == 0)
       {
-         Debug.Log("Min Phase Reached");
          return;
       }
 
@@ -60,6 +59,9 @@ public class GamePhases : MonoBehaviour
       
       // Get UI
       PhaseUI.Instance.SetPlayerPortrait(phase.portrait);
+      
+      // Get Battery
+      BatteryColor.Instance.SetBatteryColor(phase.batteryColor);
 
       activePhase = phase;
    }

@@ -26,7 +26,6 @@ public class Phase
    // Speed Lines
    public Vector3 lineSize = new Vector3(0.16F, 1.8F, 0.5F);
    
-   //[Header("Battery")]
-   // Battery Sprite
-   // public Sprite battery;
+   [Header("Battery")]
+   public Color batteryColor;
 }

@@ -2,14 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 public class EnemyBehavior : MonoBehaviour
 {
    private Rigidbody rb => GetComponent<Rigidbody>();
    public float flingSpeed = 10f;
-   public float destroyDepth;
+   public float destroyHeight;
 
    private ParticleSystem hitFX;
 
@@ -52,7 +51,7 @@ public class EnemyBehavior : MonoBehaviour
 
    private void Update()
    {
-      if (transform.position.z > destroyDepth)
+      if (transform.position.y >  destroyHeight)
       {
          Destroy(gameObject);
       }

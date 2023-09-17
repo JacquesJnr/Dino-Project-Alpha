@@ -8,6 +8,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 569883370825179270, guid: 9a18270ae55abe54e9a22c71fea1f05a, type: 3}
+      propertyPath: props.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 569883370825179270, guid: 9a18270ae55abe54e9a22c71fea1f05a, type: 3}
+      propertyPath: props.Array.data[2]
+      value: 
+      objectReference: {fileID: 502185038449762213, guid: b67ce4e185c3932479d8497255af95db, type: 3}
+    - target: {fileID: 569883370825179270, guid: 9a18270ae55abe54e9a22c71fea1f05a, type: 3}
+      propertyPath: locations.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 569883370825179270, guid: 9a18270ae55abe54e9a22c71fea1f05a, type: 3}
+      propertyPath: locations.Array.data[2].x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 569883370825179270, guid: 9a18270ae55abe54e9a22c71fea1f05a, type: 3}
+      propertyPath: locations.Array.data[2].width
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 569883370825179270, guid: 9a18270ae55abe54e9a22c71fea1f05a, type: 3}
+      propertyPath: locations.Array.data[2].height
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3529799105245744436, guid: 9a18270ae55abe54e9a22c71fea1f05a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -50,7 +74,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5473827358160952897, guid: 9a18270ae55abe54e9a22c71fea1f05a, type: 3}
       propertyPath: m_Name
-      value: Lab Segment2 To Rolling
+      value: Any To Rolling
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

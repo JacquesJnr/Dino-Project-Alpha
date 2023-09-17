@@ -742,6 +742,63 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &3811299571251227832
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8312072620419856111}
+  - component: {fileID: 6356032161316580545}
+  m_Layer: 0
+  m_Name: Scientist Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8312072620419856111
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3811299571251227832}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3529799105245744436}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6356032161316580545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3811299571251227832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce0db2ae372ccec4290bd8329e801daf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  locations:
+  - serializedVersion: 2
+    x: 0
+    y: 0
+    width: 2.4
+    height: 25
+  props:
+  - {fileID: 502185038449762213, guid: b67ce4e185c3932479d8497255af95db, type: 3}
+  spawnChance: 0.2
+  spawnAttempts: 3
+  yPos: 2.5
+  yRange: 0
+  rotationAxis: {x: 0, y: 0, z: 0}
 --- !u!1 &4103240891098344778
 GameObject:
   m_ObjectHideFlags: 0
@@ -1247,6 +1304,7 @@ Transform:
   - {fileID: 5843979913369268606}
   - {fileID: 7445130216068331947}
   - {fileID: 2215289247114791801}
+  - {fileID: 8312072620419856111}
   - {fileID: 7945791400074176814}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1262,8 +1320,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5416b8ef55c4a4b4db1ef70261487a21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnChance: 1
-  length: 30
+  tileSize: 30
+  spawnWeight: 1
+  spawnWeightPerSecond: 0.01
+  maxSpawnWeight: 1
 --- !u!1 &5523458490897904692
 GameObject:
   m_ObjectHideFlags: 0
@@ -2059,6 +2119,7 @@ MonoBehaviour:
   props:
   - {fileID: 6734784416047386538, guid: 1824fb50a650eaa4b9a509ae43da9cae, type: 3}
   - {fileID: 7186178285985692490, guid: d4422a18a2c3ced4c9e6c3261b8310f4, type: 3}
+  - {fileID: 502185038449762213, guid: b67ce4e185c3932479d8497255af95db, type: 3}
   spawnChance: 0.2
   spawnAttempts: 3
   yPos: 0

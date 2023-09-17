@@ -26,7 +26,9 @@ public class GameManager : MonoBehaviour
     [Range(0,1)] public float hitDecrease;
     public event Action OnPhaseIncreased;
     public event Action OnPhaseDecreased;
-
+    
+    [Header("GAME OVER / PAUSE MENU")]
+    public bool godMode;
     public int score;
     public GameOverMenu gameOverMenu;
 
@@ -58,7 +60,11 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            // Die();
+            if (!godMode)
+            {
+                Debug.Log("You are Dead!");
+                gameOverMenu.ShowGameOverMenu();
+            }
         }
     }
 
@@ -134,10 +140,6 @@ public class GameManager : MonoBehaviour
             }
         }
         //TODO: Update death logic to be based on speedphase
-        // else if( Velovity Phase is 0 & Hit)
-        // {
-        //     
-        // }
     }
 
     private IEnumerator VelocityDelay(float amount ,float duration)

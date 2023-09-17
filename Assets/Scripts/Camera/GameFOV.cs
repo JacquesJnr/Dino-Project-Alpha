@@ -24,7 +24,7 @@ public class GameFOV : MonoBehaviour
     
     private IEnumerator FOVChange(float targetFOV)
     {
-        float time = Time.time;
+        float time = 0;
         float start = activeGameCamera.m_Lens.FieldOfView;
         while (time < fovDuration)
         {
