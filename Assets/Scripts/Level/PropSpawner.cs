@@ -28,7 +28,7 @@ public class PropSpawner : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         if(locations != null)
         {

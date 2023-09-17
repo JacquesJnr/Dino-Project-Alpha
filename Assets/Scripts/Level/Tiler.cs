@@ -6,15 +6,15 @@ using UnityEngine;
 
 public class Tiler : MonoBehaviour
 {
-    public GameObject[] tilePrefabs;
-    public GameObject[] rollingTilePrefabs;
-    public GameObject[] flyingTilePrefabs;
-    public GameObject[] runningToRollingTiles;
-    public GameObject[] runningToFlyingTiles;
-    public GameObject[] rollingToRunningTiles;
-    public GameObject[] rollingToFlyingTiles;
-    public GameObject[] flyingToRunningTiles;
-    public GameObject[] flyingToRollingTiles;
+    public LevelTile[] tilePrefabs;
+    public LevelTile[] rollingTilePrefabs;
+    public LevelTile[] flyingTilePrefabs;
+    public LevelTile[] runningToRollingTiles;
+    public LevelTile[] runningToFlyingTiles;
+    public LevelTile[] rollingToRunningTiles;
+    public LevelTile[] rollingToFlyingTiles;
+    public LevelTile[] flyingToRunningTiles;
+    public LevelTile[] flyingToRollingTiles;
 
     public Transform floorRoot;
     public int numTiles = 5;
@@ -29,10 +29,8 @@ public class Tiler : MonoBehaviour
     private int currentModeTiles;
     private int currentModeLength;
 
-    [NonSerialized] public GameObject[] tiles;
+    [NonSerialized] public LevelTile[] tiles;
     [SerializeField] private float _lastTilePos;
-
-    const float TILE_SIZE = 30f;
 
     private void Start()
     {
@@ -41,33 +39,32 @@ public class Tiler : MonoBehaviour
             Destroy(t.gameObject);
         }
 
-        tiles = new GameObject[numTiles];
+        tiles = new LevelTile[numTiles];
         for(int i = 0; i < numTiles; i++)
         {
-            GameObject prefab = tilePrefabs.Choose(out int tileIndex);
-            GameObject tile = Instantiate(prefab, floorRoot);
+            LevelTile prefab = tilePrefabs.Choose(out int tileIndex);
+            LevelTile tile = Instantiate(prefab, floorRoot);
             tile.transform.localEulerAngles = tileRotation;
-            tile.transform.position = new Vector3(floorX, floorY, TILE_SIZE*i);
-            _lastTilePos += TILE_SIZE;
+            tile.transform.position = new Vector3(floorX, floorY, _lastTilePos);
+            _lastTilePos += tile.tileSize;
             tiles[i] = tile;
         }    
     }
 
     private void Update()
     {
-
         float speed = GamePhases.Instance.activePhase.tileSpeed*Time.deltaTime*PlayerController.Instance.DashSpeedMultipiplier;
         _lastTilePos -= speed;
         for(int i = 0; i < tiles.Length; i++)
         {
-            GameObject tile = tiles[i];
+            LevelTile tile = tiles[i];
             Vector3 pos = tile.transform.position;
 
             pos.z -= speed;
             if(pos.z <= wrapPosition)
             {
                 Destroy(tile);
-                GameObject prefab;
+                LevelTile prefab;
                 int tileIndex;
 
                 currentModeTiles++;
@@ -88,14 +85,14 @@ public class Tiler : MonoBehaviour
                 tile.transform.localEulerAngles = tileRotation;
                 tiles[i] = tile;
                 pos.z = _lastTilePos;
-                _lastTilePos += TILE_SIZE;
+                _lastTilePos += tile.tileSize;
             }
 
             tile.transform.position = pos;
         }
     }
 
-    private GameObject[] GetTilesForMode(Mode mode)
+    private LevelTile[] GetTilesForMode(Mode mode)
     {
         switch(mode)
         {
@@ -107,7 +104,7 @@ public class Tiler : MonoBehaviour
         }
     }
 
-    private GameObject[] GetTilesForModeSwap(Mode from, Mode to)
+    private LevelTile[] GetTilesForModeSwap(Mode from, Mode to)
     {
         if(from == Mode.Running && to == Mode.Flying)
         {

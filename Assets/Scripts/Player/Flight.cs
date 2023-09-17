@@ -99,7 +99,7 @@ public class Flight : MonoBehaviour
     }
     
     // Draw bounds
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.cyan;
         Gizmos.DrawWireCube(new Vector3(0, flyHeight, 0), bound);

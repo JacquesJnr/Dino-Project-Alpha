@@ -5534,7 +5534,7 @@ MonoBehaviour:
   flyBody: {fileID: 297981728}
   speed: 10
   acelleration: 2.5
-  flyHeight: 45
+  flyHeight: 30
   bound: {x: 10, y: 8, z: 2}
   ascendSpeed: 1
 --- !u!114 &84697096
@@ -10708,33 +10708,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilePrefabs:
-  - {fileID: 5473827358160952897, guid: 9a18270ae55abe54e9a22c71fea1f05a, type: 3}
-  - {fileID: 8329472382993580352, guid: 5f1695d68e67fa240a4d0913fc0423bb, type: 3}
-  - {fileID: 2570098083300840290, guid: c299074046822e1489b25e059bdc7925, type: 3}
+  - {fileID: 1198364410205225951, guid: 5f1695d68e67fa240a4d0913fc0423bb, type: 3}
+  - {fileID: 4653233823491658237, guid: c299074046822e1489b25e059bdc7925, type: 3}
+  - {fileID: -6282598515722085154, guid: 9a18270ae55abe54e9a22c71fea1f05a, type: 3}
   rollingTilePrefabs:
-  - {fileID: 5473827358160952897, guid: a8f6975ac82869c439d1dcf8204fa493, type: 3}
+  - {fileID: 8402986521541855376, guid: a8f6975ac82869c439d1dcf8204fa493, type: 3}
   flyingTilePrefabs:
-  - {fileID: 5473827358160952897, guid: 774bdab3d303c4e428c01bc62f63aa26, type: 3}
+  - {fileID: 5397753097832970287, guid: 774bdab3d303c4e428c01bc62f63aa26, type: 3}
   runningToRollingTiles:
-  - {fileID: 5473827358160952897, guid: 626975603bd94784caccbcbcb9bbfc66, type: 3}
+  - {fileID: 8906318037606084897, guid: 626975603bd94784caccbcbcb9bbfc66, type: 3}
   runningToFlyingTiles:
-  - {fileID: 393837538173408118, guid: 2f44c52b1903948469abb0ee358194bf, type: 3}
+  - {fileID: 7371961801783169513, guid: 2f44c52b1903948469abb0ee358194bf, type: 3}
   rollingToRunningTiles:
-  - {fileID: 393837538173408118, guid: d85e033a1c9c3c4479d57cff382cf315, type: 3}
+  - {fileID: 7371961801783169513, guid: d85e033a1c9c3c4479d57cff382cf315, type: 3}
   rollingToFlyingTiles:
-  - {fileID: 5473827358160952897, guid: b31537aeb5fb7b64e8c22c1d8ff6f999, type: 3}
+  - {fileID: -2586729717993841677, guid: b31537aeb5fb7b64e8c22c1d8ff6f999, type: 3}
   flyingToRunningTiles:
-  - {fileID: 393837538173408118, guid: d85e033a1c9c3c4479d57cff382cf315, type: 3}
+  - {fileID: 7371961801783169513, guid: d85e033a1c9c3c4479d57cff382cf315, type: 3}
   flyingToRollingTiles:
-  - {fileID: 5473827358160952897, guid: 626975603bd94784caccbcbcb9bbfc66, type: 3}
+  - {fileID: 8721315713627348721, guid: bd413b0ab8089a84583c8efd3171981c, type: 3}
   floorRoot: {fileID: 276145676}
-  numTiles: 20
+  numTiles: 25
   floorY: 0
   floorX: 0
   wrapPosition: -100
   tileRotation: {x: 0, y: 0, z: 0}
-  minModeLength: 5
-  maxModeLength: 10
+  minModeLength: 15
+  maxModeLength: 40
   _lastTilePos: 0
 --- !u!4 &276145676
 Transform:
@@ -15815,7 +15815,7 @@ Transform:
   m_GameObject: {fileID: 435111833}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8, y: 50, z: -10}
+  m_LocalPosition: {x: -8, y: 38.44, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
