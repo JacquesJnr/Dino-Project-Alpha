@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 
 using UnityEngine;
@@ -6,17 +7,13 @@ using UnityEngine;
 public class MusicManager : MonoBehaviour
 {
     public float transitionDuration = 1f;
-    public float phaseTransitionDuration = 1f;
     public AudioSource[] @base, running, flying, rolling;
 
     private AudioSource[] layers;
     private AudioSource[] currentLayer;
-    private AudioSource[] toLayer;
 
-    private Coroutine transitionRoutine;
-    private float lastPhaseChange;
-
-    public int PhaseIndex => GamePhases.Instance.activePhase.index;
+    private int PhaseIndex => GamePhases.Instance.activePhase.index;
+    private Mode CurrentMode => StateMachine.Instance.GetState();
 
     private void Awake()
     {
@@ -32,9 +29,9 @@ public class MusicManager : MonoBehaviour
 
     private void Start()
     {
-        StateMachine.Instance.OnStateChanged += OnStateChanged;
-        GameManager.Instance.OnPhaseIncreased += OnPhaseIncreased;
-        GameManager.Instance.OnPhaseDecreased += OnPhaseDecreased;
+        StateMachine.Instance.OnStateChanged += OnPhaseOrModeChanged;
+        GameManager.Instance.OnPhaseIncreased += OnPhaseOrModeChanged;
+        GameManager.Instance.OnPhaseDecreased += OnPhaseOrModeChanged;
     }
 
     private void SetLayerVolumes(float volume, AudioSource[] layers)
@@ -42,75 +39,9 @@ public class MusicManager : MonoBehaviour
         for(int i = 0; i < layers.Length; i++) layers[i].volume = volume;
     }
 
-    private void OnPhaseIncreased()
+    private void OnPhaseOrModeChanged()
     {
-        lastPhaseChange = Time.time;
-        StartCoroutine(TransitionPhaseRoutine(PhaseIndex - 1, PhaseIndex));
-    }
-
-    private void OnPhaseDecreased()
-    {
-        lastPhaseChange = Time.time;
-        StartCoroutine(TransitionPhaseRoutine(PhaseIndex + 1, PhaseIndex));
-    }
-
-    private void OnStateChanged()
-    {
-        TransitionLayer(StateMachine.Instance.GetState());
-    }
-
-    private void TransitionLayer(Mode mode)
-    {
-        AudioSource[] to = GetLayerAudioSources(mode);
-        StartTransitionLayerRoutine(currentLayer, to);
-    }
-
-    private void StartTransitionLayerRoutine(AudioSource[] from, AudioSource[] to)
-    {
-        if(transitionRoutine != null)
-        {
-            SetLayerVolumes(0f, currentLayer);
-            //toLayer.volume = 1f;
-            currentLayer = toLayer;
-            StopCoroutine(transitionRoutine);
-        }
-        transitionRoutine = StartCoroutine(TransitionLayerRoutine(from, to));
-    }
-
-    private IEnumerator TransitionPhaseRoutine(int from, int to)
-    {
-        Debug.Log($"Transition phase from {from} to {to}");
-        float start = Time.time;
-        while(Time.time < start + phaseTransitionDuration)
-        {
-            float phaseVolume = Mathf.Clamp01((Time.time - lastPhaseChange)/phaseTransitionDuration);
-            if(to < from) phaseVolume = 1f - phaseVolume;
-            currentLayer[to].volume = phaseVolume;
-            @base[to].volume = phaseVolume;
-            yield return null;
-        }
-
-        float finalVolume = 1f;
-        if(to < from) finalVolume = 0f;
-        currentLayer[to].volume = finalVolume;
-        @base[to].volume = finalVolume;
-    }
-
-    private IEnumerator TransitionLayerRoutine(AudioSource[] from, AudioSource[] to)
-    {
-        float start = Time.time;
-        toLayer = to;
-
-        while(Time.time < start + transitionDuration)
-        {
-            float t = (Time.time - start)/transitionDuration;
-            SetLayerVolumesFromTo(t, from, to);
-            yield return null;
-        }
-
-        SetLayerVolumesFromTo(1f, from, to);
-        currentLayer = to;
-        transitionRoutine = null;
+        StartFadeRoutines();
     }
 
     private AudioSource[] GetLayerAudioSources(Mode mode)
@@ -124,13 +55,35 @@ public class MusicManager : MonoBehaviour
         }
     }
 
-    void SetLayerVolumesFromTo(float t, AudioSource[] from, AudioSource[] to)
+    void StartFadeRoutines()
     {
-        for(int phase = 0; phase < from.Length; phase++)
+        AudioSource[] modeTracks = GetLayerAudioSources(CurrentMode);
+        for(int i = 0; i < modeTracks.Length; i++)
         {
-            float phaseVolume = Mathf.Clamp01((Time.time - lastPhaseChange)/phaseTransitionDuration);
-            from[phase].volume = t*phaseVolume;
-            to[phase].volume = (1f - t)*phaseVolume;
+            // Fade base and current layer tracks based on phase index
+            float toVolume = i <= PhaseIndex ? 1f : 0f;
+            StartCoroutine(FadeTrackRoutine(modeTracks[i], modeTracks[i].volume, toVolume, transitionDuration));
+            StartCoroutine(FadeTrackRoutine(@base[i], @base[i].volume, toVolume, transitionDuration));
         }
+
+        IEnumerable<AudioSource> otherTracks = layers.Where(x => !modeTracks.Contains(x));
+        foreach(var other in otherTracks)
+        {
+            // Fade out all other tracks
+            StartCoroutine(FadeTrackRoutine(other, other.volume, 0f, transitionDuration));
+        }
+    }
+
+    IEnumerator FadeTrackRoutine(AudioSource track, float from, float to, float duration)
+    {
+        float start = Time.time;
+        while(Time.time < start + duration)
+        {
+            float t = Mathf.Lerp(from, to, (Time.time - start)/duration);
+            track.volume = t;
+            yield return null;
+        }
+
+        track.volume = to;
     }
 }
