@@ -2,16 +2,18 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class GamePhases : MonoBehaviour
 {
  
-   [FormerlySerializedAs("gamePhases")] [SerializeField] private List<Phase> phases;
+   [SerializeField] private List<Phase> phases;
    public Phase activePhase;
+   public Sprite hitPortrait;
+   public Sprite deadPortrait;
 
    public static GamePhases Instance;
+   
 
    private void Awake()
    {
@@ -45,8 +47,8 @@ public class GamePhases : MonoBehaviour
          Debug.Log("Min Phase Reached");
          return;
       }
-      
-      SetPhase(phases[activePhase.index-1]);
+
+      StartCoroutine(HitPortrait());
    }
 
    public void SetPhase(Phase phase)
@@ -61,6 +63,13 @@ public class GamePhases : MonoBehaviour
       PhaseUI.Instance.SetPlayerPortrait(phase.portrait);
 
       activePhase = phase;
+   }
+
+   public IEnumerator HitPortrait()
+   {
+      PhaseUI.Instance.SetPlayerPortrait(hitPortrait);
+      yield return new WaitForSeconds(GameManager.Instance.delay);
+      SetPhase(phases[activePhase.index-1]);
    }
    
 }

@@ -17,9 +17,7 @@ public class GameManager : MonoBehaviour
     public Flight flyingControls;
     public bool grounded;
 
-    [Header("VELOCITY PARAMS")] 
-    // public Phase phase;
-    // [Space(10)]
+    [Header("VELOCITY PARAMS")]
     [Range(0,1)]public float gameSpeed;
     public float acceleration;
     public AnimationCurve curve;
