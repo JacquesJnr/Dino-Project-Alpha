@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DINOJAM.unity
     guid: 6d163d71009e2524691b711798cf9da0
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 0dfd5ccddbd5fb442a3c2f4cfba2f061
   m_configObjects: {}
