@@ -133,10 +133,11 @@ public class GameManager : MonoBehaviour
                 gameOverMenu.ShowPauseMenu();
             }
         }
-        else if(PlayerHealth.Instance.Health <= 0 && !gameOverMenu.isActiveAndEnabled)
-        {
-            gameOverMenu.ShowGameOverMenu();
-        }
+        //TODO: Update death logic to be based on speedphase
+        // else if( Velovity Phase is 0 & Hit)
+        // {
+        //     
+        // }
     }
 
     private IEnumerator VelocityDelay(float amount ,float duration)
