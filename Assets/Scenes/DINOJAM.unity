@@ -10714,7 +10714,7 @@ MonoBehaviour:
   rollingTilePrefabs:
   - {fileID: 5473827358160952897, guid: a8f6975ac82869c439d1dcf8204fa493, type: 3}
   flyingTilePrefabs:
-  - {fileID: 5473827358160952897, guid: 9a18270ae55abe54e9a22c71fea1f05a, type: 3}
+  - {fileID: 5473827358160952897, guid: 774bdab3d303c4e428c01bc62f63aa26, type: 3}
   runningToRollingTiles:
   - {fileID: 5473827358160952897, guid: 626975603bd94784caccbcbcb9bbfc66, type: 3}
   runningToFlyingTiles:
@@ -10726,7 +10726,7 @@ MonoBehaviour:
   flyingToRunningTiles:
   - {fileID: 393837538173408118, guid: d85e033a1c9c3c4479d57cff382cf315, type: 3}
   flyingToRollingTiles:
-  - {fileID: 393837538173408118, guid: 6f37561ce4097d7429e16469ff051f4b, type: 3}
+  - {fileID: 5473827358160952897, guid: 626975603bd94784caccbcbcb9bbfc66, type: 3}
   floorRoot: {fileID: 276145676}
   numTiles: 20
   floorY: 0

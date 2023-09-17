@@ -36,6 +36,7 @@ public class PropSpawner : MonoBehaviour
             foreach(Rect location in locations)
             {
                 Vector3 pos = location.position;
+                pos.z = pos.y;
                 pos.y = yPos;
                 Gizmos.DrawWireCube(pos, new Vector3(location.width, Mathf.Max(1f, yRange*2f), location.height));
             }

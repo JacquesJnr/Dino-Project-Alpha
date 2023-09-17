@@ -110,9 +110,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4147865970057320517, guid: 9a18270ae55abe54e9a22c71fea1f05a, type: 3}
+      propertyPath: locations.Array.data[0].y
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4147865970057320517, guid: 9a18270ae55abe54e9a22c71fea1f05a, type: 3}
+      propertyPath: locations.Array.data[0].height
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5473827358160952897, guid: 9a18270ae55abe54e9a22c71fea1f05a, type: 3}
       propertyPath: m_Name
-      value: Lab Segment4 variant
+      value: Lab Segment2 SawLeft
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

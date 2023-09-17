@@ -558,63 +558,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &2646776681054603986
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2773323915771637063}
-  - component: {fileID: 2523557313097084457}
-  m_Layer: 0
-  m_Name: Capsule Prop Spawner Right
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2773323915771637063
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2646776681054603986}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3529799105245744436}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2523557313097084457
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2646776681054603986}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce0db2ae372ccec4290bd8329e801daf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  locations:
-  - serializedVersion: 2
-    x: 17.75
-    y: 0
-    width: 0.5
-    height: 20
-  props:
-  - {fileID: 2501470454850497728, guid: f849180e0da1c9e40b9f116e6f14753f, type: 3}
-  spawnChance: 0.1
-  spawnAttempts: 1
-  yPos: 0
-  yRange: 0
-  rotationAxis: {x: 0, y: 0, z: 0}
 --- !u!1 &2736894692455965538
 GameObject:
   m_ObjectHideFlags: 0
@@ -827,63 +770,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &3089561144070391126
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3443876437958959078}
-  - component: {fileID: 2175882918879608729}
-  m_Layer: 0
-  m_Name: Sky Prop Spawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3443876437958959078
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3089561144070391126}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3529799105245744436}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2175882918879608729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3089561144070391126}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce0db2ae372ccec4290bd8329e801daf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  locations:
-  - serializedVersion: 2
-    x: 0
-    y: 0
-    width: 30
-    height: 25
-  props:
-  - {fileID: 3670579958458730319, guid: 5b61494b3b826014ea82a68e19fd43c4, type: 3}
-  spawnChance: 1
-  spawnAttempts: 10
-  yPos: 40
-  yRange: 20
-  rotationAxis: {x: 0, y: 0, z: 0}
 --- !u!1 &3098881599039977305
 GameObject:
   m_ObjectHideFlags: 0
@@ -1599,7 +1485,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3529799105245744436}
   m_Layer: 0
-  m_Name: Lab Segment2
+  m_Name: Flying Segment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1625,9 +1511,7 @@ Transform:
   - {fileID: 7445130216068331947}
   - {fileID: 5308679825729377384}
   - {fileID: 2215289247114791801}
-  - {fileID: 3443876437958959078}
-  - {fileID: 2773323915771637063}
-  - {fileID: 8785786213412874211}
+  - {fileID: 3041756810954102862}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5523458490897904692
@@ -1736,63 +1620,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &6214878890316032987
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8785786213412874211}
-  - component: {fileID: 4147865970057320517}
-  m_Layer: 0
-  m_Name: Capsule Prop Spawner Left
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8785786213412874211
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6214878890316032987}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3529799105245744436}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4147865970057320517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6214878890316032987}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce0db2ae372ccec4290bd8329e801daf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  locations:
-  - serializedVersion: 2
-    x: -17.75
-    y: 0
-    width: 0.5
-    height: 20
-  props:
-  - {fileID: 2501470454850497728, guid: 3be2d338dd00d93409156ab4d8d9942e, type: 3}
-  spawnChance: 0.1
-  spawnAttempts: 1
-  yPos: 0
-  yRange: 0
-  rotationAxis: {x: 0, y: 0, z: 0}
 --- !u!1 &6352116660632735905
 GameObject:
   m_ObjectHideFlags: 0
@@ -2111,6 +1938,63 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &6766670439046833596
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3041756810954102862}
+  - component: {fileID: 4587375424012094440}
+  m_Layer: 0
+  m_Name: Fallen Capsule Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3041756810954102862
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6766670439046833596}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3529799105245744436}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4587375424012094440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6766670439046833596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce0db2ae372ccec4290bd8329e801daf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  locations:
+  - serializedVersion: 2
+    x: 0
+    y: 0
+    width: 30
+    height: 25
+  props:
+  - {fileID: 1002089871790234383, guid: f68a06f1b246449448416833bcf4679f, type: 3}
+  spawnChance: 0.4
+  spawnAttempts: 1
+  yPos: 0
+  yRange: 0
+  rotationAxis: {x: 0, y: 0, z: 1}
 --- !u!1 &6886777268827485190
 GameObject:
   m_ObjectHideFlags: 0
@@ -2712,20 +2596,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   locations:
   - serializedVersion: 2
-    x: -19
+    x: 0
     y: 0
-    width: 5
-    height: 25
-  - serializedVersion: 2
-    x: 19
-    y: 0
-    width: 5
+    width: 40
     height: 25
   props:
   - {fileID: 6734784416047386538, guid: 1824fb50a650eaa4b9a509ae43da9cae, type: 3}
   - {fileID: 7186178285985692490, guid: d4422a18a2c3ced4c9e6c3261b8310f4, type: 3}
-  spawnChance: 0.2
-  spawnAttempts: 3
+  spawnChance: 0.4
+  spawnAttempts: 5
   yPos: 0
   yRange: 0
   rotationAxis: {x: 0, y: 0, z: 1}
