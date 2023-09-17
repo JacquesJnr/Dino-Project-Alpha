@@ -2,24 +2,28 @@ using System;
 using System.Collections;
 
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PlayerHealth : MonoBehaviour
 {
     public static PlayerHealth Instance;
 
-    public int maxHealth = 3;
     [SerializeField] private float hitFreezeDuration = 0.2f;
     [SerializeField] private float hitSlowFactor = 0.5f;
     [SerializeField] public float hitSlowDuration = 0.5f;
     public int Health { get; private set; }
 
     private float _lastHit = -999;
-    public static event Action OnPlayerHit; 
+    
+    public bool CanKillEnemies;
+    public bool FreeHit;
+    public int freeHitCount;
+    public static event Action OnPlayerHit;
+    public static event Action OnEnemyKilled;
 
     void Start()
     {
         Instance = this;
-        Health = maxHealth;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -27,11 +31,25 @@ public class PlayerHealth : MonoBehaviour
         switch(other.tag)
         {
             case "Obstacle":
-                _lastHit = Time.time;
-                Health -= 1;
-                StartCoroutine(FreezeGame(hitFreezeDuration));
-                Debug.Log("Player Hit " + other.name);
-                OnPlayerHit?.Invoke();
+                
+                if (!FreeHit)
+                {
+                    Hit();
+                }
+                else
+                {
+                    PhaseInteractions();
+                }
+
+                break;
+            case "Enemy":
+                
+                if (!CanKillEnemies)
+                {
+                    Hit();
+                }
+                
+                PhaseInteractions();
                 break;
         }
     }
@@ -56,8 +74,34 @@ public class PlayerHealth : MonoBehaviour
         return 1f - hitSlowFactor + (Time.time - _lastHit)/hitSlowDuration*hitSlowFactor;
     }
 
+    public void Hit()
+    {
+        _lastHit = Time.time;
+        StartCoroutine(FreezeGame(hitFreezeDuration));
+        OnPlayerHit?.Invoke();
+    }
+
+    public void PhaseInteractions()
+    {
+        if (FreeHit)
+        {
+            --freeHitCount;
+        }
+
+        if (CanKillEnemies)
+        {
+            
+        }
+    }
+
     public void Button_SimulateHit()
     {
         OnPlayerHit?.Invoke();
+    }
+
+    private void Update()
+    {
+        CanKillEnemies = GameManager.Instance.gameSpeed > 0.33F && StateMachine.Instance.GetState() == Mode.Rolling;
+        FreeHit = GameManager.Instance.gameSpeed > 0.66F && freeHitCount > 0;
     }
 }

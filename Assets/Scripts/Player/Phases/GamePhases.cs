@@ -77,15 +77,18 @@ public class GamePhases : MonoBehaviour
    public void Button_Phase1()
    {
       SetPhase(phases[0]);
+      GameManager.Instance.gameSpeed = 0.34F;
    }
 
    public void Button_Phase2()
    {
       SetPhase(phases[1]);
+      GameManager.Instance.gameSpeed = 0.64F;
    }
 
    public void Button_Phase3()
    {
+      GameManager.Instance.gameSpeed = 1F;
       SetPhase(phases[2]);
    }
 }

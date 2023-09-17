@@ -9,6 +9,7 @@ TagManager:
   - CameraTigger
   - Wall
   - PlayerVFX
+  - Enemy
   layers:
   - Default
   - TransparentFX

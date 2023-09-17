@@ -3,6 +3,7 @@ using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
+[SelectionBase]
 public class PlayerController : MonoBehaviour
 {
     // Note:

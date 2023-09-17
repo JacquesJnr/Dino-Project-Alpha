@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 public class GameParticles : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class GameParticles : MonoBehaviour
     [Header("Ground FX Params")] 
     public float spawnInterval;
     private float timer = 0F;
+    
+    [Header("Hit Particles")]
+    public List<GameObject> hitParticles = new List<GameObject>();
     
     private Mode currentMode;
 
