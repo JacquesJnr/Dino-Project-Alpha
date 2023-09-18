@@ -20,6 +20,7 @@ public class Sfx : MonoBehaviour
     public AudioClip[] speedUp2;
     public AudioClip[] squelchGoo;
     public AudioClip[] playerCollision;
+    public AudioClip[] collectableGet;
 
     private Dictionary<AudioClip[], List<float>> playingSounds = new();
 

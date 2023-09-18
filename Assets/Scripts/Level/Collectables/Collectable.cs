@@ -34,7 +34,8 @@ public class Collectable : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            // OnCollectableGet?.Invoke();
+            OnCollectableGet?.Invoke();
+            Sfx.Instance.Play(Sfx.Instance.collectableGet);
             flashFX.Stop();
             StartCoroutine(GetCollected(other));
             Debug.Log("Collectable Get");
