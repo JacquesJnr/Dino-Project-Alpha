@@ -51,10 +51,10 @@ public class PlayerHealth : MonoBehaviour
                     Hit(other.name);
                 }
 
-                if (!FreeHit)
-                {
-                    Hit(other.name);
-                }
+                // if (!FreeHit)
+                // {
+                //     Hit(other.name);
+                // }
 
                 PhaseInteractions();
                 break;

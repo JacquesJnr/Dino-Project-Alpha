@@ -153,10 +153,4 @@ public class GameManager : MonoBehaviour
         waiting = false;
         OnPhaseIncreased?.Invoke();
     }
-
-    private void OnDestroy()
-    {
-        StateMachine.Instance.OnStateChanged -= OnStateChanged;
-        PlayerHealth.OnPlayerHit -= OnPlayerHit;
-    }
 }
