@@ -19,8 +19,13 @@ public class CameraShake : MonoBehaviour
        GameManager.Instance.OnPhaseIncreased += VelocityUp;
        GameManager.Instance.OnPhaseIncreased += VelocityDown;
    }
-   
-   public void OnPlayerHit()
+
+    private void OnDestroy()
+    {
+        PlayerHealth.OnPlayerHit -= OnPlayerHit;
+    }
+
+    public void OnPlayerHit()
    {
       ShakeCamera(hitIntensity, 0.75F);
    }
