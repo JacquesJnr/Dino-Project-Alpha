@@ -91,6 +91,7 @@ public class PlayerHealth : MonoBehaviour
         if (CanKillEnemies)
         {
             Sfx.Instance.Play(Sfx.Instance.playerCollision);
+            OnEnemyKilled?.Invoke();
         }
     }
 
