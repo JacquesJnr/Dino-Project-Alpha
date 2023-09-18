@@ -10,11 +10,14 @@ public class Collectable : MonoBehaviour
     private float startHeight;
 
     public float collectDuration;
+
+    private ParticleSystem flashFX;
     public static event Action OnCollectableGet;
 
     private void Start()
     {
         startHeight = transform.localPosition.y;
+        flashFX = GetComponentInChildren<ParticleSystem>();
     }
 
     public float Hover()
@@ -32,6 +35,7 @@ public class Collectable : MonoBehaviour
         if (other.tag == "Player")
         {
             // OnCollectableGet?.Invoke();
+            flashFX.Stop();
             StartCoroutine(GetCollected(other));
             Debug.Log("Collectable Get");
         }
@@ -40,16 +44,15 @@ public class Collectable : MonoBehaviour
     public IEnumerator GetCollected(Collider player)
     {
         float time = 0;
+        transform.SetParent(player.transform.parent.transform);
+        startHeight = 0;
+        transform.position = Vector3.zero;
 
         while (time < collectDuration)
         {
             Vector3 shrink = Vector3.Lerp(player.transform.localScale, Vector3.zero, time / collectDuration);
-            Vector3 pos = Vector3.Lerp(transform.localPosition, player.transform.localPosition, time / collectDuration);
 
             transform.localScale = shrink;
-            transform.localPosition = pos;
-            
-
             time += Time.deltaTime;
             yield return null;
         }

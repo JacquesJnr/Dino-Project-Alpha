@@ -28,6 +28,10 @@ public class EnemyBehavior : MonoBehaviour
    {
       if (other.tag == "Player")
       {
+         if (!hitFX.isPlaying)
+         {
+            hitFX.Play();
+         }
          GoFlying();
       }
    }
@@ -38,15 +42,10 @@ public class EnemyBehavior : MonoBehaviour
          return;
       }
 
-      if (!hitFX.isPlaying)
-      {
-         hitFX.Play();
-      }
-      
       rb.isKinematic = false;
       rb.angularVelocity = new Vector3(10, 5, 0);
-      rb.AddForce(Vector3.up * flingSpeed, ForceMode.Impulse);
-      rb.AddForce(Vector3.forward * 10, ForceMode.Impulse);
+      rb.AddForce(Vector3.up * 10, ForceMode.Impulse);
+      rb.AddForce(Vector3.forward * flingSpeed, ForceMode.Impulse);
    }
 
    private void Update()
