@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 446077890806253725}
   - component: {fileID: 1743051642342895257}
   - component: {fileID: 5762660401426174232}
-  - component: {fileID: 8113909750131899329}
   m_Layer: 0
   m_Name: Scientist
   m_TagString: Enemy
@@ -101,8 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 487afbcd2d7ed5440a33e9796229d9ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flingSpeed: 1
-  destroyHeight: 0
+  flingSpeed: 50
+  destroyHeight: 60
 --- !u!135 &1743051642342895257
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -151,20 +150,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8113909750131899329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 502185038449762213}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd3c12b235760e24187098ae997d7d9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  relativeSpeed: 3
-  ignoreTileSpeed: 0
 --- !u!1 &3163280217003905453
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,7 +175,7 @@ Transform:
   m_GameObject: {fileID: 3163280217003905453}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.62, y: 3.59, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -1135,6 +1135,7 @@ Transform:
   - {fileID: 3851817413169119576}
   - {fileID: 7445130216068331947}
   - {fileID: 2215289247114791801}
+  - {fileID: 317845407813618889}
   - {fileID: 7743234377649069091}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1858,6 +1859,65 @@ Transform:
   - {fileID: 1206753946478703469}
   m_Father: {fileID: 3529799105245744436}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8397858904143020786
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 317845407813618889}
+  - component: {fileID: 5701278932061001144}
+  m_Layer: 0
+  m_Name: Prop Spawner (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &317845407813618889
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8397858904143020786}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3529799105245744436}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5701278932061001144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8397858904143020786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce0db2ae372ccec4290bd8329e801daf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  locations:
+  - serializedVersion: 2
+    x: 10
+    y: 0
+    width: 8
+    height: 25
+  props:
+  - {fileID: 6734784416047386538, guid: 1824fb50a650eaa4b9a509ae43da9cae, type: 3}
+  - {fileID: 7186178285985692490, guid: d4422a18a2c3ced4c9e6c3261b8310f4, type: 3}
+  spawnChance: 0.2
+  spawnAttempts: 3
+  yPos: 0
+  yRange: 0
+  rotationAxis: {x: 0, y: 0, z: 1}
+  staticRotation: 0
 --- !u!1 &8853875312722250924
 GameObject:
   m_ObjectHideFlags: 0
@@ -1906,15 +1966,16 @@ MonoBehaviour:
   - serializedVersion: 2
     x: 0
     y: 0
-    width: 0.5
-    height: 25
+    width: 12
+    height: 19
   props:
   - {fileID: 502185038449762213, guid: b67ce4e185c3932479d8497255af95db, type: 3}
-  spawnChance: 0.8
-  spawnAttempts: 3
+  spawnChance: 10
+  spawnAttempts: 1
   yPos: 2.5
-  yRange: 0
+  yRange: 0.1
   rotationAxis: {x: 0, y: 0, z: 0}
+  staticRotation: 1
 --- !u!1 &8855916012504813659
 GameObject:
   m_ObjectHideFlags: 0
@@ -1961,9 +2022,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   locations:
   - serializedVersion: 2
-    x: 0
+    x: -10
     y: 0
-    width: 25
+    width: 8
     height: 25
   props:
   - {fileID: 6734784416047386538, guid: 1824fb50a650eaa4b9a509ae43da9cae, type: 3}
@@ -1973,3 +2034,4 @@ MonoBehaviour:
   yPos: 0
   yRange: 0
   rotationAxis: {x: 0, y: 0, z: 1}
+  staticRotation: 0

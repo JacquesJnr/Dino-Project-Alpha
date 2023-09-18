@@ -10,6 +10,8 @@ public class PropSpawner : MonoBehaviour
     public float yRange;
     public Vector3 rotationAxis;
 
+    public bool staticRotation;
+
     void Start()
     {
         for(int i = 0; i < spawnAttempts; i++)
@@ -23,7 +25,14 @@ public class PropSpawner : MonoBehaviour
                 pos.z = pos.y;
                 pos.y = yPos + (Random.value-0.5f)*yRange;
                 prop.transform.localPosition = pos;
-                prop.transform.localRotation *= Quaternion.Euler(360f*Random.value*rotationAxis);
+                if (!staticRotation)
+                {
+                    prop.transform.localRotation *= Quaternion.Euler(360f*Random.value*rotationAxis); 
+                }
+                else
+                {
+                    prop.transform.localRotation = Quaternion.Euler(0,0,0);
+                }
             }
         }
     }
