@@ -137,9 +137,9 @@ Transform:
   m_Children:
   - {fileID: 8909131836500369507}
   - {fileID: 3846938059568598819}
-  - {fileID: 2948662019008801926}
   - {fileID: 4730747151246416829}
   - {fileID: 5714990022665327668}
+  - {fileID: 2948662019008801926}
   m_Father: {fileID: 3529799105245744436}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1645428392190354893
@@ -295,14 +295,14 @@ MonoBehaviour:
   - serializedVersion: 2
     x: 5
     y: 0
-    width: 3
+    width: 1
     height: 1
   props:
   - {fileID: 2237743301887964864, guid: fa9ff3b5afe42ee4a980594f73153c76, type: 3}
   spawnChance: 10
   spawnAttempts: 1
-  yPos: 35
-  yRange: 2
+  yPos: 38
+  yRange: 0.5
   rotationAxis: {x: 0, y: 0, z: 0}
   staticRotation: 1
 --- !u!1 &1970390292482313299
@@ -353,14 +353,14 @@ MonoBehaviour:
   - serializedVersion: 2
     x: 0
     y: 0
-    width: 3
+    width: 1
     height: 1
   props:
   - {fileID: 2237743301887964864, guid: fa9ff3b5afe42ee4a980594f73153c76, type: 3}
   spawnChance: 10
   spawnAttempts: 1
-  yPos: 35
-  yRange: 2
+  yPos: 34
+  yRange: 0.5
   rotationAxis: {x: 0, y: 0, z: 0}
   staticRotation: 1
 --- !u!1 &2103743382317776851
@@ -1838,14 +1838,14 @@ MonoBehaviour:
   - serializedVersion: 2
     x: -5
     y: 0
-    width: 3
+    width: 1
     height: 1
   props:
   - {fileID: 2237743301887964864, guid: fa9ff3b5afe42ee4a980594f73153c76, type: 3}
   spawnChance: 10
   spawnAttempts: 1
-  yPos: 35
-  yRange: 2
+  yPos: 30
+  yRange: 0.5
   rotationAxis: {x: 0, y: 0, z: 0}
   staticRotation: 1
 --- !u!1 &6352116660632735905
@@ -2481,16 +2481,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   locations:
   - serializedVersion: 2
-    x: 0
+    x: -5
     y: 0
-    width: 3
+    width: 1
     height: 1
   props:
   - {fileID: 2237743301887964864, guid: fa9ff3b5afe42ee4a980594f73153c76, type: 3}
   spawnChance: 10
   spawnAttempts: 1
-  yPos: 40
-  yRange: 2
+  yPos: 38
+  yRange: 0.5
   rotationAxis: {x: 0, y: 0, z: 0}
   staticRotation: 1
 --- !u!1 &7900361819445520537
@@ -2539,16 +2539,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   locations:
   - serializedVersion: 2
-    x: 0
+    x: 5
     y: 0
-    width: 3
+    width: 1
     height: 1
   props:
   - {fileID: 2237743301887964864, guid: fa9ff3b5afe42ee4a980594f73153c76, type: 3}
   spawnChance: 10
   spawnAttempts: 1
   yPos: 30
-  yRange: 2
+  yRange: 0.5
   rotationAxis: {x: 0, y: 0, z: 0}
   staticRotation: 1
 --- !u!1 &7962376435103008255

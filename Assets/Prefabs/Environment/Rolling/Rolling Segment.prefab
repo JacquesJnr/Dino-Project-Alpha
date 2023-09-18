@@ -1966,8 +1966,8 @@ MonoBehaviour:
   - serializedVersion: 2
     x: 0
     y: 0
-    width: 12
-    height: 19
+    width: 25
+    height: 1
   props:
   - {fileID: 502185038449762213, guid: b67ce4e185c3932479d8497255af95db, type: 3}
   spawnChance: 10

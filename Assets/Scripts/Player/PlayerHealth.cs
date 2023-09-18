@@ -87,11 +87,6 @@ public class PlayerHealth : MonoBehaviour
         {
             --freeHitCount;
         }
-
-        if (CanKillEnemies)
-        {
-            
-        }
     }
 
     public void Button_SimulateHit()
@@ -101,7 +96,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Update()
     {
-        CanKillEnemies = GameManager.Instance.gameSpeed > 0.33F && StateMachine.Instance.GetState() == Mode.Rolling;
+        CanKillEnemies = GameManager.Instance.gameSpeed > 0.33F;
         FreeHit = GameManager.Instance.gameSpeed > 0.66F && freeHitCount > 0;
     }
 }

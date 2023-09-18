@@ -63,6 +63,11 @@ public class GamePhases : MonoBehaviour
       // Get Battery
       BatteryPack.Instance.SetBatteryColor(phase.batteryColor);
 
+      if (phase.index == 2)
+      {
+         PlayerHealth.Instance.freeHitCount = 1;
+      }
+
       activePhase = phase;
    }
 

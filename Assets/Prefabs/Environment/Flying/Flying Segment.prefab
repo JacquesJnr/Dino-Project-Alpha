@@ -1059,14 +1059,14 @@ MonoBehaviour:
   - serializedVersion: 2
     x: 5
     y: 0
-    width: 3
+    width: 1
     height: 1
   props:
   - {fileID: 2237743301887964864, guid: fa9ff3b5afe42ee4a980594f73153c76, type: 3}
   spawnChance: 10
   spawnAttempts: 1
   yPos: 35
-  yRange: 2
+  yRange: 0.5
   rotationAxis: {x: 0, y: 0, z: 0}
   staticRotation: 1
 --- !u!1 &3970066111735639603
@@ -1563,6 +1563,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1932610509215302424}
   - {fileID: 8797817995128684800}
   - {fileID: 7320596733980943691}
   - {fileID: 3851817413169119576}
@@ -1571,7 +1572,6 @@ Transform:
   - {fileID: 5308679825729377384}
   - {fileID: 2215289247114791801}
   - {fileID: 3041756810954102862}
-  - {fileID: 1932610509215302424}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5397753097832970287
@@ -1744,14 +1744,14 @@ MonoBehaviour:
   - serializedVersion: 2
     x: -5
     y: 0
-    width: 3
+    width: 1
     height: 1
   props:
   - {fileID: 2237743301887964864, guid: fa9ff3b5afe42ee4a980594f73153c76, type: 3}
   spawnChance: 10
   spawnAttempts: 1
   yPos: 35
-  yRange: 2
+  yRange: 0.5
   rotationAxis: {x: 0, y: 0, z: 0}
   staticRotation: 1
 --- !u!1 &6352116660632735905
@@ -2424,14 +2424,14 @@ MonoBehaviour:
   - serializedVersion: 2
     x: 0
     y: 0
-    width: 3
+    width: 1
     height: 1
   props:
   - {fileID: 2237743301887964864, guid: fa9ff3b5afe42ee4a980594f73153c76, type: 3}
   spawnChance: 10
   spawnAttempts: 1
   yPos: 35
-  yRange: 2
+  yRange: 0.5
   rotationAxis: {x: 0, y: 0, z: 0}
   staticRotation: 1
 --- !u!1 &8225758341137096237
