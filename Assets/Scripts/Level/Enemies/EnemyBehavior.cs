@@ -17,14 +17,8 @@ public class EnemyBehavior : MonoBehaviour
         int random = Random.Range(0, GameParticles.Instance.hitParticles.Count);
         var hit = Instantiate(GameParticles.Instance.hitParticles[random], transform.GetChild(0));
         hitFX = hit.GetComponentInChildren<ParticleSystem>();
-        PlayerHealth.OnEnemyKilled += GoFlying;
     }
-
-    private void OnDestroy()
-    {
-        PlayerHealth.OnEnemyKilled -= GoFlying;
-    }
-
+    
     private void OnTriggerEnter(Collider other)
    {
       if (other.tag == "Player")

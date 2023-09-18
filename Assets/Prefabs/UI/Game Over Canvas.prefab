@@ -1029,6 +1029,7 @@ MonoBehaviour:
   killerIcon: {fileID: 8830123674093291433}
   happyDino: {fileID: 21300000, guid: f9842939548423547a8486341cf1bc17, type: 3}
   deadDino: {fileID: 21300000, guid: 98b3f8bce3332274bbf8580f9f89d213, type: 3}
+  killerMenu: {fileID: 3749042981432185201}
 --- !u!1 &6453738181930505594
 GameObject:
   m_ObjectHideFlags: 0
@@ -1512,7 +1513,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 62.1
+  m_fontSize: 30.48
   m_fontSizeBase: 30.48
   m_fontWeight: 400
   m_enableAutoSizing: 1

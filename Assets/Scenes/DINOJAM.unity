@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0052671554, g: 0.0075603146, b: 0.008243821, a: 1}
+  m_IndirectSpecularColor: {r: 0.0051886793, g: 0.007476198, b: 0.008159966, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -16135,7 +16135,7 @@ MonoBehaviour:
   flyingControls: {fileID: 84697095}
   grounded: 0
   gameSpeed: 0
-  acceleration: 0.5
+  acceleration: 0.75
   curve:
     serializedVersion: 2
     m_Curve:
