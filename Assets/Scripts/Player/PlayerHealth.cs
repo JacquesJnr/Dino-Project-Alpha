@@ -87,6 +87,11 @@ public class PlayerHealth : MonoBehaviour
         {
             --freeHitCount;
         }
+
+        if (CanKillEnemies)
+        {
+            Sfx.Instance.Play(Sfx.Instance.playerCollision);
+        }
     }
 
     public void Button_SimulateHit()
