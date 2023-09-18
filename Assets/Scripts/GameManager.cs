@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        Sfx.Instance.Play(Sfx.Instance.startGameSiren, 1f, 1);
         StateMachine.Instance.OnStateChanged += OnStateChanged;
         PlayerHealth.OnPlayerHit += OnPlayerHit;
         OnStateChanged();
@@ -53,6 +54,7 @@ public class GameManager : MonoBehaviour
     
     public void OnPlayerHit()
     {
+        Sfx.Instance.Play(Sfx.Instance.playerCollision);
         OnPhaseDecreased?.Invoke();
         if (gameSpeed >= hitDecrease)
         {

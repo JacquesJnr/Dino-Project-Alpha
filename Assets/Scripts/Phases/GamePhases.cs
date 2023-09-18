@@ -35,8 +35,11 @@ public class GamePhases : MonoBehaviour
          Debug.Log("Max Phase Reached");
          return;
       }
-      
-      SetPhase(phases[activePhase.index+1]);
+
+        if(activePhase.index + 1 == 1) Sfx.Instance.Play(Sfx.Instance.speedUp);
+        if(activePhase.index + 1 == 2) Sfx.Instance.Play(Sfx.Instance.speedUp2);
+
+        SetPhase(phases[activePhase.index+1]);
    }
    
    public void OnPhaseDecreased()

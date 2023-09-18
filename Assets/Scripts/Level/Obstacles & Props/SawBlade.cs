@@ -11,11 +11,13 @@ public class SawBlade : MonoBehaviour
     public float targetAngle;
     public float sequenceDelay;
     public float moveUpDelay;
+    public float randomStartDelay = 3f;
 
     [Header("References")]
     public Transform root;
     public Transform blade;
     public Transform hurtbox;
+    public AudioSource spinningSound;
 
     void Start()
     {
@@ -32,6 +34,8 @@ public class SawBlade : MonoBehaviour
 
     private IEnumerator BladeRoutine()
     {
+        yield return new WaitForSeconds(Random.value*randomStartDelay);
+
         Vector3 euler;
         float start, t;
         while(true)
@@ -49,12 +53,14 @@ public class SawBlade : MonoBehaviour
             start = Time.time;
             while(Time.time < start + spinDuration)
             {
+                spinningSound.Play();
                 t = (Time.time - start)/spinDuration;
                 euler = blade.localEulerAngles;
                 euler.x = -t*540f;
                 blade.localEulerAngles = euler;
                 yield return null;
             }
+            spinningSound.Stop();
             yield return new WaitForSeconds(moveUpDelay);
 
             start = Time.time;
