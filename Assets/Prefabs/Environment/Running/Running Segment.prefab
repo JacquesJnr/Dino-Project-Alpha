@@ -223,8 +223,9 @@ GameObject:
   - component: {fileID: 6716483814478728611}
   - component: {fileID: 7837898689587392568}
   - component: {fileID: 4210260048139865231}
+  - component: {fileID: 8120675752853531065}
   m_Layer: 0
-  m_Name: Wall L (1)
+  m_Name: Wall L Middle
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -273,7 +274,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 44aa2bd9e3bde064583042bcdf2b78eb, type: 2}
+  - {fileID: 2100000, guid: eed33d3e2742f9f42bdd7008c3e1dcc8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -317,6 +318,22 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &8120675752853531065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103743382317776851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fff8e1b37a5f684ab9a1dd697a00d9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materials:
+  - {fileID: 2100000, guid: 9f987b327a68a19479156153bdcff891, type: 2}
+  - {fileID: 2100000, guid: eed33d3e2742f9f42bdd7008c3e1dcc8, type: 2}
+  - {fileID: 2100000, guid: 44aa2bd9e3bde064583042bcdf2b78eb, type: 2}
 --- !u!1 &2475960591938254531
 GameObject:
   m_ObjectHideFlags: 0
@@ -615,6 +632,7 @@ MonoBehaviour:
   yPos: 0
   yRange: 0
   rotationAxis: {x: 0, y: 0, z: 0}
+  staticRotation: 0
 --- !u!1 &2736894692455965538
 GameObject:
   m_ObjectHideFlags: 0
@@ -884,6 +902,7 @@ MonoBehaviour:
   yPos: 40
   yRange: 20
   rotationAxis: {x: 0, y: 0, z: 0}
+  staticRotation: 0
 --- !u!1 &3098881599039977305
 GameObject:
   m_ObjectHideFlags: 0
@@ -1137,8 +1156,9 @@ GameObject:
   - component: {fileID: 6630446537150140027}
   - component: {fileID: 1074206822310625659}
   - component: {fileID: 2866297080872181463}
+  - component: {fileID: 8036579908812787667}
   m_Layer: 0
-  m_Name: Wall L (2)
+  m_Name: Wall L Top
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1187,7 +1207,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a2b1ea17c9df2ee47a132b107fa96c02, type: 2}
+  - {fileID: 2100000, guid: 9c6be905845a53548beb2f349edce738, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1231,6 +1251,21 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &8036579908812787667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3970066111735639603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fff8e1b37a5f684ab9a1dd697a00d9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materials:
+  - {fileID: 2100000, guid: 9c6be905845a53548beb2f349edce738, type: 2}
+  - {fileID: 2100000, guid: e3bf6c223e928a449a1720f6351751fb, type: 2}
 --- !u!1 &4103240891098344778
 GameObject:
   m_ObjectHideFlags: 0
@@ -1660,7 +1695,7 @@ GameObject:
   - component: {fileID: 5450841761108504343}
   - component: {fileID: 4431638607757358992}
   m_Layer: 0
-  m_Name: Wall L
+  m_Name: Wall L Bottom
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1810,6 +1845,7 @@ MonoBehaviour:
   yPos: 0
   yRange: 0
   rotationAxis: {x: 0, y: 0, z: 0}
+  staticRotation: 0
 --- !u!1 &6352116660632735905
 GameObject:
   m_ObjectHideFlags: 0
@@ -2245,8 +2281,9 @@ GameObject:
   - component: {fileID: 3609042354151186145}
   - component: {fileID: 7121195725881127224}
   - component: {fileID: 7819191438801985544}
+  - component: {fileID: 3086670251593252723}
   m_Layer: 0
-  m_Name: Wall R (1)
+  m_Name: Wall R Middle
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2339,6 +2376,22 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &3086670251593252723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7040118042533616657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fff8e1b37a5f684ab9a1dd697a00d9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materials:
+  - {fileID: 2100000, guid: 9f987b327a68a19479156153bdcff891, type: 2}
+  - {fileID: 2100000, guid: eed33d3e2742f9f42bdd7008c3e1dcc8, type: 2}
+  - {fileID: 2100000, guid: 44aa2bd9e3bde064583042bcdf2b78eb, type: 2}
 --- !u!1 &7962376435103008255
 GameObject:
   m_ObjectHideFlags: 0
@@ -2420,8 +2473,9 @@ GameObject:
   - component: {fileID: 8219714658338221287}
   - component: {fileID: 7423428411851240921}
   - component: {fileID: 6866315909601114090}
+  - component: {fileID: 7839463311589193437}
   m_Layer: 0
-  m_Name: Wall R (2)
+  m_Name: Wall R Top
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2470,7 +2524,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a2b1ea17c9df2ee47a132b107fa96c02, type: 2}
+  - {fileID: 2100000, guid: e3bf6c223e928a449a1720f6351751fb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2514,6 +2568,21 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &7839463311589193437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8264947009119795100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fff8e1b37a5f684ab9a1dd697a00d9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materials:
+  - {fileID: 2100000, guid: 9c6be905845a53548beb2f349edce738, type: 2}
+  - {fileID: 2100000, guid: e3bf6c223e928a449a1720f6351751fb, type: 2}
 --- !u!1 &8272878779789838288
 GameObject:
   m_ObjectHideFlags: 0
@@ -2746,3 +2815,4 @@ MonoBehaviour:
   yPos: 0
   yRange: 0
   rotationAxis: {x: 0, y: 0, z: 1}
+  staticRotation: 0

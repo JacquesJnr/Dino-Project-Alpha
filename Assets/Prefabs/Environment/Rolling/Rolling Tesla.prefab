@@ -1111,7 +1111,7 @@ GameObject:
   - component: {fileID: 3529799105245744436}
   - component: {fileID: 8402986521541855376}
   m_Layer: 0
-  m_Name: Rolling Segment
+  m_Name: Rolling Tesla
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
