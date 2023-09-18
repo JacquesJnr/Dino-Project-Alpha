@@ -799,6 +799,7 @@ MonoBehaviour:
   yPos: 2.5
   yRange: 0
   rotationAxis: {x: 0, y: 0, z: 0}
+  staticRotation: 0
 --- !u!1 &4103240891098344778
 GameObject:
   m_ObjectHideFlags: 0
@@ -861,7 +862,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 077cf1c3946f1d543b7803d505c68b90, type: 2}
+  - {fileID: 2100000, guid: c64e7bac34bfb734f8d8861237ec75d6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -967,7 +968,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 077cf1c3946f1d543b7803d505c68b90, type: 2}
+  - {fileID: 2100000, guid: c64e7bac34bfb734f8d8861237ec75d6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1113,7 +1114,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 077cf1c3946f1d543b7803d505c68b90, type: 2}
+  - {fileID: 2100000, guid: c64e7bac34bfb734f8d8861237ec75d6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2125,6 +2126,7 @@ MonoBehaviour:
   yPos: 0
   yRange: 0
   rotationAxis: {x: 0, y: 0, z: 1}
+  staticRotation: 0
 --- !u!1001 &7283228617024196641
 PrefabInstance:
   m_ObjectHideFlags: 0
