@@ -2018,12 +2018,12 @@ MonoBehaviour:
   props:
   - {fileID: 6734784416047386538, guid: 1824fb50a650eaa4b9a509ae43da9cae, type: 3}
   - {fileID: 7186178285985692490, guid: d4422a18a2c3ced4c9e6c3261b8310f4, type: 3}
-  - {fileID: 502185038449762213, guid: b67ce4e185c3932479d8497255af95db, type: 3}
   spawnChance: 0.2
   spawnAttempts: 3
   yPos: 0
   yRange: 0
   rotationAxis: {x: 0, y: 0, z: 1}
+  staticRotation: 0
 --- !u!1001 &6870927836653923351
 PrefabInstance:
   m_ObjectHideFlags: 0
