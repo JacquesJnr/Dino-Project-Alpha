@@ -10856,6 +10856,7 @@ MonoBehaviour:
   CanKillEnemies: 0
   FreeHit: 0
   freeHitCount: 0
+  gameOver: {fileID: 1408503203}
 --- !u!1 &330144689
 GameObject:
   m_ObjectHideFlags: 0
@@ -16161,7 +16162,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   delay: 1.5
   hitDecrease: 0.34
-  godMode: 1
+  godMode: 0
   dead: 0
   gameOverMenu: {fileID: 1408503203}
 --- !u!4 &531682254
@@ -17094,6 +17095,7 @@ MonoBehaviour:
   CanKillEnemies: 0
   FreeHit: 0
   freeHitCount: 0
+  gameOver: {fileID: 1408503203}
 --- !u!1 &857537151
 GameObject:
   m_ObjectHideFlags: 0
@@ -43930,6 +43932,7 @@ MonoBehaviour:
   CanKillEnemies: 0
   FreeHit: 0
   freeHitCount: 0
+  gameOver: {fileID: 1408503203}
 --- !u!1001 &2039284177
 PrefabInstance:
   m_ObjectHideFlags: 0

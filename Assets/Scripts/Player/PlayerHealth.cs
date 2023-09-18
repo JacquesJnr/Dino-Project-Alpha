@@ -21,6 +21,8 @@ public class PlayerHealth : MonoBehaviour
     public static event Action OnPlayerHit;
     public static event Action OnEnemyKilled;
 
+    public GameOverMenu gameOver;
+
     void Start()
     {
         Instance = this;
@@ -34,7 +36,7 @@ public class PlayerHealth : MonoBehaviour
                 
                 if (!FreeHit)
                 {
-                    Hit();
+                    Hit(other.name);
                 }
                 else
                 {
@@ -46,7 +48,7 @@ public class PlayerHealth : MonoBehaviour
                 
                 if (!CanKillEnemies)
                 {
-                    Hit();
+                    Hit(other.name);
                 }
                 
                 PhaseInteractions();
@@ -74,11 +76,12 @@ public class PlayerHealth : MonoBehaviour
         return 1f - hitSlowFactor + (Time.time - _lastHit)/hitSlowDuration*hitSlowFactor;
     }
 
-    public void Hit()
+    public void Hit(string name)
     {
         _lastHit = Time.time;
         StartCoroutine(FreezeGame(hitFreezeDuration));
         OnPlayerHit?.Invoke();
+        gameOver.SetKillInfo(name);
     }
 
     public void PhaseInteractions()
