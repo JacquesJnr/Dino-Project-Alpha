@@ -34,6 +34,14 @@ public class MusicManager : MonoBehaviour
         GameManager.Instance.OnPhaseDecreased += OnPhaseOrModeChanged;
     }
 
+    private void OnDestroy()
+    {
+        StopAllCoroutines();
+        StateMachine.Instance.OnStateChanged -= OnPhaseOrModeChanged;
+        GameManager.Instance.OnPhaseIncreased -= OnPhaseOrModeChanged;
+        GameManager.Instance.OnPhaseDecreased -= OnPhaseOrModeChanged;
+    }
+
     private void SetLayerVolumes(float volume, AudioSource[] layers)
     {
         for(int i = 0; i < layers.Length; i++) layers[i].volume = volume;

@@ -13,7 +13,6 @@ public class StateMachine : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        DontDestroyOnLoad(gameObject);
     }
 
     public void SetState(Mode newState)
