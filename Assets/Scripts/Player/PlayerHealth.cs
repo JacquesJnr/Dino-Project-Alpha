@@ -50,7 +50,12 @@ public class PlayerHealth : MonoBehaviour
                 {
                     Hit(other.name);
                 }
-                
+
+                if (!FreeHit)
+                {
+                    Hit(other.name);
+                }
+
                 PhaseInteractions();
                 break;
         }
@@ -90,7 +95,7 @@ public class PlayerHealth : MonoBehaviour
         {
             --freeHitCount;
         }
-
+        
         if (CanKillEnemies)
         {
             Sfx.Instance.Play(Sfx.Instance.playerCollision);

@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 
 using UnityEngine;
@@ -14,9 +15,12 @@ public class GameOverMenu : MonoBehaviour
 
     public Sprite happyDino, deadDino;
 
+    public GameObject killerMenu;
+
     public void ShowGameOverMenu()
     {
         gameObject.SetActive(true);
+        killerMenu.SetActive(true);
         Time.timeScale = 0f;
         scoreText.text = $"Score\n{Score.Instance.score}";
 
@@ -30,6 +34,7 @@ public class GameOverMenu : MonoBehaviour
     public void ShowPauseMenu()
     {
         gameObject.SetActive(true);
+        killerMenu.SetActive(false);
         Time.timeScale = 0f;
 
         header.text = "Game\npaused";
@@ -61,7 +66,7 @@ public class GameOverMenu : MonoBehaviour
             killerIcon.sprite = sawKill;
         }
 
-        if (name.Contains("TeslaCoil"))
+        if (name.Contains("Antenna"))
         {
             killerName.text = "Tesla Coil";
             killerInfo.text = "You got zapped!";
