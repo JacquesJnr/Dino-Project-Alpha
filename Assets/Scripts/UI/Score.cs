@@ -14,16 +14,22 @@ public class Score : MonoBehaviour
    private float timer;
 
    public static Score Instance;
+
    public void Start()
    {
       score = 0;
       timer = 0;
       Instance = this;
       
-      Collectable.OnCollectableGet += OnCollectableGet;
       PlayerHealth.OnEnemyKilled += OnEnemyKilled;
    }
-   private void Update()
+
+    private void OnDestroy()
+    {
+        PlayerHealth.OnEnemyKilled -= OnEnemyKilled;
+    }
+
+    private void Update()
    {
       // Increase Score
       if (!GameManager.Instance.dead)
@@ -49,11 +55,5 @@ public class Score : MonoBehaviour
    public void OnEnemyKilled()
    {
       score += killModifier;
-   }
-
-   private void OnDisable()
-   {
-      Collectable.OnCollectableGet -= OnCollectableGet;
-      PlayerHealth.OnEnemyKilled -= OnEnemyKilled;
    }
 }

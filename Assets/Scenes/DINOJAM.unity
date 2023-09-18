@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0051886793, g: 0.007476198, b: 0.008159966, a: 1}
+  m_IndirectSpecularColor: {r: 0.0052671554, g: 0.0075603146, b: 0.008243821, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5387,8 +5387,8 @@ MonoBehaviour:
   flyBody: {fileID: 297981728}
   speed: 10
   acelleration: 2.5
-  flyHeight: 30
-  bound: {x: 10, y: 8, z: 2}
+  flyHeight: 35
+  bound: {x: 16, y: 10, z: 2}
   ascendSpeed: 1
 --- !u!114 &84697096
 MonoBehaviour:

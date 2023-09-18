@@ -12,19 +12,20 @@ public class EnemyBehavior : MonoBehaviour
 
    private ParticleSystem hitFX;
 
-   private void OnEnable()
-   {
-      PlayerHealth.OnEnemyKilled += GoFlying;
-   }
+    private void Start()
+    {
+        int random = Random.Range(0, GameParticles.Instance.hitParticles.Count);
+        var hit = Instantiate(GameParticles.Instance.hitParticles[random], transform.GetChild(0));
+        hitFX = hit.GetComponentInChildren<ParticleSystem>();
+        PlayerHealth.OnEnemyKilled += GoFlying;
+    }
 
-   private void Start()
-   {
-      int random = Random.Range(0, GameParticles.Instance.hitParticles.Count);
-      var hit = Instantiate(GameParticles.Instance.hitParticles[random], transform.GetChild(0));
-      hitFX = hit.GetComponentInChildren<ParticleSystem>();
-   }
+    private void OnDestroy()
+    {
+        PlayerHealth.OnEnemyKilled -= GoFlying;
+    }
 
-   private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
    {
       if (other.tag == "Player")
       {

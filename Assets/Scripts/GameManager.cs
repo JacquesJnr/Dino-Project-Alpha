@@ -47,6 +47,11 @@ public class GameManager : MonoBehaviour
         OnStateChanged();
     }
 
+    private void OnDestroy()
+    {
+        PlayerHealth.OnPlayerHit -= OnPlayerHit;
+    }
+
     public void OnStateChanged()
     {
         SetGameControls();

@@ -12,7 +12,6 @@ public class Collectable : MonoBehaviour
     public float collectDuration;
 
     private ParticleSystem flashFX;
-    public static event Action OnCollectableGet;
 
     private void Start()
     {
@@ -34,7 +33,7 @@ public class Collectable : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            OnCollectableGet?.Invoke();
+            Score.Instance.OnCollectableGet();
             Sfx.Instance.Play(Sfx.Instance.collectableGet);
             flashFX.Stop();
             StartCoroutine(GetCollected(other));
