@@ -10856,6 +10856,7 @@ MonoBehaviour:
   CanKillEnemies: 0
   FreeHit: 0
   freeHitCount: 0
+  gameOver: {fileID: 1408503203}
 --- !u!1 &330144689
 GameObject:
   m_ObjectHideFlags: 0
@@ -17094,6 +17095,7 @@ MonoBehaviour:
   CanKillEnemies: 0
   FreeHit: 0
   freeHitCount: 0
+  gameOver: {fileID: 1408503203}
 --- !u!1 &857537151
 GameObject:
   m_ObjectHideFlags: 0
@@ -43930,6 +43932,7 @@ MonoBehaviour:
   CanKillEnemies: 0
   FreeHit: 0
   freeHitCount: 0
+  gameOver: {fileID: 1408503203}
 --- !u!1001 &2039284177
 PrefabInstance:
   m_ObjectHideFlags: 0
