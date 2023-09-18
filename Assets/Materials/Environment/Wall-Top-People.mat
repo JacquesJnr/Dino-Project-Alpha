@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Front1
+  m_Name: Wall-Top-People
   m_Shader: {fileID: -6465566751694194690, guid: a8c72b8f97e40e04ea45ee6b7537178c, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -28,7 +28,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: f1c391f1f040e3a4d97d3df280e55f1e, type: 3}
+        m_Texture: {fileID: 2800000, guid: b024504d0149faa4abc1221e9085671e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
