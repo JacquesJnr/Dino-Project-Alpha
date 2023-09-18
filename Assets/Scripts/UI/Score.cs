@@ -14,15 +14,21 @@ public class Score : MonoBehaviour
    public void Start()
    {
       Instance = this;
+      Collectable.OnCollectableGet += OnCollectableGet;
    }
    private void Update()
    {
       // Increase Score
-      score += 1;
-      scoreUI.text = score.ToString();
+
+      if (!GameManager.Instance.dead)
+      {
+         score += 1;
+         scoreUI.text = score.ToString();  
+      }
    }
-   private void OnCollisionEnter(Collision other)
+
+   public void OnCollectableGet()
    {
-      // OnCollectableGet
+      score += collectibleModifier;
    }
 }

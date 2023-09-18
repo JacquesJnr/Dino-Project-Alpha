@@ -3,12 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BatteryColor : MonoBehaviour
+public class BatteryPack : MonoBehaviour
 {
     public float fadeTime = 0.5F;
     private SpriteRenderer sp;
 
-    public static BatteryColor Instance;
+    public static BatteryPack Instance;
 
     private void Start()
     {

@@ -61,7 +61,7 @@ public class GamePhases : MonoBehaviour
       PhaseUI.Instance.SetPlayerPortrait(phase.portrait);
       
       // Get Battery
-      BatteryColor.Instance.SetBatteryColor(phase.batteryColor);
+      BatteryPack.Instance.SetBatteryColor(phase.batteryColor);
 
       activePhase = phase;
    }
